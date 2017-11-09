@@ -103,9 +103,19 @@ class UserController extends PublicController
         }
         
         $user = M("user")->where('id=' . intval($uid))->find();
-        if(!empty($user['provinceid']))
-            $user['province'] = M('china_city')->where("id = {$user['provinceid']}")->find()['name'];
-            
+        if (! empty($user['provinceid']))
+            $user['province'] = M('china_city')->where("code = {$user['provinceid']}")->find()['name'];
+        if (! empty($user['cityid']))
+            $user['province'] = M('china_city')->where("code = {$user['cityid']}")->find()['name'];
+        if (! empty($user['areaid']))
+            $user['province'] = M('china_city')->where("code = {$user['areaid']}")->find()['name'];
+        if (! empty($user['agent_provinceid']))
+            $user['province'] = M('china_city')->where("code = {$user['agent_provinceid']}")->find()['name'];
+        if (! empty($user['agent_cityid']))
+            $user['province'] = M('china_city')->where("code = {$user['agent_cityid']}")->find()['name'];
+        if (! empty($user['agent_areaid']))
+            $user['province'] = M('china_city')->where("code = {$user['agent_areaid']}")->find()['name'];
+        
         if ($user['photo']) {
             if ($user['source'] == '') {
                 $user['photo'] = __DATAURL__ . $user['photo'];
@@ -517,7 +527,7 @@ class UserController extends PublicController
         $id = trim($_POST['uid']);
         $passtwo = trim($_POST['passtwo']);
         $oldpassword = trim($_POST['old']);
-        if (! $id || !$passtwo || !$oldpassword) {
+        if (! $id || ! $passtwo || ! $oldpassword) {
             echo json_encode(array(
                 'status' => 0,
                 'err' => '信息不完全.'
@@ -633,12 +643,12 @@ class UserController extends PublicController
         if (! $user_info) {
             echo json_encode(array(
                 'status' => 0,
-            		'err' => '会员信息错误.'
+                'err' => '会员信息错误.'
             ));
             exit();
         }
         
-        $result = M('user')->where('id='. intval($userid))->setField(array(
+        $result = M('user')->where('id=' . intval($userid))->setField(array(
             'cardnumber' => $banknum,
             'cardholder' => $username,
             'cardbank' => $bankname
@@ -675,7 +685,7 @@ class UserController extends PublicController
             exit();
         }
     }
-    
+
     public function getBankInfo()
     {
         Vendor('Bank.Bank');
@@ -688,17 +698,19 @@ class UserController extends PublicController
         ));
         exit();
     }
+
     /**
      * 用户注册
      */
-    public function register(){
+    public function register()
+    {
         $userid = intval($_POST['userid']);
         $provinceid = intval($_POST['provinceid']);
         $cityid = intval($_POST['cityid']);
         $areaid = intval($_POST['areaid']);
         $mobile = trim($_POST['mobile']);
         $realname = trim($_POST['realname']);
-        $pwd  = md5(md5($_POST['pwd']));
+        $pwd = md5(md5($_POST['pwd']));
         
         $user_info = M('user')->where('id=' . intval($userid) . ' AND del=0')->find();
         if (! $user_info) {
@@ -709,12 +721,15 @@ class UserController extends PublicController
             exit();
         }
         
-        $user=M('user');
+        $user = M('user');
         $where = array();
-        $where['mobile']=$mobile;
-        $count=$user->where($where)->count();
-        if($count) {
-            echo json_encode(array('status'=>0,'err'=>'手机号已存在！'));
+        $where['mobile'] = $mobile;
+        $count = $user->where($where)->count();
+        if ($count) {
+            echo json_encode(array(
+                'status' => 0,
+                'err' => '手机号已存在！'
+            ));
             exit();
         }
         
@@ -727,35 +742,42 @@ class UserController extends PublicController
         $data['areaid'] = $areaid;
         $data['addtime'] = time();
         $res = $user->where(array(
-            'id'=>$userid
+            'id' => $userid
         ))->setField($data);
         if ($res) {
-            $_SESSION['LoginName']=$name;
-            $_SESSION['ID']=$res;
-            $arr =array();
-            $arr['status']=1;
+            $_SESSION['LoginName'] = $name;
+            $_SESSION['ID'] = $res;
+            $arr = array();
+            $arr['status'] = 1;
             $arr['uid'] = $res;
             $arr['LoginName'] = $name;
             echo json_encode($arr);
             exit();
-        }else{
-            echo json_encode(array('status'=>0,'err'=>'注册失败！'));
+        } else {
+            echo json_encode(array(
+                'status' => 0,
+                'err' => '注册失败！'
+            ));
             exit();
         }
     }
-    public function checkuser(){
+
+    public function checkuser()
+    {
         $openid = $_POST['openid'];
         $where = array(
             'openid' => $openid
         );
-        $user_info = M('user')->where($where)->field('mobile')->find();
+        $user_info = M('user')->where($where)
+            ->field('mobile')
+            ->find();
         if (! $user_info['mobile']) {
             echo json_encode(array(
                 'status' => 0,
                 'err' => '会员信息错误.'
             ));
             exit();
-        }else{
+        } else {
             echo json_encode(array(
                 'status' => 1,
                 'userinfo' => $user_info

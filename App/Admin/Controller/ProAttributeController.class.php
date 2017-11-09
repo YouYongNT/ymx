@@ -328,13 +328,13 @@ class ProAttributeController extends PublicController{
 								$data['price'] = 0;
 								$res = M('guige')->add($data);
 								if (!$res) {
-									throw new Exception('产品属性添加失败.');
+									throw new \Exception('产品属性添加失败.');
 								}
 							}
 						}
 					}
 				}
-			} catch (Exception $e) {
+			} catch (\Exception $e) {
 				$this->error($e->getMessage());
 			}
 			$this->success('操作成功.');
