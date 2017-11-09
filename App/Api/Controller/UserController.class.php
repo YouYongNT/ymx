@@ -106,15 +106,15 @@ class UserController extends PublicController
         if (! empty($user['provinceid']))
             $user['province'] = M('china_city')->where("code = {$user['provinceid']}")->find()['name'];
         if (! empty($user['cityid']))
-            $user['province'] = M('china_city')->where("code = {$user['cityid']}")->find()['name'];
+            $user['city'] = M('china_city')->where("code = {$user['cityid']}")->find()['name'];
         if (! empty($user['areaid']))
-            $user['province'] = M('china_city')->where("code = {$user['areaid']}")->find()['name'];
+            $user['area'] = M('china_city')->where("code = {$user['areaid']}")->find()['name'];
         if (! empty($user['agent_provinceid']))
-            $user['province'] = M('china_city')->where("code = {$user['agent_provinceid']}")->find()['name'];
+            $user['agent_province'] = M('china_city')->where("code = {$user['agent_provinceid']}")->find()['name'];
         if (! empty($user['agent_cityid']))
-            $user['province'] = M('china_city')->where("code = {$user['agent_cityid']}")->find()['name'];
+            $user['agent_city'] = M('china_city')->where("code = {$user['agent_cityid']}")->find()['name'];
         if (! empty($user['agent_areaid']))
-            $user['province'] = M('china_city')->where("code = {$user['agent_areaid']}")->find()['name'];
+            $user['agent_area'] = M('china_city')->where("code = {$user['agent_areaid']}")->find()['name'];
         
         if ($user['photo']) {
             if ($user['source'] == '') {
