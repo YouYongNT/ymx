@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<link rel="Bookmark" href="/favicon.ico" >
+	<link rel="Shortcut Icon" href="/favicon.ico" />
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="__PUBLIC__/admin/lib/html5shiv.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/admin/lib/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui/css/H-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/H-ui.admin.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/static/h-ui.admin/css/style.css" />
+	<!--[if IE 6]>
+	<script type="text/javascript" src="__PUBLIC__/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+	<script>DD_belatedPNG.fix('*');</script>
+	<![endif]-->
+	<script type="text/javascript" src="__PUBLIC__/admin/js/jquery.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/admin/js/action.js"></script>
+	<script type="text/javascript">
+        function openDialog(type){
+            window.open('{:U("Inout/expAdminuser")}?name={$name}&tel={$tel}');
+        }
+	</script>
+	<title>管理员列表</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 地区管理 <span class="c-gray en">&gt;</span> 全部地区 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c">
+		全站所有涉及的地区均来源于此处，强烈建议对此处谨慎操作。<br />
+		所属大区为默认的全国性的几大区域，只有省级地区才需要填写大区域，目前全国几大区域有：华北、东北、华东、华南、华中、西南、西北、港澳台、海外 <br />
+		所在层级为该地区的所在的层级深度，如北京>北京市>朝阳区,其中北京层级为1，北京市层级为2，朝阳区层级为3 <br />
+		点击地区名前“+”符号，显示当前地区的下级地区 <br />
+	</div>
+	<br>
+	<table class="table table-border table-bordered table-bg">
+		<thead>
+
+		<tr class="text-c">
+			<th width="20">ID</th>
+			<th width="100">分类名称</th>
+			<th width="80">操作</th>
+		</tr>
+		</thead>
+
+
+		<volist name='list' id='tr1'>
+			<tr data-id="tr0_{$tr1.tid}" class="text-c">
+				<td>{$tr1.id}</td>
+				<td style="text-align:left; padding-left:15px;"><span id="{$tr1.id}" class="trid">+</span> {$tr1.name}</td>
+				<td>
+					<a href="{:U('add')}?tid={$tr1.id}">新增下级</a> | 
+					<a href="{:U('add')}?aid={$tr1.id}">编辑</a> |
+					<a onclick="del_id_url({$tr1.id})">删除</a>
+				</td>
+			</tr>
+			<volist name='tr1["list2"]' id='tr2'>
+				<tr class="text-c tr_{$tr1.id}" style="display: none;">
+					<td>{$tr2.id}</td>
+					<td style="text-align:left; padding-left:15px;">&nbsp; &nbsp; &nbsp;<span id="{$tr2.id}" class="trid">+</span> {$tr2.name}</td>
+					<td>
+						<a href="{:U('add')}?tid={$tr2.id}">新增下级</a> |
+						<a href="{:U('add')}?aid={$tr2.id}">编辑</a> |
+						<a onclick="del_id_url({$tr2.id})">删除</a>
+					</td>
+				</tr>
+				<volist name='tr2["list3"]' id='tr3'>
+					<tr class="text-c tr_{$tr2.id}" style="display: none;">
+						<td>{$tr3.id}</td>
+						<td style="text-align:left; padding-left:15px;">&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;{$tr3.name}</td>
+						<td>
+							<!-- <a href="{:U('add')}?tid={$tr3.id}">新增下级</a> | -->
+							<a href="{:U('add')}?aid={$tr3.id}">编辑</a> |
+							<a onclick="del_id_url({$tr3.id})">删除</a>
+						</td>
+					</tr>
+				</volist>
+			</volist>
+		</volist>
+	</table>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script>
+<script>
+	$('.trid').click(function(){
+		var id = $(this).attr('id');
+		if($(this).html() == '+'){
+			$('.tr_'+id).show();
+			$(this).html('-');
+		}else{
+			$('.tr_'+id).hide();
+			$(this).html('+');
+		}
+	})
+    function del_id_url(id){
+        if(confirm("确认删除吗？"))
+        {
+            location='{:U("del")}?did='+id;
+        }
+    }
+</script>
+</body>
+</html>

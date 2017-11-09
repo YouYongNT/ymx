@@ -1,0 +1,637 @@
+[ 2017-10-31T09:23:41+08:00 ] ::1 /xcxshop/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T09:23:41+08:00 ] ::1 /xcxshop/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000075s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T09:23:41+08:00 ] ::1 /xcxshop/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000034s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T09:33:55+08:00 ] ::1 /xcxshop/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000053s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T09:33:55+08:00 ] ::1 /xcxshop/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T09:33:55+08:00 ] ::1 /xcxshop/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000050s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T09:34:30+08:00 ] ::1 /xcxshop/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T09:34:30+08:00 ] ::1 /xcxshop/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T09:34:31+08:00 ] ::1 /xcxshop/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000034s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T09:34:46+08:00 ] ::1 /xcxshop/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T09:34:46+08:00 ] ::1 /xcxshop/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T09:34:46+08:00 ] ::1 /xcxshop/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T10:18:24+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T10:18:26+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T10:18:26+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T10:18:26+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T10:19:45+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Category/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000060s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T10:19:46+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Shopping/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000052s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T10:19:46+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Shopping/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T10:19:47+08:00 ] ::1 /xcx_yamaxun/index.php/Api/User/getorder
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000093s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T10:19:47+08:00 ] ::1 /xcx_yamaxun/index.php/Api/User/getorder
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T10:19:47+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Shopping/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T13:58:07+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T13:58:08+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000069s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T13:58:08+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:05:37+08:00 ] ::1 /xcx_yamaxun/index.php/Api/User/getorder
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:05:37+08:00 ] ::1 /xcx_yamaxun/index.php/Api/User/getorder
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:15:07+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:15:07+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:15:07+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:25:02+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000073s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:25:02+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:25:02+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:25:19+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/getlist
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:25:23+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Category/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:25:24+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Shopping/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000076s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:25:24+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Shopping/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000053s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:25:31+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Product/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:29:34+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:29:34+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:29:34+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:31:30+08:00 ] ::1 /xcx_yamaxun/index.php/Api/User/getorder
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:31:30+08:00 ] ::1 /xcx_yamaxun/index.php/Api/User/getorder
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:31:36+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Order/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000034s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:31:50+08:00 ] ::1 /xcx_yamaxun/index.php/Api/User/getorder
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:32:21+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:32:21+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:32:21+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:33:26+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:33:26+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000072s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:33:26+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:33:36+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:33:36+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:33:37+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:44:09+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:44:09+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:44:09+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:47:26+08:00 ] ::1 /xcx_yamaxun/index.php/Api/User/getorder
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:47:26+08:00 ] ::1 /xcx_yamaxun/index.php/Api/User/getorder
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:48:50+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:48:50+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:48:50+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:48:54+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:48:54+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:48:54+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:49:06+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:49:06+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:49:06+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:49:14+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:49:14+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000058s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:49:14+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000058s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:49:17+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:49:17+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:49:17+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:49:20+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:49:20+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:49:20+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:49:45+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:49:45+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:49:45+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:50:02+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:50:02+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T14:50:02+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000060s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T16:22:33+08:00 ] ::1 /xcx_yamaxun/index.php/Api/User/getorder
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T16:22:33+08:00 ] ::1 /xcx_yamaxun/index.php/Api/User/getorder
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T16:22:36+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Address/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T16:22:38+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Address/get_province
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T16:22:47+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Address/get_city
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T16:22:59+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Address/get_area
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000058s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T16:23:05+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Address/get_code
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-31T16:25:16+08:00 ] ::1 /xcx_yamaxun/index.php/Api/Address/get_code
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcx_yamaxun\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcx_yamaxun\App\Api\Conf\config.php 第 40 行.
+

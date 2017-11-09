@@ -1,0 +1,778 @@
+[ 2017-10-30T14:59:18+08:00 ] ::1 /xcxshop/admin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+
+[ 2017-10-30T14:59:19+08:00 ] ::1 /xcxshop/index.php/Admin/Login/index.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+SQL: SHOW COLUMNS FROM `lr_program` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `lr_program` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+NOTIC: [8] Undefined variable: key D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\f0f0edaa955fd2857dedea53d1ab9ca3.php 第 28 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004399s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004428s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000569s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000639s ]
+
+[ 2017-10-30T14:59:20+08:00 ] ::1 /xcxshop/index.php/Admin/Login/static/h-ui/js/H-ui.min.js
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+ERR: 非法操作:static
+
+[ 2017-10-30T14:59:20+08:00 ] ::1 /xcxshop/index.php/Admin/Login/lib/jquery/1.9.1/jquery.min.js
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000033s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000520s ]
+ERR: 非法操作:lib
+
+[ 2017-10-30T14:59:20+08:00 ] ::1 /xcxshop/index.php/Admin/Login/static/h-ui/js/H-ui.min.js
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000598s ]
+ERR: 非法操作:static
+
+[ 2017-10-30T14:59:29+08:00 ] ::1 /xcxshop/index.php/Admin/Login/index.html?key=
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000610s ]
+SQL: SHOW COLUMNS FROM `lr_adminuser` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `lr_adminuser` WHERE ( name='admin' AND del<1 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `lr_program` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `lr_program` LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: shop_id D:\xampp\htdocs\xcxshop\App\Admin\Controller\LoginController.class.php 第 21 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001693s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001777s ]
+
+[ 2017-10-30T14:59:30+08:00 ] ::1 /xcxshop/index.php/Admin/Index/index.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `lr_web` [ RunTime:0.0037s ]
+SQL: SELECT `concent` FROM `lr_web` WHERE ( id=5 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000209s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009018s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009060s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000609s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000651s ]
+
+[ 2017-10-30T14:59:30+08:00 ] ::1 /xcxshop/index.php/Admin/Page/adminindex.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000074s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004661s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004713s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000594s ]
+
+[ 2017-10-30T14:59:33+08:00 ] ::1 /xcxshop/index.php/Admin/Product/add.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000518s ]
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 66 行.
+NOTIC: [8] Undefined index: page D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 67 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 68 行.
+NOTIC: [8] Undefined index: type D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 69 行.
+NOTIC: [8] Undefined index: submit D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `lr_category` [ RunTime:0.0039s ]
+SQL: SELECT `id`,`name` FROM `lr_category` WHERE ( tid=1 )  [ RunTime:0.0003s ]
+NOTIC: [2] Illegal string offset 'cid' D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 225 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 225 行.
+SQL: SELECT `tid` FROM `lr_category` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: photo_string D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 233 行.
+SQL: SHOW COLUMNS FROM `lr_brand` [ RunTime:0.0022s ]
+SQL: SELECT `id`,`name` FROM `lr_brand` WHERE ( 1=1 )  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: shop_id D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 250 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 33 行.
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 33 行.
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 33 行.
+NOTIC: [2] Division by zero D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 33 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 91 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 98 行.
+NOTIC: [8] Undefined variable: catetwo D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 113 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: company D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 145 行.
+NOTIC: [8] Undefined index: price D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 155 行.
+NOTIC: [8] Undefined index: price_yh D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 161 行.
+NOTIC: [8] Undefined index: price_jf D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 167 行.
+NOTIC: [8] Undefined index: pro_number D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 173 行.
+NOTIC: [8] Undefined index: num D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 181 行.
+NOTIC: [8] Undefined index: photo_x D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 188 行.
+NOTIC: [8] Undefined index: photo_d D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 199 行.
+NOTIC: [8] Undefined variable: img_str D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 211 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 243 行.
+NOTIC: [8] Undefined index: renqi D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 251 行.
+NOTIC: [8] Undefined index: is_show D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 259 行.
+NOTIC: [8] Undefined index: is_show D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 260 行.
+NOTIC: [8] Undefined index: is_hot D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 267 行.
+NOTIC: [8] Undefined index: is_hot D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 268 行.
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 284 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008272s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008302s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000560s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000587s ]
+
+[ 2017-10-30T14:59:34+08:00 ] ::1 /xcxshop/index.php/Admin/Product/index.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 14 行.
+NOTIC: [8] Undefined index: shop_id D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 15 行.
+NOTIC: [8] Undefined index: type D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 18 行.
+NOTIC: [8] Undefined index: tuijian D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 19 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 20 行.
+SQL: SHOW COLUMNS FROM `lr_product` [ RunTime:0.0046s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lr_product` WHERE ( 1=1 AND pro_type=1 AND del<1 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: page D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 32 行.
+SQL: SELECT * FROM `lr_product` WHERE ( 1=1 AND pro_type=1 AND del<1 ) ORDER BY addtime desc LIMIT 0,5   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lr_category` [ RunTime:0.0019s ]
+SQL: SELECT `name` FROM `lr_category` WHERE ( id=17 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lr_brand` [ RunTime:0.0021s ]
+SQL: SELECT `name` FROM `lr_brand` WHERE ( id=6 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `lr_category` WHERE ( id=9 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `lr_brand` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `lr_category` WHERE ( id=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `lr_brand` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `lr_category` WHERE ( id=15 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `lr_brand` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `lr_category` WHERE ( id=8 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `lr_brand` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008117s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008163s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000556s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000588s ]
+
+[ 2017-10-30T14:59:37+08:00 ] ::1 /xcxshop/index.php/Admin/Product/add.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000058s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 66 行.
+NOTIC: [8] Undefined index: page D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 67 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 68 行.
+NOTIC: [8] Undefined index: type D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 69 行.
+NOTIC: [8] Undefined index: submit D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `lr_category` [ RunTime:0.0041s ]
+SQL: SELECT `id`,`name` FROM `lr_category` WHERE ( tid=1 )  [ RunTime:0.0003s ]
+NOTIC: [2] Illegal string offset 'cid' D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 225 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 225 行.
+SQL: SELECT `tid` FROM `lr_category` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: photo_string D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 233 行.
+SQL: SHOW COLUMNS FROM `lr_brand` [ RunTime:0.0019s ]
+SQL: SELECT `id`,`name` FROM `lr_brand` WHERE ( 1=1 )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: shop_id D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 250 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000128s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 33 行.
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 33 行.
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 33 行.
+NOTIC: [2] Division by zero D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 33 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 91 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 98 行.
+NOTIC: [8] Undefined variable: catetwo D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 113 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: brand_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 134 行.
+NOTIC: [8] Undefined index: company D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 145 行.
+NOTIC: [8] Undefined index: price D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 155 行.
+NOTIC: [8] Undefined index: price_yh D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 161 行.
+NOTIC: [8] Undefined index: price_jf D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 167 行.
+NOTIC: [8] Undefined index: pro_number D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 173 行.
+NOTIC: [8] Undefined index: num D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 181 行.
+NOTIC: [8] Undefined index: photo_x D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 188 行.
+NOTIC: [8] Undefined index: photo_d D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 199 行.
+NOTIC: [8] Undefined variable: img_str D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 211 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 243 行.
+NOTIC: [8] Undefined index: renqi D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 251 行.
+NOTIC: [8] Undefined index: is_show D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 259 行.
+NOTIC: [8] Undefined index: is_show D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 260 行.
+NOTIC: [8] Undefined index: is_hot D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 267 行.
+NOTIC: [8] Undefined index: is_hot D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 268 行.
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7f798b353c5b1a865ba027ccbfdac8e6.php 第 284 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009197s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009224s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000535s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000577s ]
+
+[ 2017-10-30T14:59:39+08:00 ] ::1 /xcxshop/index.php/Admin/More/setup.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000033s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+SQL: SHOW COLUMNS FROM `lr_program` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `lr_program` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005093s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005125s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000513s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000538s ]
+
+[ 2017-10-30T14:59:40+08:00 ] ::1 /xcxshop/index.php/Admin/More/setup.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+SQL: SHOW COLUMNS FROM `lr_program` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `lr_program` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005817s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005852s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000528s ]
+
+[ 2017-10-30T15:00:47+08:00 ] ::1 /xcxshop/index.php/Admin/More/setup.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `lr_program` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\xcxshop\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\xampp\htdocs\xcxshop\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\xcxshop\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SELECT `id` FROM `lr_program` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `lr_program` SET `title`='亚马逊商学院',`name`='南通有用',`logo`='UploadFiles/logo/1509346847586555.png',`describe`='亚马逊商学院',`service_wx`='',`tel`='4006551365',`email`='2872815158@qq.com',`copyright`='Copyright © 2016 ramicalschool',`uptime`='1509346847' WHERE ( id=1 ) [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004760s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004797s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000575s ]
+
+[ 2017-10-30T15:00:49+08:00 ] ::1 /xcxshop/index.php/Admin/More/setup.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM `lr_program` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `lr_program` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005347s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005381s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001248s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001340s ]
+
+[ 2017-10-30T15:01:02+08:00 ] ::1 /xcxshop/index.php/Admin/More/setup.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000033s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+SQL: SHOW COLUMNS FROM `lr_program` [ RunTime:0.0032s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\xcxshop\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\xampp\htdocs\xcxshop\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT `id` FROM `lr_program` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `lr_program` SET `title`='亚马逊商学院',`name`='南通有用',`logo`='UploadFiles/logo/1509346847586555.png',`describe`='亚马逊商学院',`service_wx`='',`tel`='4006551365',`email`='516406271@qq.com',`copyright`='Copyright © 2016 91youyong.cn',`uptime`='1509346862' WHERE ( id=1 ) [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000054s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004730s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004765s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000506s ]
+
+[ 2017-10-30T15:01:03+08:00 ] ::1 /xcxshop/index.php/Admin/More/setup.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `lr_program` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `lr_program` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005309s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005341s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000569s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000596s ]
+
+[ 2017-10-30T15:01:05+08:00 ] ::1 /xcxshop/index.php/Admin/Product/index.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000033s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000655s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 14 行.
+NOTIC: [8] Undefined index: shop_id D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 15 行.
+NOTIC: [8] Undefined index: type D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 18 行.
+NOTIC: [8] Undefined index: tuijian D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 19 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 20 行.
+SQL: SHOW COLUMNS FROM `lr_product` [ RunTime:0.0041s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lr_product` WHERE ( 1=1 AND pro_type=1 AND del<1 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: page D:\xampp\htdocs\xcxshop\App\Admin\Controller\ProductController.class.php 第 32 行.
+SQL: SELECT * FROM `lr_product` WHERE ( 1=1 AND pro_type=1 AND del<1 ) ORDER BY addtime desc LIMIT 0,5   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `lr_category` [ RunTime:0.0019s ]
+SQL: SELECT `name` FROM `lr_category` WHERE ( id=17 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lr_brand` [ RunTime:0.0018s ]
+SQL: SELECT `name` FROM `lr_brand` WHERE ( id=6 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `lr_category` WHERE ( id=9 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `lr_brand` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `lr_category` WHERE ( id=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `lr_brand` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `lr_category` WHERE ( id=15 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `lr_brand` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `lr_category` WHERE ( id=8 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `lr_brand` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000148s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007801s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007835s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000593s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2017-10-30T15:01:07+08:00 ] ::1 /xcxshop/index.php/Admin/Brand/add.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+SQL: SHOW COLUMNS FROM `lr_brand` [ RunTime:0.0037s ]
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\xcxshop\App\Admin\Controller\BrandController.class.php 第 60 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+NOTIC: [8] Undefined variable: brand_info D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\0339691b9862dce0987849959f1f76a1.php 第 36 行.
+NOTIC: [8] Undefined variable: brand_info D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\0339691b9862dce0987849959f1f76a1.php 第 50 行.
+NOTIC: [8] Undefined variable: id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\0339691b9862dce0987849959f1f76a1.php 第 74 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005056s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005083s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000571s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000597s ]
+
+[ 2017-10-30T15:01:08+08:00 ] ::1 /xcxshop/index.php/Admin/Brand/index.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+SQL: SHOW COLUMNS FROM `lr_brand` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: brand_name D:\xampp\htdocs\xcxshop\App\Admin\Controller\BrandController.class.php 第 20 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `lr_brand` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lr_brand` LIMIT 0,5   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+NOTIC: [8] Undefined variable: name D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\ab4b9af6790308501cce30a58d6505ed.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005532s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005564s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000687s ]
+
+[ 2017-10-30T15:01:10+08:00 ] ::1 /xcxshop/index.php/Admin/User/index.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+NOTIC: [8] Undefined index: type D:\xampp\htdocs\xcxshop\App\Admin\Controller\UserController.class.php 第 11 行.
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\xcxshop\App\Admin\Controller\UserController.class.php 第 12 行.
+NOTIC: [8] Undefined index: tel D:\xampp\htdocs\xcxshop\App\Admin\Controller\UserController.class.php 第 13 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\xcxshop\App\Admin\Controller\UserController.class.php 第 14 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\xcxshop\App\Admin\Controller\UserController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `lr_user` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lr_user` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: page D:\xampp\htdocs\xcxshop\App\Admin\Controller\UserController.class.php 第 26 行.
+SQL: SELECT * FROM `lr_user` WHERE ( 1=1 ) ORDER BY id desc LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000080s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006429s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006463s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000404s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000572s ]
+
+[ 2017-10-30T15:01:16+08:00 ] ::1 /xcxshop/index.php/Admin/Order/index.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+NOTIC: [2048] Declaration of Admin\Controller\OrderController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\xampp\htdocs\xcxshop\App\Admin\Controller\OrderController.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `lr_order` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `lr_order_product` [ RunTime:0.0022s ]
+NOTIC: [8] Undefined index: shop_id D:\xampp\htdocs\xcxshop\App\Admin\Controller\OrderController.class.php 第 32 行.
+NOTIC: [8] Undefined index: pay_type D:\xampp\htdocs\xcxshop\App\Admin\Controller\OrderController.class.php 第 35 行.
+NOTIC: [8] Undefined index: pay_status D:\xampp\htdocs\xcxshop\App\Admin\Controller\OrderController.class.php 第 36 行.
+NOTIC: [8] Undefined index: start_time D:\xampp\htdocs\xcxshop\App\Admin\Controller\OrderController.class.php 第 37 行.
+NOTIC: [8] Undefined index: end_time D:\xampp\htdocs\xcxshop\App\Admin\Controller\OrderController.class.php 第 38 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `lr_order` WHERE ( 1=1 AND del=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `lr_order` WHERE ( 1=1 AND del=0 ) ORDER BY id desc LIMIT 0,25   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `lr_user` [ RunTime:0.0032s ]
+SQL: SELECT `name` FROM `lr_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `lr_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `lr_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `lr_user` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+NOTIC: [8] Undefined variable: shop_id D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 37 行.
+NOTIC: [8] Undefined variable: pay_type D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 49 行.
+NOTIC: [8] Undefined variable: pay_type D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 50 行.
+NOTIC: [8] Undefined variable: pay_status D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 59 行.
+NOTIC: [8] Undefined variable: pay_status D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 59 行.
+NOTIC: [8] Undefined variable: pay_status D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 59 行.
+NOTIC: [8] Undefined variable: pay_status D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 59 行.
+NOTIC: [8] Undefined variable: pay_status D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 59 行.
+NOTIC: [8] Undefined variable: pay_status D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 61 行.
+NOTIC: [8] Undefined variable: pay_status D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 62 行.
+NOTIC: [8] Undefined variable: start_time D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 68 行.
+NOTIC: [8] Undefined variable: end_time D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 69 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 95 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 95 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 95 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fe3111dbdfd9340f96aca53ab7ea90c5.php 第 95 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006727s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006753s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000521s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000548s ]
+
+[ 2017-10-30T15:01:17+08:00 ] ::1 /xcxshop/index.php/Admin/Category/add.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000634s ]
+SQL: SHOW COLUMNS FROM `lr_category` [ RunTime:0.0036s ]
+SQL: SELECT `id`,`tid`,`name`,`bz_2`,`bz_4` FROM `lr_category` WHERE ( tid=0 AND bz_4<2 ) ORDER BY sort desc,id asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`tid`,`name`,`bz_2` FROM `lr_category` WHERE ( tid=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`tid`,`name`,`bz_2` FROM `lr_category` WHERE ( tid=2 )  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`tid`,`name`,`bz_2` FROM `lr_category` WHERE ( tid=3 )  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`tid`,`name`,`bz_2` FROM `lr_category` WHERE ( tid=4 )  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`tid`,`name`,`bz_2` FROM `lr_category` WHERE ( tid=12 )  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cid D:\xampp\htdocs\xcxshop\App\Admin\Controller\CategoryController.class.php 第 41 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+NOTIC: [8] Undefined variable: cate_info D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7caa4c17e7ffe7ff69e201a0c5296174.php 第 38 行.
+NOTIC: [8] Undefined variable: cate_info D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7caa4c17e7ffe7ff69e201a0c5296174.php 第 41 行.
+NOTIC: [8] Undefined variable: cate_info D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7caa4c17e7ffe7ff69e201a0c5296174.php 第 41 行.
+NOTIC: [8] Undefined variable: cate_info D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7caa4c17e7ffe7ff69e201a0c5296174.php 第 41 行.
+NOTIC: [8] Undefined variable: cate_info D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7caa4c17e7ffe7ff69e201a0c5296174.php 第 41 行.
+NOTIC: [8] Undefined variable: cate_info D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7caa4c17e7ffe7ff69e201a0c5296174.php 第 51 行.
+NOTIC: [8] Undefined variable: cate_info D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7caa4c17e7ffe7ff69e201a0c5296174.php 第 57 行.
+NOTIC: [8] Undefined variable: cate_info D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7caa4c17e7ffe7ff69e201a0c5296174.php 第 58 行.
+NOTIC: [8] Undefined variable: cate_info D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7caa4c17e7ffe7ff69e201a0c5296174.php 第 68 行.
+NOTIC: [8] Undefined variable: cate_info D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7caa4c17e7ffe7ff69e201a0c5296174.php 第 75 行.
+NOTIC: [8] Undefined variable: cate_info D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\7caa4c17e7ffe7ff69e201a0c5296174.php 第 82 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006864s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006890s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000585s ]
+
+[ 2017-10-30T15:01:19+08:00 ] ::1 /xcxshop/index.php/Admin/Category/index.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+SQL: SHOW COLUMNS FROM `lr_category` [ RunTime:0.0041s ]
+SQL: SELECT `id`,`tid`,`name`,`bz_2`,`bz_4` FROM `lr_category` WHERE ( tid=0 AND bz_4<2 ) ORDER BY sort desc,id asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`tid`,`name`,`bz_2` FROM `lr_category` WHERE ( tid=1 )  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`tid`,`name`,`bz_2` FROM `lr_category` WHERE ( tid=2 )  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`tid`,`name`,`bz_2` FROM `lr_category` WHERE ( tid=3 )  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`tid`,`name`,`bz_2` FROM `lr_category` WHERE ( tid=4 )  [ RunTime:0.0006s ]
+SQL: SELECT `id`,`tid`,`name`,`bz_2` FROM `lr_category` WHERE ( tid=12 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+NOTIC: [8] Undefined variable: name D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fd4baca4519ae09b87f761f8e37c27b2.php 第 28 行.
+NOTIC: [8] Undefined variable: tel D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\fd4baca4519ae09b87f761f8e37c27b2.php 第 28 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008783s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008818s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000571s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000601s ]
+
+[ 2017-10-30T15:01:21+08:00 ] ::1 /xcxshop/index.php/Admin/Voucher/add.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000631s ]
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\xcxshop\App\Admin\Controller\VoucherController.class.php 第 50 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+NOTIC: [8] Undefined variable: voucher D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\13612774336989bf3190fbf810b8832f.php 第 40 行.
+NOTIC: [8] Undefined variable: voucher D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\13612774336989bf3190fbf810b8832f.php 第 47 行.
+NOTIC: [8] Undefined variable: voucher D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\13612774336989bf3190fbf810b8832f.php 第 55 行.
+NOTIC: [8] Undefined variable: voucher D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\13612774336989bf3190fbf810b8832f.php 第 63 行.
+NOTIC: [8] Undefined variable: voucher D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\13612774336989bf3190fbf810b8832f.php 第 71 行.
+NOTIC: [8] Undefined variable: voucher D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\13612774336989bf3190fbf810b8832f.php 第 79 行.
+NOTIC: [8] Undefined variable: voucher D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\13612774336989bf3190fbf810b8832f.php 第 87 行.
+NOTIC: [8] Undefined variable: voucher D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\13612774336989bf3190fbf810b8832f.php 第 95 行.
+NOTIC: [8] Undefined variable: voucher D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\13612774336989bf3190fbf810b8832f.php 第 102 行.
+NOTIC: [8] Undefined variable: voucher D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\13612774336989bf3190fbf810b8832f.php 第 102 行.
+NOTIC: [8] Undefined variable: voucher D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\13612774336989bf3190fbf810b8832f.php 第 114 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007867s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007924s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000668s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000581s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000612s ]
+
+[ 2017-10-30T15:01:21+08:00 ] ::1 /xcxshop/index.php/Admin/Voucher/index.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+NOTIC: [8] Undefined index: keyword D:\xampp\htdocs\xcxshop\App\Admin\Controller\VoucherController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lr_voucher` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lr_voucher` WHERE ( 1=1 AND del=0 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: page D:\xampp\htdocs\xcxshop\App\Admin\Controller\VoucherController.class.php 第 28 行.
+SQL: SELECT * FROM `lr_voucher` WHERE ( 1=1 AND del=0 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lr_shangchang` [ RunTime:0.0025s ]
+SQL: SELECT `name` FROM `lr_shangchang` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `lr_shangchang` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `lr_shangchang` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `lr_shangchang` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `lr_shangchang` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `lr_shangchang` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\55f81ff4dc034ae4f416fba030e2a707.php 第 66 行.
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\55f81ff4dc034ae4f416fba030e2a707.php 第 66 行.
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\55f81ff4dc034ae4f416fba030e2a707.php 第 66 行.
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\55f81ff4dc034ae4f416fba030e2a707.php 第 66 行.
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\55f81ff4dc034ae4f416fba030e2a707.php 第 66 行.
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\xcxshop\App\Runtime\Cache\Admin\55f81ff4dc034ae4f416fba030e2a707.php 第 66 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005868s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005897s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000648s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000677s ]
+
+[ 2017-10-30T15:01:26+08:00 ] ::1 /xcxshop/index.php/Admin/More/setup.html
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+SQL: SHOW COLUMNS FROM `lr_program` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `lr_program` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005449s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005483s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000575s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000603s ]
+

@@ -1,0 +1,197 @@
+[ 2017-10-30T15:39:14+08:00 ] ::1 /xcxshop/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000083s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:39:14+08:00 ] ::1 /xcxshop/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000034s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:39:14+08:00 ] ::1 /xcxshop/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:39:20+08:00 ] ::1 /xcxshop/index.php/Api/Index/getlist
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:39:21+08:00 ] ::1 /xcxshop/index.php/Api/Index/getlist
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:39:39+08:00 ] ::1 /xcxshop/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:39:39+08:00 ] ::1 /xcxshop/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000034s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:39:39+08:00 ] ::1 /xcxshop/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:39:46+08:00 ] ::1 /xcxshop/index.php/Api/Category/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:39:47+08:00 ] ::1 /xcxshop/index.php/Api/Category/getcat
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:39:48+08:00 ] ::1 /xcxshop/index.php/Api/Category/getcat
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:39:49+08:00 ] ::1 /xcxshop/index.php/Api/Category/getcat
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:39:50+08:00 ] ::1 /xcxshop/index.php/Api/Shopping/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:39:50+08:00 ] ::1 /xcxshop/index.php/Api/Shopping/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:39:53+08:00 ] ::1 /xcxshop/index.php/Api/Payment/buy_cart
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:39:55+08:00 ] ::1 /xcxshop/index.php/Api/Payment/payment
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+ERR: 请选择收货地址.374
+
+[ 2017-10-30T15:39:57+08:00 ] ::1 /xcxshop/index.php/Api/Shopping/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:40:03+08:00 ] ::1 /xcxshop/index.php/Api/User/getorder
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:40:03+08:00 ] ::1 /xcxshop/index.php/Api/User/getorder
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:40:05+08:00 ] ::1 /xcxshop/index.php/Api/Order/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:40:08+08:00 ] ::1 /xcxshop/index.php/Api/Order/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:40:08+08:00 ] ::1 /xcxshop/index.php/Api/Order/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:40:10+08:00 ] ::1 /xcxshop/index.php/Api/User/getorder
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:40:30+08:00 ] ::1 /xcxshop/index.php/Api/User/getorder
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T15:40:36+08:00 ] ::1 /xcxshop/index.php/Api/Order/order_refund
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T17:43:08+08:00 ] ::1 /xcxshop/index.php/Api/Index/index
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T17:43:08+08:00 ] ::1 /xcxshop/index.php/Api/Login/getsessionkey
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000059s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+
+[ 2017-10-30T17:43:08+08:00 ] ::1 /xcxshop/index.php/Api/Login/authlogin
+NOTIC: [8] Use of undefined constant SHOW_PAGE_TRACE - assumed 'SHOW_PAGE_TRACE' D:\xampp\htdocs\xcxshop\App\Common\Conf\debug.php 第 4 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+NOTIC: [8] Use of undefined constant LOAD_EXT_CONFIG - assumed 'LOAD_EXT_CONFIG' D:\xampp\htdocs\xcxshop\App\Api\Conf\config.php 第 40 行.
+

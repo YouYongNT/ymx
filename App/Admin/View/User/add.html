@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>后台管理</title>
+	<link href="__PUBLIC__/admin/css/main.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="__PUBLIC__/admin/js/jquery.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/admin/js/action.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/admin/js/jCalendar.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/admin/js/jquery.XYTipsWindow.min.2.8.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/admin/js/mydate.js"></script>
+</head>
+<body>
+<div class="aaa_pts_show_1">【 会员信息管理 】</div>
+<div class="aaa_pts_show_2">
+    <div>
+       <div class="aaa_pts_4"><a href="index">普通会员管理</a></div>
+       <div class="aaa_pts_4"><a href="add">添加普通会员</a></div>
+    </div>
+    <div class="aaa_pts_3">
+      <form action="{:U('User/add')}?id={$id}" method="post" onsubmit="return ac_from();">
+      <ul class="aaa_pts_5">
+         <li>
+            <div class="d1">用户姓名:</div>
+            <div>
+              <input class="inp_1" name="name" id="name" value="{$userinfo.name}"/>
+            </div>
+         </li>
+<!--          <li>
+            <div class="d1">用户姓名:</div>
+            <div>
+              <input class="inp_1" name="uname" id="uname" value="{$userinfo.uname}"/> &nbsp;&nbsp;&nbsp;请设置2个字符以上
+            </div>
+         </li>
+         <li>
+            <div class="d1">用户权限:</div>
+            <div>
+              <select class="inp_1" name="qx" id="qx">
+                 	权限遍历 category id=6 就是普通会员后续要改进一下表的结构
+                    <option value="6">普通会员</option>
+                 	权限遍历
+              </select>
+            </div>
+         </li> 
+ -->
+ 
+		<li>
+            <div class="d1">手机号码:</div>
+            <div>
+              <input class="inp_1" name="mobile" id="mobile" value="{$userinfo.mobile}"/>
+            </div>
+		</li>
+		<li>
+            <div class="d1">用户密码:</div>
+            <div>
+              <input class="inp_1" name="password" id="password"  type="password" />
+            </div>
+		</li>
+		<li>
+            <div class="d1">地区:</div>
+            <div>
+            	<select class="inp_1 input-text" name="provinceid" id="provinceid" onchange="changeArea(this,1);" style="width:150px;margin-right:5px;">
+                    <!-- 遍历 -->
+                    <option value="">省</option>
+                    <volist name="province_list" id="v">
+                        <option value="{$v.code}" <if condition="$v.code eq $userinfo['provinceid']">selected="selected"</if>>-- {$v.name}</option>
+                    </volist>
+                    <!-- 遍历 -->
+                </select>
+                
+                <select class="inp_1 input-text" name="cityid" id="cityid" onchange="changeArea(this,2);" style="width:150px;margin-right:5px;">
+                    <!-- 遍历 -->
+                    <option value="">市</option>
+                    <volist name="city_list" id="v">
+                        <option value="{$v.code}" <if condition="$v.code eq $userinfo['cityid']">selected="selected"</if>>-- {$v.name}</option>
+                    </volist>
+                    <!-- 遍历 -->
+                </select>
+                
+                <select class="inp_1 input-text" name="areaid" id="areaid" style="width:150px;margin-right:5px;">
+                    <!-- 遍历 -->
+                    <option value="">区</option>
+                    <volist name="area_list" id="v">
+                        <option value="{$v.code}" <if condition="$v.code eq $userinfo['areaid']">selected="selected"</if>>-- {$v.name}</option>
+                    </volist>
+                    <!-- 遍历 -->
+                </select>
+            </div>
+		</li>
+		
+		<li>
+            <div class="d1">会员开始时间:</div>
+            <div>
+              <input class="inp_1" name="vip_starttime" id="vip_starttime" onfocus="MyCalendar.SetDate(this)" value="<?php echo $userinfo['vip_starttime']!='' ? date("Y-m-d H:i",$userinfo['vip_starttime']) : null; ?>"/>
+            </div>
+		</li>
+		<li>
+            <div class="d1">会员结束时间:</div>
+            <div>
+              <input class="inp_1" name="vip_endtime" id="vip_endtime" onfocus="MyCalendar.SetDate(this)" value="<?php echo $userinfo['vip_endtime']!='' ? date("Y-m-d H:i",$userinfo['vip_endtime']) : null; ?>"/>
+            </div>
+		</li>
+		<li>
+            <div class="d1">注册时间:</div>
+            <div>
+            	<?php echo $userinfo['addtime']!='' ? date("Y-m-d H:i",$userinfo['addtime']) : ''; ?>
+            </div>
+         </li>
+         <li>
+            <div class="d1">状态:</div>
+            <div>
+            	<input name="del" value="0" type="radio" <if condition="0 eq $userinfo['del']">checked="checked"</if> />正常
+            	<input name="del" value="1" type="radio" <if condition="1 eq $userinfo['del']">checked="checked"</if> />禁用
+            </div>
+         </li>
+         <li></li>
+         <li>
+            <div class="d1">是否授权代理商:</div>
+            <div>
+            	<input name="is_agent" value="0" type="radio" <if condition="0 eq $userinfo['is_agent']">checked="checked"</if> />否
+            	<input name="is_agent" value="1" type="radio" <if condition="1 eq $userinfo['is_agent']">checked="checked"</if> />是
+            </div>
+         </li>
+         <li>
+            <div class="d1">授权区域:</div>
+            <div>
+            	<select class="inp_1 input-text" name="agent_provinceid" id="agent_provinceid" onchange="aChangeArea(this,1);" style="width:150px;margin-right:5px;">
+                    <!-- 遍历 -->
+                    <option value="">省</option>
+                    <volist name="province_list" id="v">
+                        <option value="{$v.id}" <if condition="$v.id eq $userinfo['agent_provinceid']">selected="selected"</if>>-- {$v.name}</option>
+                    </volist>
+                    <!-- 遍历 -->
+                </select>
+                
+                <select class="inp_1 input-text" name="agent_cityid" id="agent_cityid" onchange="aChangeArea(this,2);" style="width:150px;margin-right:5px;">
+                    <!-- 遍历 -->
+                    <option value="">市</option>
+                    <volist name="city_list" id="v">
+                        <option value="{$v.id}" <if condition="$v.id eq $userinfo['agent_cityid']">selected="selected"</if>>-- {$v.name}</option>
+                    </volist>
+                    <!-- 遍历 -->
+                </select>
+                
+                <select class="inp_1 input-text" name="agent_areaid" id="agent_areaid" style="width:150px;margin-right:5px;">
+                    <!-- 遍历 -->
+                    <option value="">区</option>
+                    <volist name="area_list" id="v">
+                        <option value="{$v.id}" <if condition="$v.id eq $userinfo['agent_areaid']">selected="selected"</if>>-- {$v.name}</option>
+                    </volist>
+                    <!-- 遍历 -->
+                </select>
+            </div>
+         </li>
+         <li>
+         	<input type="submit" name="submit" value="提交" class="aaa_pts_web_3" border="0" />
+         </li>
+      </ul>
+      </form>
+    </div>
+</div>
+<script type="text/javascript">
+function changeArea(e,t){
+	var id = $(e).val();
+	$.post('{:U("getArea")}', {
+		id: id
+	}, function(data) {
+	    if (data.arealist != '') {
+	    	if(t == 1){
+	    		var htmls = '<option value="">市</option>';
+		        var area = data.arealist;
+		        for (var i = 0; i < area.length; i++) {
+		            htmls += '<option value="' + area[i].id + '">-- ' + area[i].name + '</option>';
+		        }
+		        $('#cityid').html(htmls);
+	    	}else{
+	    		var htmls = '<option value="">区</option>';
+		        var area = data.arealist;
+		        for (var i = 0; i < area.length; i++) {
+		            htmls += '<option value="' + area[i].id + '">-- ' + area[i].name + '</option>';
+		        }
+		        $('#areaid').html(htmls);
+	    	}
+	        
+	    }
+	}, "json");
+}
+function aChangeArea(e,t){
+	var id = $(e).val();
+	$.post('{:U("getArea")}', {
+		id: id
+	}, function(data) {
+	    if (data.arealist != '') {
+	    	if(t == 1){
+	    		var htmls = '<option value="">市</option>';
+		        var area = data.arealist;
+		        for (var i = 0; i < area.length; i++) {
+		            htmls += '<option value="' + area[i].id + '">-- ' + area[i].name + '</option>';
+		        }
+		        $('#agent_cityid').html(htmls);
+	    	}else{
+	    		var htmls = '<option value="">区</option>';
+		        var area = data.arealist;
+		        for (var i = 0; i < area.length; i++) {
+		            htmls += '<option value="' + area[i].id + '">-- ' + area[i].name + '</option>';
+		        }
+		        $('#agent_areaid').html(htmls);
+	    	}
+	        
+	    }
+	}, "json");
+}
+
+function ac_from(){
+  	var name = $('#name').val();
+	if(name.length<3){
+		alert('用户名长度不能少于3');
+		return false;
+	}
+  
+	if(!<?php echo $id; ?>){
+		var password = $('#password').val();
+		if(password.length<6){
+		  alert('密码长度不能少于6');
+		  return false;
+		}  
+	}
+  
+	var mobile = $('#mobile').val();
+	var regx=/^1[34578]\d{9}$/;
+	if (!regx.test(mobile)) {
+		alert("手机号码不合法，请输入正确的手机号码");
+		return false;
+	}
+}
+</script>
+</body>
+</html>
