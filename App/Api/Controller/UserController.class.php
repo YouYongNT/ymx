@@ -126,7 +126,7 @@ class UserController extends PublicController
         echo json_encode(array(
             'status' => 1,
             'userinfo' => $user
-        ),JSON_UNESCAPED_UNICODE);
+        ), JSON_UNESCAPED_UNICODE);
         exit();
     }
 
@@ -669,19 +669,60 @@ class UserController extends PublicController
 
     public function smssend()
     {
-        Vendor('SMS.Send');
-        $send = new \Send();
-        $res = $send->sendSms('17712267011', '验证码为：42347，请勿泄漏');
-        if ($res) {
+        $numbers = range(0, 9);
+        shuffle($numbers);
+        $code = '';
+        $tel = trim($_REQUEST['tel']);
+        
+        if (empty($tel)) {
             echo json_encode(array(
-                'status' => 1
+                'status' => 0,
+                'err' => '参数错误'
             ));
             exit();
+        }
+        
+        $count = M('sms_reg')->where([
+            'tel' => $tel,
+            "addtime like '" . date('Y-m-d') . "%'"
+        ])->count();
+        
+        if ($count > 4) {
+            echo json_encode(array(
+                'status' => 0,
+                'err' => '已达当日上限'
+            ), JSON_UNESCAPED_UNICODE);
+            exit();
+        }
+        for ($i = 0; $i < 6; $i ++)
+            $code .= $numbers[$i];
+        
+        Vendor('SMS.Send');
+        $send = new \Send();
+        $res = $send->sendSms($tel, "感谢您注册亚马逊商学院，您的验证码是" . $code . "，请勿泄漏。");
+        if ($res) {
+            $op = M('sms_reg')->add([
+                'tel' => $tel,
+                'regcode' => $code,
+                'addtime' => date('Y-m-d H:i:s')
+            ]);
+            if ($op) {
+                echo json_encode(array(
+                    'status' => 1
+                ));
+                exit();
+            } else {
+                echo json_encode(array(
+                    'status' => 0,
+                    'err' => '操作异常'
+                ), JSON_UNESCAPED_UNICODE);
+                exit();
+            }
         } else {
             echo json_encode(array(
                 'status' => 0,
                 'err' => '操作失败'
-            ));
+            ), JSON_UNESCAPED_UNICODE);
             exit();
         }
     }
@@ -730,6 +771,20 @@ class UserController extends PublicController
                 'status' => 0,
                 'err' => '手机号已存在！'
             ));
+            exit();
+        }
+        
+        $coun = M('sms_reg')->where([
+            'tel' => trim($_POST['mobile']),
+            'regcode' => trim($_POST['code']),
+            "addtime like '" . date('Y-m-d') . "%'"
+        ])->count();
+        
+        if (! $coun) {
+            echo json_encode(array(
+                'status' => 0,
+                'err' => '验证码错误'
+            ), JSON_UNESCAPED_UNICODE);
             exit();
         }
         

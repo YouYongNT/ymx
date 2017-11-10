@@ -145,12 +145,19 @@ class PaymentController extends PublicController
             
             $data['post'] = 0;
             $data['price'] = $_POST['price'];
-            
+            $data['uninum'] = $_POST['uninum'];
             $adds_info = M('user')->where("id = $uid")->find();
             if(empty($adds_info['mobile'])){
                 echo json_encode(array(
                     'status' => 0,
                     'err' => '请先完善个人信息'
+                ));
+                exit();
+            }
+            if(empty($data['uninum'])){
+                echo json_encode(array(
+                    'status' => 0,
+                    'err' => '邀请码必填'
                 ));
                 exit();
             }
