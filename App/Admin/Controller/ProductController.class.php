@@ -87,6 +87,7 @@ class ProductController extends PublicController{
 				'num'=>(int)$_POST['num'] ,			//库存
 				'content'=>$_POST['content'] , 
 				'class'=>$_POST['class'],  //产品单位
+				'code_count'=>$_POST['code_count'],  //邀请码数量
 				'pro_type'=>1,
 				'renqi' => intval($_POST['renqi']),
 				'is_hot'=>intval($_POST['is_hot']),//是否热卖

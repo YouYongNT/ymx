@@ -11,10 +11,9 @@ class OrderController extends PublicController{
 		$this->order = M('Order');
 		$this->order_product = M('Order_product');
 
-		$order_status = array('10'=>'待付款','20'=>'待发货','30'=>'待收货','40'=>'已收货','50'=>'交易完成');
+		$order_status = array('0'=>'取消','50'=>'已付款');
 		$this->assign('order_status',$order_status);
 	}
-
 
 	/*
 	*
@@ -173,11 +172,6 @@ class OrderController extends PublicController{
 			}
 		}
 
-		$post_info = array();
-		if (intval($order_info['post'])) {
-			$post_info = M('post')->where('id='.intval($order_info['post']))->find();
-		}
-		
 		$this->assign('post_info',$post_info);
 		$this->assign('order_info',$order_info);
 		$this->assign('order_pro',$order_pro);
@@ -201,9 +195,9 @@ class OrderController extends PublicController{
 
 		//接收ajax传过来的值
 		$order_status = intval($_POST['order_status']);
-		$kuaidi_name = $_POST['kuaidi_name'];
-		$kuaidi_num = $_POST['kuaidi_num'];
-		if ($o_info['kuaidi_name']==$kuaidi_name && $o_info['kuaidi_num']==$kuaidi_num && intval($o_info['status'])==$order_status) {
+// 		$kuaidi_name = $_POST['kuaidi_name'];
+// 		$kuaidi_num = $_POST['kuaidi_num'];
+		if (intval($o_info['status'])==$order_status) {
 			$arr = array();
 			$arr = array('returns'=>0 , 'message'=>'修改信息未发生变化.');
 			echo json_encode($arr);
@@ -211,19 +205,21 @@ class OrderController extends PublicController{
 		}
 
 		try{
-			if(($kuaidi_name=='' || $kuaidi_num=='') && $order_status==30) throw new \Exception('参数不正确');
-			/*$msg = '您的订单（编号:%s）,已发货，送货快递:%s，运单号:%s 【%s】';
-			$msg = sprintf($msg,$id,$kuaidi_name,$kuaidi_num,$partner_info['name']);*/
+			//付款成功
+			if ($order_status == 50){
+				$op = M('order_product')->where('order_id='.$o_info['id'])->find();
+				Vendor('SMS.Send');
+				$send = new \Send();
+				$res = $send->sendSms($o_info['tel'], '亲爱的亚马逊商学院会员'.$o_info['receiver'].'，您购买的产品'.$op['name'].'已确定付款成功！快去平台看看吧。');
+				
+				$msg = '您的订单（编号:%s）,已发货，送货快递:%s，运单号:%s 【%s】';
+				$msg = sprintf($msg,$id,$kuaidi_name,$kuaidi_num,$partner_info['name']);
+			}
+			
 			//修改快递信息
 			$data = array();
 			if ($order_status) {
 				$data['status'] = $order_status;
-			}
-			if ($kuaidi_name) {
-				$data['kuaidi_name'] = $kuaidi_name;
-			}
-			if ($kuaidi_num) {
-				$data['kuaidi_num'] = $kuaidi_num;
 			}
 			$up = $this->order->where('id='.intval($oid))->save($data);
 			$json = array();
