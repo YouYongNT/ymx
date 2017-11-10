@@ -134,7 +134,7 @@
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>选择分类：</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <select class="inp_1 input-text" name="cid" id="cid" style="width:150px;margin-right:5px;">
+                    <select class="inp_1 input-text" name="cid" id="cid" onchange="selectcid(this);" style="width:150px;margin-right:5px;">
 	                    <!-- 遍历 -->
 	                    <option value="">一级分类</option>
 	                    <volist name="cate_list" id="v">
@@ -145,12 +145,21 @@
                     <span id="catedesc" style="color:red;font-size: 12px;">&nbsp;&nbsp; * 必选项</span>
                 </div>
             </div>
-            <div class="row cl">
+            
+            <div class="row cl" id="class_id" <if condition="$pro_allinfo['cid'] eq 20 || !isset($pro_allinfo['cid'])">style="display: none;"</if>>
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>课时：</label>
                 <div class="formControls col-xs-8 col-sm-3">
                     <input type="text" class="input-text" placeholder="课 时" name="class" id="class" value="{$pro_allinfo.class}">
                 </div>
             </div>
+            
+            <div class="row cl" id="cc_id" <if condition="$pro_allinfo['cid'] neq 20 || !isset($pro_allinfo['cid'])">style="display: none;"</if>>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>邀请码数量：</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" placeholder="邀请码数量" name="code_count" id="code_count" value="{$pro_allinfo.code_count}">
+                </div>
+            </div>
+            
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>原价：</label>
                 <div class="formControls col-xs-8 col-sm-3">
@@ -312,40 +321,6 @@
                 </div>
             </div>
 
-            <!-- 
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>人气：</label>
-                <div class="formControls col-xs-8 col-sm-3">
-                    <input type="text" class="input-text" placeholder="人气" name="renqi" id="renqi" value="<?php echo (int)$pro_allinfo['renqi']; ?>">
-                </div>
-            </div>
-
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>新上市：</label>
-                <div class="formControls col-xs-8 col-sm-3">
-                    <input type="radio" name="is_show" value="1" <?php echo $pro_allinfo[ 'is_show']==1 ? 'checked="checked"' : null?>/> 是 &nbsp;
-                    <input type="radio" name="is_show" value="0" <?php echo $pro_allinfo[ 'is_show']!=1 ? 'checked="checked"' : null?> /> 否
-                </div>
-            </div>
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>热销产品：</label>
-                <div class="formControls col-xs-8 col-sm-3">
-                    <input type="radio" name="is_hot" value="1" <?php echo $pro_allinfo[ 'is_hot']==1 ? 'checked="checked"' : null?>/> 是 &nbsp;
-                    <input type="radio" name="is_hot" value="0" <?php echo $pro_allinfo[ 'is_hot']!=1 ? 'checked="checked"' : null?> /> 否
-                </div>
-            </div>
-
-
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>品牌图片，图片大小120*120</label>
-                <div class="formControls col-xs-8 col-sm-3">
-                    <input type="file" name="file" id="file" value="">
-                </div>
-            </div>
-			 -->
-
             <div class="row cl">
                 <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
                     <input class="btn btn-primary radius" type="submit" name="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
@@ -358,9 +333,6 @@
 
     <!--_footer 作为公共模版分离出去-->
 
-
-
-
     <script>
         //初始化编辑器
         $('#content').xheditor({
@@ -372,6 +344,20 @@
             //alert('aaa');
             $('#imgs_add').append('<div>&nbsp;&nbsp;<input type="file" style="width:160px;" name="files[]" /><a onclick="$(this).parent().remove();" class="btn cls" style="background:#D0D0D0; width:40px; color:black;"">删除</a></div>');
             return false;
+        }
+        
+        //选择分类
+        function selectcid(e){
+        	var cid = $(e).val();
+        	if (cid!=20){
+        		$('#class_id').show();
+        		$('#cc_id').hide();
+        		$('#code_count').val('');
+        	}else {
+        		$('#cc_id').show();
+        		$('#class_id').hide();
+        		$('#class').val('');
+        	}
         }
 
         /* function getcid() {
