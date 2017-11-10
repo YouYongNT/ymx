@@ -104,17 +104,17 @@ class UserController extends PublicController
         
         $user = M("user")->where('id=' . intval($uid))->find();
         if (! empty($user['provinceid']))
-            $user['province'] = M('china_city')->where("code = {$user['provinceid']}")->find()['name'];
+            $user['province'] = M('china_city')->where("code = {$user['provinceid']}")->getField('name');
         if (! empty($user['cityid']))
-            $user['city'] = M('china_city')->where("code = {$user['cityid']}")->find()['name'];
+            $user['city'] = M('china_city')->where("code = {$user['cityid']}")->getField('name');
         if (! empty($user['areaid']))
-            $user['area'] = M('china_city')->where("code = {$user['areaid']}")->find()['name'];
+            $user['area'] = M('china_city')->where("code = {$user['areaid']}")->getField('name');
         if (! empty($user['agent_provinceid']))
-            $user['agent_province'] = M('china_city')->where("code = {$user['agent_provinceid']}")->find()['name'];
+            $user['agent_province'] = M('china_city')->where("code = {$user['agent_provinceid']}")->getField('name');
         if (! empty($user['agent_cityid']))
-            $user['agent_city'] = M('china_city')->where("code = {$user['agent_cityid']}")->find()['name'];
+            $user['agent_city'] = M('china_city')->where("code = {$user['agent_cityid']}")->getField('name');
         if (! empty($user['agent_areaid']))
-            $user['agent_area'] = M('china_city')->where("code = {$user['agent_areaid']}")->find()['name'];
+            $user['agent_area'] = M('china_city')->where("code = {$user['agent_areaid']}")->getField('name');
         
         if ($user['photo']) {
             if ($user['source'] == '') {
@@ -126,7 +126,7 @@ class UserController extends PublicController
         echo json_encode(array(
             'status' => 1,
             'userinfo' => $user
-        ));
+        ),JSON_UNESCAPED_UNICODE);
         exit();
     }
 
@@ -736,7 +736,7 @@ class UserController extends PublicController
         $data = array();
         $data['mobile'] = $mobile;
         $data['pwd'] = $pwd;
-        $data['realname'] = $realname;
+        $data['uname'] = $realname;
         $data['provinceid'] = $provinceid;
         $data['cityid'] = $cityid;
         $data['areaid'] = $areaid;

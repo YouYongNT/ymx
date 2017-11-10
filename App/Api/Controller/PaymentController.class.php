@@ -154,7 +154,7 @@ class PaymentController extends PublicController
                 ));
                 exit();
             }
-            $data['receiver'] = $adds_info['mobile'];
+            $data['receiver'] = $adds_info['uname'];
             $data['tel'] = $adds_info['mobile'];
             $data['address_xq'] = '暂无需填写';
             $data['code'] = '暂无需填写';

@@ -103,7 +103,7 @@ class ProductController extends PublicController {
 			exit ();
 		}
 		// $content = preg_replace("/width:.+?[\d]+px;/",'',$pro['content']);
-		$pro ['content'] = htmlspecialchars_decode ( $pro ['content'] );
+		//$pro ['content'] = htmlspecialchars_decode ( $pro ['content'] );
 		$pro ['photo_x'] = __DATAURL__ . $pro ['photo_x'];
 		$PRO = 20; // VIP类别外键
 		           // //////处理VIP卡数据////////
