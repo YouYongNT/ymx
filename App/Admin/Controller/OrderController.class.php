@@ -195,8 +195,6 @@ class OrderController extends PublicController{
 
 		//接收ajax传过来的值
 		$order_status = intval($_POST['order_status']);
-// 		$kuaidi_name = $_POST['kuaidi_name'];
-// 		$kuaidi_num = $_POST['kuaidi_num'];
 		if (intval($o_info['status'])==$order_status) {
 			$arr = array();
 			$arr = array('returns'=>0 , 'message'=>'修改信息未发生变化.');
@@ -207,16 +205,155 @@ class OrderController extends PublicController{
 		try{
 			//付款成功
 			if ($order_status == 50){
-				$op = M('order_product')->where('order_id='.$o_info['id'])->find();
+				$opList = M('order_product')->where('order_id='.$o_info['id'])->select();
 				Vendor('SMS.Send');
-				$send = new \Send();
-				$res = $send->sendSms($o_info['tel'], '亲爱的亚马逊商学院会员'.$o_info['receiver'].'，您购买的产品'.$op['name'].'已确定付款成功！快去平台看看吧。');
+				foreach ($opList as $o){
+					$send = new \Send();
+					$res = $send->sendSms($o_info['tel'], '亲爱的亚马逊商学院会员'.$o_info['receiver'].'，您购买的产品'.$o['name'].'已确定付款成功！进入平台个人中心查看详情。');
+				}
 				
-				$msg = '您的订单（编号:%s）,已发货，送货快递:%s，运单号:%s 【%s】';
-				$msg = sprintf($msg,$id,$kuaidi_name,$kuaidi_num,$partner_info['name']);
+				//产品关联处理
+				foreach ($opList as $op){
+					for ($i==0; $i<$op['num']; $i++){//购买的单个产品数量
+						$pro = M('product')->where('id='.$op['pid'])->find();
+						if ($pro['cid'] == 20){//vip会员卡
+							//默认亚马逊的邀请码
+							$a_code = 'A00001';
+							
+							//生成会员卡和关联门票及课程
+							$invite_code = M('invite_code')->where('number='.$o_info['uninum'])->find();
+							if (!empty($invite_code)){
+								$invite_id = $invite_code['vip_id'];
+							}else {
+								$invite_id = 0;
+							}
+							$vip_array = array(
+									'uid'			=> $o_info['uid'],
+									'pid '			=> $op['pid'],
+									'amount'		=> $op['price'],
+									'invite_id'		=> $invite_id,
+									'invite_code'	=> $o_info['uninum'],
+									'dateline'		=> time()
+									);
+							$vid = M('vip_card')->add($vip_array);
+							if ($vid){//添加会员卡成功
+								//生成会员卡编号
+								$number = $pro['pro_number'].sprintf('%05s', $vid);
+								//上级信息
+								$pinfo = array();
+								$ppinfo = array();
+								$pinfo = M('vip_card')->where('id='.$invite_id)->find();
+								if (!empty($pinfo)){
+									$number .= ' '.$pinfo['number'];
+									//上上级
+									$ppinfo = M('vip_card')->where('id='.$pinfo['invite_id'])->find();
+									if (!empty($ppinfo)){
+										$number .= ' '.$ppinfo['number'];
+									}else {
+										$number .= ' '.$a_code;
+									}
+								}else {
+									$number .= ' '.$a_code.' '.$a_code;
+								}
+								M('vip_card')->where('id='.$vid)->save(array('number'=>$number));
+								
+								//上级提成
+								if (!empty($pinfo)){
+									if ($pro['pro_number'] == 'L1'){//事业伙伴
+										$percent_1 	= 0.1;
+										$amount_1 	= floatval($op['price'] * 0.1);
+									}else {//L2-L6的提成
+										$percent_1 	= 0.3;
+										$amount_1 	= floatval($op['price'] * 0.3);
+									}
+									$parray = array(
+											'uid'				=> $pinfo['uid'],
+											'invite_card_id'	=> $pinfo['id'],
+											'invite_card_code'	=> $pinfo['number'],
+											'card_id'			=> $vid,
+											'card_number'		=> $number,
+											'card_type'			=> $pro['pro_number'],
+											'percent'			=> $percent_1,
+											'amount'			=> $amount_1,
+											'dateline'			=> time()
+									);
+									M('income_info')->add($parray);
+									$pincome = M('income')->where('uid='.$pinfo['uid'])->find();
+									
+									//更新或添加会员收益
+									if (!empty($pincome)){
+										M('income')->where('uid='.$pinfo['uid'])->save(array('amount'=>floatval($pincome['amount']+$amount_1),'cycle_amount'=>floatval($pincome['cycle_amount']+$amount_1)));
+									}else {
+										M('income')->add(array('uid'=>$pinfo['uid'],'amount'=>$amount_1,'cycle_amount'=>$amount_1));
+									}
+								}
+								
+								//上上级分成
+								if (!empty($ppinfo)){
+									$percent_2 	= 0.15;
+									$amount_2 	= floatval($op['price'] * 0.15);
+									$pparray = array(
+											'uid'				=> $ppinfo['uid'],
+											'invite_card_id'	=> $ppinfo['id'],
+											'invite_card_code'	=> $ppinfo['number'],
+											'card_id'			=> $vid,
+											'card_number'		=> $number,
+											'card_type'			=> $pro['pro_number'],
+											'percent'			=> $percent_2,
+											'amount'			=> $amount_2,
+											'dateline'			=> time()
+									);
+									M('income_info')->add($pparray);
+									$ppincome = M('income')->where('uid='.$pparray['uid'])->find();
+									
+									//更新或添加会员收益
+									if (!empty($ppincome)){
+										M('income')->where('uid='.$ppinfo['uid'])->save(array('amount'=>floatval($ppincome['amount']+$amount_1),'cycle_amount'=>floatval($ppincome['cycle_amount']+$amount_1)));
+									}else {
+										M('income')->add(array('uid'=>$ppinfo['uid'],'amount'=>$amount_1,'cycle_amount'=>$amount_1));
+									}
+								}
+								
+								//修改邀请码状态
+								M('invite_code')->where('number='.$o_info['uninum'])->save(array('status'=>2));//status 0：未使用；1：锁定；2：已使用
+							}
+							
+							//生成邀请码
+							for ($j==0;$j<$pro['code_count'];$j++){
+								$number = $this->make_coupon_card();
+								M('invite_code')->add(array('vip_id'=>$vid,'number'=>$number,'status'=>0,'dateline'=>time()));
+							}
+							
+							//关联门票或课程
+							if ($pro['realte'] != ''){
+								$relate = unserialize($pro['relate']);
+								foreach ($relate as $id=>$num){
+									$rp = M('product')->where('id='.$id)->find();
+									if ($rp['cid'] == 27){//门票
+										for ($k==0;$k<intval($num);$k++){
+											$tnum = $this->make_coupon_card();
+											M('ticket')->add(array('uid'=>$o_info['uid'],'number'=>$tnum,'pid'=>$pro['id'],'vip_id'=>$vid,'status'=>0,'dateline'=>time()));
+										}
+									}elseif ($rp['cid'] == 28){//课程
+										for ($l==0;$l<intval($num);$l++){
+											$cnum = $this->make_coupon_card();
+											M('course')->add(array('uid'=>$o_info['uid'],'number'=>$cnum,'pid'=>$pro['id'],'vip_id'=>$vid,'status'=>0,'dateline'=>time()));
+										}
+									}
+								}
+							}
+							
+						}elseif ($pro['cid'] == 27){//门票
+							$tnum = $this->make_coupon_card();
+							M('ticket')->add(array('uid'=>$o_info['uid'],'number'=>$tnum,'pid'=>$pro['id'],'vip_id'=>0,'status'=>0,'dateline'=>time()));
+						}elseif ($pro['cid'] == 28){//课程
+							$cnum = $this->make_coupon_card();
+							M('course')->add(array('uid'=>$o_info['uid'],'number'=>$cnum,'pid'=>$pro['id'],'vip_id'=>0,'status'=>0,'dateline'=>time()));
+						}
+					}
+				}
 			}
 			
-			//修改快递信息
 			$data = array();
 			if ($order_status) {
 				$data['status'] = $order_status;
@@ -237,6 +374,26 @@ class OrderController extends PublicController{
 		exit();
 	}
 
+	//生成邀请码
+	function make_coupon_card() {
+		$code = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$rand = $code[rand(0,25)]
+		.strtoupper(dechex(date('m')))
+		.date('d').substr(time(),-5)
+		.substr(microtime(),2,5)
+		.sprintf('%02d',rand(0,99));
+		for(
+				$a = md5( $rand, true ),
+				$s = '0123456789ABCDEFGHIJKLMNOPQRSTUV',
+				$d = '',
+				$f = 0;
+				$f < 8;
+				$g = ord( $a[ $f ] ),
+				$d .= $s[ ( $g ^ ord( $a[ $f + 8 ] ) ) - $g & 0x1F ],
+				$f++
+				);
+		return $d;
+	}
 
 	/*
 	*

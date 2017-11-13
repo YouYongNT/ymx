@@ -25,13 +25,13 @@ class VipController extends PublicController{
 		$number!='' ? $where.=" and v.number like '%$number%'" : null;
 
 		define('rows',20);
-		$count=M('vip_card')->alias("v")->join('left join lr_user as u on v.uid=u.id')->join('left join lr_product as p on v.pro_id=p.id')->where($where)->count();
+		$count=M('vip_card')->alias("v")->join('left join lr_user as u on v.uid=u.id')->join('left join lr_product as p on v.pid=p.id')->where($where)->count();
 		$rows=ceil($count/rows);
  
 		$page=(int)$_GET['page'];
 		$page<0?$page=0:'';
 		$limit=$page*rows;
-		$viplist=M('vip_card')->alias("v")->join('left join lr_user as u on v.uid=u.id')->join('left join lr_product as p on v.pro_id=p.id')->field('u.name,u.mobile,v.number,p.name as pro_name,v.dateline')->where($where)->order('v.id desc')->limit($limit,rows)->select();
+		$viplist=M('vip_card')->alias("v")->join('left join lr_user as u on v.uid=u.id')->join('left join lr_product as p on v.pid=p.id')->field('u.name,u.mobile,v.number,p.name as pro_name,v.dateline')->where($where)->order('v.id desc')->limit($limit,rows)->select();
 		$page_index=$this->page_index($count,$rows,$page);
 		foreach ($viplist as $k => $v) {
 			$viplist[$k]['dateline']=date("Y-m-d H:i",$v['dateline']);
