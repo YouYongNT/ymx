@@ -297,7 +297,7 @@ class ProductController extends PublicController{
 	 */
 	public function getproduct(){
 		$cateid = intval($_REQUEST['cateid']);
-		$prolist = M('product')->where('cid='.intval($cateid))->field('id,name')->select();
+		$prolist = M('product')->where('cid='.intval($cateid).' AND del=0')->field('id,name')->select();
 		echo json_encode(array('prolist'=>$prolist));
 		exit();
 	}

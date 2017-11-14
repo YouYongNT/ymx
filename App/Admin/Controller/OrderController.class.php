@@ -127,7 +127,6 @@ class OrderController extends PublicController{
 	}
 
 	/*
-	*
 	* 选择商家里面的省市联动
 	*/
 	public function get_city(){
@@ -221,7 +220,11 @@ class OrderController extends PublicController{
 							$a_code = 'A00001';
 							
 							//生成会员卡和关联门票及课程
-							$invite_code = M('invite_code')->where('number='.$o_info['uninum'])->find();
+							$invite_code = array();
+							if ($o_info['uninum'] != ''){
+								$a_code = $o_info['uninum'];
+								$invite_code = M('invite_code')->where("number='{$a_code}'")->find();
+							}
 							if (!empty($invite_code)){
 								$invite_id = $invite_code['vip_id'];
 							}else {
@@ -232,7 +235,7 @@ class OrderController extends PublicController{
 									'pid '			=> $op['pid'],
 									'amount'		=> $op['price'],
 									'invite_id'		=> $invite_id,
-									'invite_code'	=> $o_info['uninum'],
+									'invite_code'	=> $a_code,
 									'dateline'		=> time()
 									);
 							$vid = M('vip_card')->add($vip_array);
@@ -243,6 +246,7 @@ class OrderController extends PublicController{
 								$pinfo = array();
 								$ppinfo = array();
 								$pinfo = M('vip_card')->where('id='.$invite_id)->find();
+								
 								if (!empty($pinfo)){
 									$number .= ' '.$pinfo['number'];
 									//上上级
@@ -315,17 +319,19 @@ class OrderController extends PublicController{
 								}
 								
 								//修改邀请码状态
-								M('invite_code')->where('number='.$o_info['uninum'])->save(array('status'=>2));//status 0：未使用；1：锁定；2：已使用
+								if ($o_info['uninum'] != ''){
+									M('invite_code')->where("number='{$o_info['uninum']}'")->save(array('status'=>2));//status 0：未使用；1：锁定；2：已使用
+								}
 							}
 							
 							//生成邀请码
 							for ($j==0;$j<$pro['code_count'];$j++){
-								$number = $this->make_coupon_card();
-								M('invite_code')->add(array('vip_id'=>$vid,'number'=>$number,'status'=>0,'dateline'=>time()));
+								$nj = $this->make_coupon_card();
+								M('invite_code')->add(array('vip_id'=>$vid,'number'=>$nj,'status'=>0,'dateline'=>time()));
 							}
 							
 							//关联门票或课程
-							if ($pro['realte'] != ''){
+							if ($pro['relate'] != ''){
 								$relate = unserialize($pro['relate']);
 								foreach ($relate as $id=>$num){
 									$rp = M('product')->where('id='.$id)->find();
