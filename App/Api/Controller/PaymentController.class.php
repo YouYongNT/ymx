@@ -154,7 +154,7 @@ class PaymentController extends PublicController
                 ));
                 exit();
             }
-            if(empty($data['uninum'])){
+            if(empty($data['uninum']) || $data['uninum'] == 'undefined'){
                 echo json_encode(array(
                     'status' => 0,
                     'err' => '邀请码必填'

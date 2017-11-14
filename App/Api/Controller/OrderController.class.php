@@ -483,13 +483,6 @@ class OrderController extends PublicController
             $data['num'] = $_POST['pingfen' . $data['pid']];
             $result = $product_dp->add($data);
         }
-        /*
-         * $meresult = $product_dp->where('uid='.$_SESSION['ID'].' and orderid='.$_POST['orderid'].' and pid='.$_POST['id'])->select();
-         * if($meresult){
-         * echo 2;
-         * exit();
-         * }
-         */
         
         if ($result) {
             $order->where('id=' . $_POST['orderid'])->save($status);
@@ -500,37 +493,4 @@ class OrderController extends PublicController
             $this->error('评价失败');
         }
     }
-    /**
-     * CREATE TABLE `lr_order` (
-  `id` int(11) NOT NULL COMMENT '订单id',
-  `order_sn` varchar(20) NOT NULL COMMENT '订单编号',
-  `pay_sn` varchar(20) DEFAULT NULL COMMENT '支付单号',
-  `shop_id` int(11) NOT NULL DEFAULT '0' COMMENT '商家ID',
-  `uid` int(11) NOT NULL DEFAULT '0' COMMENT '用户ID',
-  `price` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '价格',
-  `amount` decimal(9,2) DEFAULT '0.00' COMMENT '优惠后价格',
-  `addtime` int(10) NOT NULL DEFAULT '0' COMMENT '购买时间',
-  `del` tinyint(2) NOT NULL DEFAULT '0' COMMENT '删除状态',
-  `type` enum('weixin','alipay','cash') DEFAULT 'weixin' COMMENT '支付方式',
-  `price_h` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '真实支付金额',
-  `status` tinyint(2) NOT NULL DEFAULT '10' COMMENT '订单状态{0,已取消10未付款20代发货30待收货40待评价50交易完成51交易关闭',
-  `vid` int(11) DEFAULT '0' COMMENT '优惠券ID',
-  `receiver` varchar(15) NOT NULL COMMENT '收货人',
-  `tel` char(15) NOT NULL COMMENT '联系方式',
-  `address_xq` varchar(50) NOT NULL COMMENT '地址详情',
-  `code` int(11) NOT NULL COMMENT '邮编',
-  `post` int(11) DEFAULT NULL COMMENT '快递ID',
-  `remark` varchar(255) DEFAULT NULL COMMENT '买家留言',
-  `post_remark` varchar(255) NOT NULL COMMENT '邮费信息',
-  `product_num` int(11) NOT NULL DEFAULT '1' COMMENT '商品数量',
-  `trade_no` varchar(50) DEFAULT NULL COMMENT '微信交易单号',
-  `kuaidi_name` varchar(10) DEFAULT NULL COMMENT '快递名称',
-  `kuaidi_num` varchar(20) DEFAULT NULL COMMENT '运单号',
-  `back` enum('1','2','0') DEFAULT '0' COMMENT '标识客户是否有发起退款1申请退款 2已退款',
-  `back_remark` varchar(255) DEFAULT NULL COMMENT '退款原因',
-  `back_addtime` int(11) DEFAULT '0' COMMENT '申请退款时间',
-  `order_type` tinyint(2) DEFAULT '1' COMMENT '订单类型 1普通订单 2抢购订单'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-     */
-    
 }

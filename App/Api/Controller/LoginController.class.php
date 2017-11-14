@@ -146,8 +146,8 @@ class LoginController extends PublicController {
 	//***************************
 	public function getsessionkey(){
 		$wx_config = C('weixin');
-    	$appid = $wx_config['appid'];
-    	$secret = $wx_config['secret'];
+        	$appid = $wx_config['appid'];
+        	$secret = $wx_config['secret'];
 
 		$code = trim($_POST['code']);
 		if (!$code) {
