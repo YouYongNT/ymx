@@ -54,9 +54,8 @@
         <br>
         <table class="table table-border table-bordered table-bg">
             <thead>
-
                 <tr class="text-c">
-                    <th width="40">卡号</th>
+                    <th width="100">卡号</th>
                     <th width="100">持卡人姓名</th>
                     <th width="150">手机号码</th>
                     <th width="150">VIP等级</th>
@@ -64,7 +63,6 @@
                     <th width="100">操作</th>
                 </tr>
             </thead>
-
             <tbody id="news_option">
                 <!-- 遍历 -->
                 <volist name="viplist" id="v" empty="暂时没有数据">
@@ -75,7 +73,7 @@
                         <td>{$v.pro_name}</td>
                         <td>{$v.dateline}</td>
                         <td class="obj_1">
-                          	<a href="{:U('User/view')}?id={$v.id}">详情</a>
+                          	<a href="{:U('Vip/show')}?id={$v.id}">详情</a>
                         </td>
                     </tr>
                 </volist>

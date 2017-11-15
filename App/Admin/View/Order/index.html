@@ -118,8 +118,10 @@
                     </td>
                     <td>{$order.addtime|date='Y-m-d H:i',###}</td>
                     <td>
-                        <a href="{:U('show')}?oid={$order.id}">查看</a> |
-                        <a onclick="del_id_url({$order.id})">删除</a>
+                        <a href="{:U('show')}?oid={$order.id}">查看</a> 
+                        <if condition="$order.status neq 50">
+                        |<a onclick="del_id_url({$order.id})">删除</a>
+                        </if>
                         <if condition="$order.back eq 1"> | <a href="{:U('back')}?oid={$order.id}">确认退款</a></if>
                     </td>
                 </tr>

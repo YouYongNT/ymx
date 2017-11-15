@@ -11,7 +11,7 @@ class OrderController extends PublicController{
 		$this->order = M('Order');
 		$this->order_product = M('Order_product');
 
-		$order_status = array('0'=>'取消','50'=>'已付款');
+		$order_status = array('0'=>'取消','10'=>'未付款','50'=>'已付款');
 		$this->assign('order_status',$order_status);
 	}
 
@@ -232,8 +232,8 @@ class OrderController extends PublicController{
 							}
 							$vip_array = array(
 									'uid'			=> $o_info['uid'],
-									'pid '			=> $op['pid'],
-									'amount'		=> $op['price'],
+									'pid'			=> $pro['id'],
+									'amount'		=> floatval($op['price']),
 									'invite_id'		=> $invite_id,
 									'invite_code'	=> $a_code,
 									'dateline'		=> time()
@@ -241,25 +241,27 @@ class OrderController extends PublicController{
 							$vid = M('vip_card')->add($vip_array);
 							if ($vid){//添加会员卡成功
 								//生成会员卡编号
-								$number = $pro['pro_number'].sprintf('%05s', $vid);
+								$tmp_num = $pro['pro_number'].sprintf('%05s', $vid);
 								//上级信息
 								$pinfo = array();
 								$ppinfo = array();
 								$pinfo = M('vip_card')->where('id='.$invite_id)->find();
 								
 								if (!empty($pinfo)){
-									$number .= ' '.$pinfo['number'];
+									$n1 = explode(' ', $pinfo['number']);
+									$tmp_num .= ' '.$n1[0];
 									//上上级
 									$ppinfo = M('vip_card')->where('id='.$pinfo['invite_id'])->find();
 									if (!empty($ppinfo)){
-										$number .= ' '.$ppinfo['number'];
+										$n2 = explode(' ', $ppinfo['number']);
+										$tmp_num .= ' '.$n2[0];
 									}else {
-										$number .= ' '.$a_code;
+										$tmp_num .= ' A00001';
 									}
 								}else {
-									$number .= ' '.$a_code.' '.$a_code;
+									$tmp_num .= ' A00001 A00001';
 								}
-								M('vip_card')->where('id='.$vid)->save(array('number'=>$number));
+								M('vip_card')->where('id='.$vid)->save(array('number'=>$tmp_num));
 								
 								//上级提成
 								if (!empty($pinfo)){
@@ -275,7 +277,7 @@ class OrderController extends PublicController{
 											'invite_card_id'	=> $pinfo['id'],
 											'invite_card_code'	=> $pinfo['number'],
 											'card_id'			=> $vid,
-											'card_number'		=> $number,
+											'card_number'		=> $tmp_num,
 											'card_type'			=> $pro['pro_number'],
 											'percent'			=> $percent_1,
 											'amount'			=> $amount_1,
@@ -301,7 +303,7 @@ class OrderController extends PublicController{
 											'invite_card_id'	=> $ppinfo['id'],
 											'invite_card_code'	=> $ppinfo['number'],
 											'card_id'			=> $vid,
-											'card_number'		=> $number,
+											'card_number'		=> $tmp_num,
 											'card_type'			=> $pro['pro_number'],
 											'percent'			=> $percent_2,
 											'amount'			=> $amount_2,
