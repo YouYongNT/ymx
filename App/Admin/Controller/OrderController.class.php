@@ -340,12 +340,12 @@ class OrderController extends PublicController{
 									if ($rp['cid'] == 27){//门票
 										for ($k==0;$k<intval($num);$k++){
 											$tnum = $this->make_coupon_card();
-											M('ticket')->add(array('uid'=>$o_info['uid'],'number'=>$tnum,'pid'=>$pro['id'],'vip_id'=>$vid,'status'=>0,'dateline'=>time()));
+											M('ticket')->add(array('uid'=>$o_info['uid'],'number'=>$tnum,'pid'=>$id,'vip_id'=>$vid,'status'=>0,'dateline'=>time()));
 										}
 									}elseif ($rp['cid'] == 28){//课程
 										for ($l==0;$l<intval($num);$l++){
 											$cnum = $this->make_coupon_card();
-											M('course')->add(array('uid'=>$o_info['uid'],'number'=>$cnum,'pid'=>$pro['id'],'vip_id'=>$vid,'status'=>0,'dateline'=>time()));
+											M('course')->add(array('uid'=>$o_info['uid'],'number'=>$cnum,'pid'=>$id,'vip_id'=>$vid,'status'=>0,'dateline'=>time()));
 										}
 									}
 								}

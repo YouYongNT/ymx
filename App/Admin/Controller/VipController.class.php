@@ -51,15 +51,31 @@ class VipController extends PublicController{
 		$this->assign('page_index',$page_index);
 		$this->assign('page',$page);
 		$this->assign('viplist',$viplist);
-		$this->display();	
+		$this->display();
 	}
 
 	/**
 	 * VIP卡详情
 	 */
 	public function show(){
-		$id = intval($_REQUEST['id']);
+		//获取传递过来的id
+		$id = intval($_GET['id']);
+		if(!$id) {
+			$this->error('系统错误.');
+		}
+
+		//根据vip卡id获取vip详情
+		$vip_info = M('vip_card')->where('id='.intval($id))->find();
+		if (!$vip_info) {
+			$this->error('VIP卡信息错误.');
+		}
 		
+		
+
+		$this->assign('post_info',$post_info);
+		$this->assign('order_info',$order_info);
+		$this->assign('order_pro',$order_pro);
+		$this->display();
 	}
 	
 	/**
