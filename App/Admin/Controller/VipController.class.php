@@ -70,7 +70,17 @@ class VipController extends PublicController{
 			$this->error('VIP卡信息错误.');
 		}
 		
-		
+		//关联门票
+		$tList = M('ticket')->where('vip_id='.$id)->select();
+		$tArray = array();
+		foreach ($tList as $key=>$t){
+			if (empty($tArray[$t['pid']])){
+				$tArray[$t['pid']]
+				if (){
+					$tArray[$t['pid']]['use'] = 1;
+				}
+			}
+		}
 
 		$this->assign('post_info',$post_info);
 		$this->assign('order_info',$order_info);

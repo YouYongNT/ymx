@@ -213,7 +213,7 @@ class OrderController extends PublicController{
 				
 				//产品关联处理
 				foreach ($opList as $op){
-					for ($i==0; $i<$op['num']; $i++){//购买的单个产品数量
+					for ($i=0; $i<$op['num']; $i++){//购买的单个产品数量
 						$pro = M('product')->where('id='.$op['pid'])->find();
 						if ($pro['cid'] == 20){//vip会员卡
 							//默认亚马逊的邀请码
@@ -327,7 +327,7 @@ class OrderController extends PublicController{
 							}
 							
 							//生成邀请码
-							for ($j==0;$j<$pro['code_count'];$j++){
+							for ($j=0;$j<$pro['code_count'];$j++){
 								$nj = $this->make_coupon_card();
 								M('invite_code')->add(array('vip_id'=>$vid,'number'=>$nj,'status'=>0,'dateline'=>time()));
 							}
@@ -338,12 +338,12 @@ class OrderController extends PublicController{
 								foreach ($relate as $id=>$num){
 									$rp = M('product')->where('id='.$id)->find();
 									if ($rp['cid'] == 27){//门票
-										for ($k==0;$k<intval($num);$k++){
+										for ($k=0;$k<intval($num);$k++){
 											$tnum = $this->make_coupon_card();
 											M('ticket')->add(array('uid'=>$o_info['uid'],'number'=>$tnum,'pid'=>$id,'vip_id'=>$vid,'status'=>0,'dateline'=>time()));
 										}
 									}elseif ($rp['cid'] == 28){//课程
-										for ($l==0;$l<intval($num);$l++){
+										for ($l=0;$l<intval($num);$l++){
 											$cnum = $this->make_coupon_card();
 											M('course')->add(array('uid'=>$o_info['uid'],'number'=>$cnum,'pid'=>$id,'vip_id'=>$vid,'status'=>0,'dateline'=>time()));
 										}
