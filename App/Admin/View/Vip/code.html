@@ -30,50 +30,32 @@
 	<i class="Hui-iconfont">&#xe67f;</i> 首页 
 	<span class="c-gray en">&gt;</span> VIP卡管理 
 	<span class="c-gray en">&gt;</span> VIP卡详情 
+	<span class="c-gray en">&gt;</span> <?php echo $vip_info['pro_name']; ?> 邀请码
 	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
 </nav>
 <div class="page-container">
-    <div style="border-bottom:1px solid #b9c9d6;">
-        <ul style="margin-top:15px;  padding-bottom:5px; width:500px; float:left;">
-            <li>VIP 卡号：<?php echo $vip_info['number']; ?></li>
-            <li>持卡人姓名：<?php echo $vip_info['uname']; ?></li>
-            <li>手机号码：<?php echo $vip_info['mobile']; ?></li>
-            <li>会员卡等级：<?php echo $vip_info['pro_name']; ?></li>
-            <li>购买日期：<?php echo $vip_info['dateline']; ?></li>
-        </ul>
-    </div>
-    <br>
+	邀请码共 <?php echo $co['count']; ?> 张，<?php echo $co['usenum']; ?> 张已使用，<?php echo $co['locknum']; ?> 张已锁定，<?php echo $co['nousenum']; ?> 张未使用
     <table class="table table-border table-bordered table-bg">
         <thead>
         <tr class="text-c">
-            <th width="150">权益名称</th>
-            <th width="40">数量</th>
-            <th width="40">已使用</th>
-            <th width="60">操作</th>
+            <th width="150">邀请码</th>
+            <th width="40">状态</th>
+            <th width="40">关联日期</th>
+            <th width="100">关联者VIP卡</th>
+            <th width="60">关联者姓名</th>
+            <th width="60">关联者手机</th>
         </tr>
         </thead>
-        <volist name='tArray' id="ta">
+        <volist name='code_list' id="c">
             <tr class="text-c">
-                <td>{$ta.name}</td>
-                <td>{$ta.count}</td>
-                <td>{$ta.use}</td>
-                <td></td>
+                <td>{$c.number}</td>
+                <td><?php if($c['status'] == 0){echo '未使用';}elseif($c['status'] == 1){echo '已锁定';}elseif($c['status'] == 2){ echo '已使用';} ;?></td>
+                <td><?php if($c['status'] == 1 || $c['status'] == 2 ){echo date('Y-m-d H:m',$c['info']['dateline']);} ?></td>
+                <td>{$c.info.number}</td>
+                <td>{$c.info.uname}</td>
+                <td>{$c.info.mobile}</td>
             </tr>
         </volist>
-        <volist name='cArray' id="ca">
-            <tr class="text-c">
-                <td>{$ca.name}</td>
-                <td>{$ca.count}</td>
-                <td>{$ca.use}</td>
-                <td></td>
-            </tr>
-        </volist>
-        <tr class="text-c">
-            <td>邀请码</td>
-            <td>{$iArray.count}</td>
-            <td>{$iArray.use}</td>
-            <td><a href="{:U('Vip/code')}?id={$vip_info.id}">查看详情</a></td>
-        </tr>
     </table>
 
 </div>
