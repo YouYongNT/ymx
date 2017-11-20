@@ -35,6 +35,7 @@ class OrderController extends PublicController{
 		$pay_status = intval($_REQUEST['pay_status']); //订单状态
 		$start_time = intval(strtotime($_REQUEST['start_time'])); //订单状态
 		$end_time = intval(strtotime($_REQUEST['end_time'])); //订单状态
+		
 		//构建搜索条件
 		$condition = array();
 		$condition['del'] = 0; 
@@ -64,16 +65,17 @@ class OrderController extends PublicController{
 		//根据下单时间搜索
 		if ($start_time) {
 			$condition['addtime'] = array('gt',$start_time);
-			$where .=' AND addtime>'.$start_time;
+			$where .=' AND addtime > '.$start_time;
 			//搜索内容输出
-			$this->assign('start_time',date("Y-m-d",$start_time));
+			$this->assign('start_time',$_REQUEST['start_time']);
 		}
+		
 		//根据下单时间搜索
 		if ($end_time) {
 			$condition['addtime'] = array('lt',$end_time);
-			$where .=' AND addtime<'.$end_time;
+			$where .=' AND addtime < '.$end_time;
 			//搜索内容输出
-			$this->assign('end_time',date("Y-m-d",$end_time));
+			$this->assign('end_time',$_REQUEST['end_time']);
 		}
 		/*if ($start_time && $end_time) {
 			$condition['addtime'] = array('eq','addtime>'.$start_time.' AND addtime<='.$end_time);
@@ -88,7 +90,7 @@ class OrderController extends PublicController{
 			$Page->parameter[$key]  =  urlencode($val);
 		}
 		if ($start_time && $end_time) {
-			$addtime = 'addtime>'.$start_time.' AND addtime<'.$end_time;
+			$addtime = 'addtime > '.$start_time.' AND addtime < '.$end_time;
 			$Page->parameter['addtime']  =  urlencode($addtime);
 		}
 
@@ -365,6 +367,8 @@ class OrderController extends PublicController{
 			$data = array();
 			if ($order_status) {
 				$data['status'] = $order_status;
+				$data['payer'] = $_POST['payer'];
+				$data['voucher'] = $_POST['voucher'];
 			}
 			$up = $this->order->where('id='.intval($oid))->save($data);
 			$json = array();

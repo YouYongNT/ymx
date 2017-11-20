@@ -26,22 +26,38 @@
 	<script type="text/javascript" src="__PUBLIC__/admin/js/jCalendar.js"></script>
     <script type="text/javascript" src="__PUBLIC__/admin/js/jquery.XYTipsWindow.min.2.8.js"></script>
     <script type="text/javascript" src="__PUBLIC__/admin/js/mydate.js"></script>
-    <title>VIP卡列表</title>
+    <script type="text/javascript">
+        function openDialog(type) {
+            window.open("{:U('Inout/expUser')}?tel={$tel}&name={$name}");
+        }
+    </script>
+    <title>课程激活列表</title>
 </head>
 
 <body>
-    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> VIP卡管理 <span class="c-gray en">&gt;</span> VIP卡列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
-            title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <nav class="breadcrumb">
+    	<i class="Hui-iconfont">&#xe67f;</i> 首页 
+	    <span class="c-gray en">&gt;</span> VIP卡管理 
+	    <span class="c-gray en">&gt;</span> 课程激活列表 
+	    <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
+   	</nav>
     <div class="page-container">
         <div class="text-c">
-        <form name='form' action="{:U('index')}" method='get'>
-			VIP卡号：<input type="text" class="input-text" style="width:250px" placeholder="VIP卡号" id="number" value="{$number}">
-			购买时间：
-            <input class="inp_1 inp_6 input-text" id="start_time" name="start_time" value="{$start_time}" onfocus="MyCalendar.SetDate(this)" style="width:160px;">
-            <input class="inp_1 inp_6 input-text" id="end_time" name="end_time" value="{$end_time}" onfocus="MyCalendar.SetDate(this)" style="width:160px;">
-			<br />
-			手机号码：<input type="text" class="input-text" style="width:250px" placeholder="持卡人手机号码" id="mobile" value="{$mobile}">
-			姓名：<input type="text" class="input-text" style="width:250px" placeholder="持卡人姓名" id="uname" value="{$uname}">
+        <form name='form' action="{:U('course')}" method='get'>
+			状态：
+			<select name="status" id="status">
+				<option value="">状态不限</option>
+				<option value="1" <?php if($status == 1)echo 'selected="selected"'; ?>>未使用</option>
+				<option value="2" <?php if($status == 2)echo 'selected="selected"'; ?>>待确认</option>
+				<option value="3" <?php if($status == 3	)echo 'selected="selected"'; ?>>已使用</option>
+			</select>
+			课程类型：
+			<select name="type" id="type">
+				<option value="">类型不限</option>
+				<volist name="tlist" id="t" empty="暂时没有数据">
+				<option value="{$t.id}" <?php if($type == $t.id)echo 'selected="selected"'; ?>>{$t.name}</option>
+				</volist>
+			</select>
             <button type="button" class="btn btn-success" id="" name="" onclick="product_option(0);"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
         </form>
         </div>
@@ -49,25 +65,33 @@
         <table class="table table-border table-bordered table-bg">
             <thead>
                 <tr class="text-c">
-                    <th width="100">卡号</th>
-                    <th width="100">持卡人姓名</th>
-                    <th width="150">手机号码</th>
-                    <th width="150">VIP等级</th>
-                    <th width="100">购买日期</th>
+                    <th width="100">课程编号</th>
+                    <th width="100">课程类型</th>
+                    <th width="150">所属VIP卡</th>
+                    <th width="100">状态</th>
+                    <th width="100">持卡者姓名</th>
+                    <th width="100">持卡者手机</th>
                     <th width="100">操作</th>
                 </tr>
             </thead>
             <tbody id="news_option">
                 <!-- 遍历 -->
-                <volist name="viplist" id="v" empty="暂时没有数据">
+                <volist name="courselist" id="v" empty="暂时没有数据">
                     <tr data-id="{$v.id}" data-name="{$v.number}" class="text-c">
                         <td>{$v.number}</td>
-                        <td>{$v.uname}</td>
-                        <td>{$v.mobile}</td>
                         <td>{$v.pro_name}</td>
-                        <td>{$v.dateline}</td>
+                        <td>{$v.vip_number}</td>
+                        <td>
+                        	<?php if($v['status'] == 0){echo '未使用';}
+									elseif($v['status'] == 1){echo '<font color="green">待确认</font';}
+									elseif($v['status'] == 2){echo '<font color="red">已确认</font>';}?>
+						</td>
+                        <td>{$v.uname}</td>
+                        <td>{$v.umobile}</td>
                         <td class="obj_1">
-                          	<a href="{:U('Vip/show')}?id={$v.id}">详情</a>
+                        	<?php if($v['status'] == 1){ ?>
+                        		<button type="button" class="btn btn-success" onclick="doactive({$v.id},2);"><i class="Hui-iconfont">&#xe665;</i> 确认</button>
+                        	<?php } ?>
                         </td>
                     </tr>
                 </volist>
@@ -95,17 +119,35 @@
         //分页
         function product_option(page) {
             var obj = {
-                "number": $("#number").val(),
-                "start_time": $("#start_time").val(),
-                "end_time": $("#end_time").val(),
-                "mobile": $("#mobile").val(),
-                "uname": $("#uname").val(),
+                "status": $("#status").val(),
+                "type": $("#type").val(),
             }
             var url = '?page=' + page;
             $.each(obj, function(a, b) {
                 url += '&' + a + '=' + b;
             });
             location = url;
+        }
+        
+        //激活或者确认使用
+        function doactive(id,status){
+        	$.ajax({
+                type: "POST",
+                url: "{:U('do_course_active')}",
+                data:{'status':status,'id':id},
+	            dataType: "json",
+	                success: function (data) {
+	                if(data.returns){
+	                    alert('提交成功！');
+	                    location.reload();
+	                }else{
+	                    alert(data.message);
+	                }
+	            },
+	            error: function (msg) {
+	                alert ('网络连接失败！');
+	            }
+	        });
         }
     </script>
 </body>

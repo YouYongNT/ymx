@@ -10,14 +10,14 @@ class UserController extends PublicController{
 		$aaa_pts_qx=1;
 		$type=$_GET['type'];
 		$id=(int)$_GET['id'];
-		$tel = trim($_REQUEST['tel']);
+		$mobile = trim($_REQUEST['mobile']);
 		$name = trim($_REQUEST['name']);
 
 		$names=$this->htmlentities_u8($_GET['name']);
 		//搜索
 		$where="1=1";
 		$name!='' ? $where.=" and name like '%$name%'" : null;
-		$tel!='' ? $where.=" and tel like '%$tel%'" : null;
+		$mobile!='' ? $where.=" and mobile like '%$mobile%'" : null;
 
 		define('rows',20);
 		$count=M('user')->where($where)->count();
@@ -41,7 +41,7 @@ class UserController extends PublicController{
 		// 将GET到的参数输出
 		//=====================
 		$this->assign('name',$name);
-		$this->assign('tel',$tel);
+		$this->assign('mobile',$mobile);
 
 		//=============
 		//将变量输出

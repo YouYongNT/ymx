@@ -12,8 +12,8 @@ class VipController extends PublicController{
 		$id=(int)$_GET['id'];
 		$mobile = trim($_REQUEST['mobile']);
 		$uname = $this->htmlentities_u8(trim($_REQUEST['uname']));
-		$start_time = strtotime($_REQUEST['start_time']);
-		$end_time = strtotime($_REQUEST['end_time']);
+		$start_time = intval(strtotime($_REQUEST['start_time']));
+		$end_time = intval(strtotime($_REQUEST['end_time']));
 		$number = trim($_REQUEST['number']);
 
 		//搜索
@@ -41,8 +41,8 @@ class VipController extends PublicController{
 		//=====================
 		$this->assign('uname',$uname);
 		$this->assign('mobile',$mobile);
-		$this->assign('start_time',$start_time);
-		$this->assign('end_time',$end_time);
+		$this->assign('start_time',$_REQUEST['start_time']);
+		$this->assign('end_time',$_REQUEST['end_time']);
 		$this->assign('number',$number);
 
 		//=============
@@ -171,8 +171,11 @@ class VipController extends PublicController{
 
 		//搜索
 		$where="1=1";
-		$type!='' ? $where.=" and p.cid={$type}" : null;
-		$status!='' ? $where.=" and t.status={$status}" : null;
+		$type!='' ? $where.=" and p.id={$type}" : null;
+		if ($status!=''){
+			$s = $status-1;
+			$where.=" and t.status={$s}";
+		}
 
 		define('rows',20);
 		$count=M('ticket')->alias("t")->join('left join lr_product as p on t.pid=p.id')->where($where)->count();
@@ -188,7 +191,7 @@ class VipController extends PublicController{
 		foreach ($ticketlist as $key=>$t){
 			if ($t['vip_id']){
 				$vip = M('vip_card')->where('id='.$t['vip_id'])->find();
-				$ticketlist[$key]['vip_number'] = $t['number'];
+				$ticketlist[$key]['vip_number'] = $vip['number'];
 			}
 		}
 		
@@ -211,9 +214,118 @@ class VipController extends PublicController{
 		$this->display();
 	}
 	
+	/**
+	 * 激活
+	 */
+	public function doactive(){
+		$id = intval($_POST['id']);
+		$status = intval($_POST['status']);
+		$uname = $_POST['uname']!='' ? $_POST['uname'] : '';
+		$umobile = $_POST['umobile']!='' ? $_POST['umobile'] : '';
+		$info = M('ticket')->where('id='.intval($id))->find();
+		
+		if (!$info) {
+			$arr = array();
+			$arr = array('returns'=>0 , 'message'=>'没有找到相关门票.');
+			echo json_encode($arr);
+			exit();
+		}
+		try{
+			$up = M('ticket')->where('id='.intval($id))->save(array('status'=>$status,'uname'=>$uname,'umobile'=>$umobile));
+			$json = array();
+			if ($up) {
+				$json['message']="操作成功.";
+				$json['returns']=1;
+			}else{
+				$json['message']="操作失败.";
+				$json['returns']=0;
+			}
+		}catch(\Exception $e){
+			$json = array('returns'=>0 , 'message'=>$e->getMessage());
+		}
+		echo json_encode($json);
+		exit();
+	}
 	
 	/**
-	 * 门票激活管理 course
+	 * 课程激活管理 course
 	 */
+	public function course(){
+		$type = $_GET['type'];
+		$status = $_GET['status'];
 	
+		//搜索
+		$where="1=1";
+		$type!='' ? $where.=" and p.id={$type}" : null;
+		if ($status!=''){
+			$s = $status-1;
+			$where.=" and c.status={$s}";
+		}
+	
+		define('rows',20);
+		$count=M('course')->alias("c")->join('left join lr_product as p on c.pid=p.id')->where($where)->count();
+		$rows=ceil($count/rows);
+		
+		$page=(int)$_GET['page'];
+		$page<0?$page=0:'';
+		$limit=$page*rows;
+		$courselist=M('course')->alias("c")->join('left join lr_product as p on c.pid=p.id')->field('c.*,p.name as pro_name')->where($where)->order('c.id desc')->limit($limit,rows)->select();
+		$page_index=$this->page_index($count,$rows,$page);
+	
+		//查询关联vip卡
+		foreach ($courselist as $key=>$t){
+			if ($t['vip_id']){
+				$vip = M('vip_card')->where('id='.$t['vip_id'])->find();
+				$courselist[$key]['vip_number'] = $vip['number'];
+			}
+		}
+		//门票类型
+		$tlist = M('product')->where('cid=28')->select();
+	
+		//====================
+		// 将GET到的参数输出
+		//=====================
+		$this->assign('status',$status);
+		$this->assign('type',$type);
+	
+		//=============
+		//将变量输出
+		//=============
+		$this->assign('tlist',$tlist);
+		$this->assign('page_index',$page_index);
+		$this->assign('page',$page);
+		$this->assign('courselist',$courselist);
+		$this->display();
+	}
+	
+	/**
+	 * 确认课程
+	 */
+	public function do_course_active(){
+		$id = intval($_POST['id']);
+		$status = intval($_POST['status']);
+		$info = M('course')->where('id='.intval($id))->find();
+	
+		if (!$info) {
+			$arr = array();
+			$arr = array('returns'=>0 , 'message'=>'没有找到相关门票.');
+			echo json_encode($arr);
+			exit();
+		}
+		try{
+			$up = M('course')->where('id='.intval($id))->save(array('status'=>$status));
+			$json = array();
+			if ($up) {
+				$json['message']="操作成功.";
+				$json['returns']=1;
+			}else{
+				$json['message']="操作失败.";
+				$json['returns']=0;
+			}
+		}catch(\Exception $e){
+			$json = array('returns'=>0 , 'message'=>$e->getMessage());
+		}
+		echo json_encode($json);
+		exit();
+	}
 }

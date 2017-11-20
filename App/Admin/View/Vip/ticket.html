@@ -46,11 +46,11 @@
         <form name='form' action="{:U('ticket')}" method='get'>
 			状态：
 			<select name="status" id="status">
-				<option value="" <?php if($status == '')echo 'selected="selected"'; ?>>状态不限</option>
-				<option value="0" <?php if($status == 0)echo 'selected="selected"'; ?>>未使用</option>
-				<option value="1" <?php if($status == 1)echo 'selected="selected"'; ?>>待激活</option>
-				<option value="2" <?php if($status == 2)echo 'selected="selected"'; ?>>可使用</option>
-				<option value="3" <?php if($status == 3)echo 'selected="selected"'; ?>>已使用</option>
+				<option value="">状态不限</option>
+				<option value="1" <?php if($status == 1)echo 'selected="selected"'; ?>>未使用</option>
+				<option value="2" <?php if($status == 2)echo 'selected="selected"'; ?>>待激活</option>
+				<option value="3" <?php if($status == 3)echo 'selected="selected"'; ?>>可使用</option>
+				<option value="4" <?php if($status == 4	)echo 'selected="selected"'; ?>>已使用</option>
 			</select>
 			门票类型：
 			<select name="type" id="type">
@@ -68,7 +68,7 @@
                 <tr class="text-c">
                     <th width="100">门票编号</th>
                     <th width="100">门票类型</th>
-                    <th width="100">所属VIP卡</th>
+                    <th width="150">所属VIP卡</th>
                     <th width="100">状态</th>
                     <th width="100">购买者姓名</th>
                     <th width="100">购买者手机</th>
@@ -85,18 +85,21 @@
                         <td>{$v.pro_name}</td>
                         <td>{$v.vip_number}</td>
                         <td>
-                        	<?php if($v.status == 0){echo '未使用';}
-									elseif($v.status == 1){echo '待激活';} 
-									elseif($v.status == 2){echo '可使用';} 
-									elseif($v.status == 3){echo '已使用';} 
-							?>
+                        	<?php if($v['status'] == 0){echo '未使用';}
+									elseif($v['status'] == 1){echo '<font color="blue">待激活</font>';}
+									elseif($v['status'] == 2){echo '<font color="green">可使用</font';}
+									elseif($v['status'] == 3){echo '<font color="red">已使用</font>';}?>
 						</td>
                         <td>{$v.buyer_name}</td>
                         <td>{$v.buyer_mobile}</td>
-                        <td>{$v.uname}</td>
-                        <td>{$v.umobile}</td>
+                        <td>{$v.uname}<if condition="$v['status'] eq 2"><input type="text" id="uname_{$v.id}" value="" /></if></td>
+                        <td>{$v.umobile}<if condition="$v['status'] eq 2"><input type="text" id="umobile_{$v.id}" value="" /></if></td>
                         <td class="obj_1">
-                          	<a href="{:U('Vip/show')}?id={$v.id}">详情</a>
+                        	<?php if($v['status'] == 1){ ?>
+                        		<button type="button" class="btn btn-success" onclick="doactive({$v.id},2);"><i class="Hui-iconfont">&#xe665;</i> 确认激活</button>
+                        	<?php }elseif($v['status'] == 2){ ?>
+								<button type="button" class="btn btn-success" onclick="doactive({$v.id},3);"><i class="Hui-iconfont">&#xe665;</i> 确认使用</button>
+							<?php } ?>
                         </td>
                     </tr>
                 </volist>
@@ -124,14 +127,37 @@
         //分页
         function product_option(page) {
             var obj = {
-                "name": $("#name").val(),
-                "tel": $("#tel").val(),
+                "status": $("#status").val(),
+                "type": $("#type").val(),
             }
             var url = '?page=' + page;
             $.each(obj, function(a, b) {
                 url += '&' + a + '=' + b;
             });
             location = url;
+        }
+        
+        //激活或者确认使用
+        function doactive(id,status){
+        	var uname = $('#uname_'+id).val();
+        	var umobile = $('#umobile_'+id).val();
+        	$.ajax({
+                type: "POST",
+                url: "{:U('doactive')}",
+                data:{'status':status,'id':id,'uname':uname,'umobile':umobile},
+	            dataType: "json",
+	                success: function (data) {
+	                if(data.returns){
+	                    alert('提交成功！');
+	                    location.reload();
+	                }else{
+	                    alert(data.message);
+	                }
+	            },
+	            error: function (msg) {
+	                alert ('网络连接失败！');
+	            }
+	        });
         }
     </script>
 </body>

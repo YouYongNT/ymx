@@ -66,8 +66,9 @@
             <li style="padding-top:5px;">
                 <div>收货人：<?php echo $order_info['receiver']; ?></div>
                 <div>联系电话：<?php echo $order_info['tel']; ?></div>
+                <div>邀请码：<?php echo $order_info['uninum']; ?></div>
+                <font>订单价格:</font> ￥ <?php echo number_format($order_info['price'],2); ?>
                 <!-- 
-                <div>邮政编码：<?php echo $order_info['code']; ?></div>
                 <div>收货地址：<?php echo $order_info['address_xq']; ?></div>
                 -->
             </li>
@@ -95,7 +96,6 @@
         </ul>
          -->
     </div>
-
     <div>
     <div class="ord_show_5">
 
@@ -105,8 +105,6 @@
 <!--         发货快递：<input id="kuaidi_name" value="<?php echo $order_info['kuaidi_name'];?>" />
         <br>
         快递单号：<input id="kuaidi_num" value="<?php echo $order_info['kuaidi_num'];?>"/> -->
-			<font>订单价格:</font> ￥ <?php echo number_format($order_info['price'],2); ?>
-			<br>
            	 状态修改：
            	<?php if($order_info['status'] == 10){ ?>
             <select id="zt_order_update">
@@ -118,7 +116,10 @@
             <?php }else{ ?>
             	<?php if($order_info['status'] == 50){echo '已付款';}elseif($order_info['status'] == 0){echo '已取消';}?>
             <?php } ?>
-            
+            <br />
+			付费人姓名：<input id="payer" value="<?php echo $order_info['payer'];?>"/>
+            <br />
+			付费凭证单据号：<input id="voucher" value="<?php echo $order_info['voucher'];?>"/>
         <br><br>
         <input type="button" value="提交" style="" onclick="sms_message()" class="btn btn-success"/>
         <br>
@@ -175,6 +176,10 @@
             //if(!confirm('确定发送订单发货短信吗？')) return;
             //获取订单当前状态
             var o_status = $('#o_status').val();
+          	//付费人
+            var payer = $('#payer').val();
+          	//付费凭证
+            var voucher = $('#voucher').val();
             //获取订单选择状态
             var order_status = $('#zt_order_update').val();
             //选择状态不能比当前状态小，已付款的订单不能变成未付款
@@ -193,21 +198,21 @@
             $.ajax({
                 type: "POST",
                 url: "{:U('sms_up')}",
-                data:{'order_status':order_status,'oid':<?php echo $order_info['id'];?>},
-            dataType: "json",
-                success: function (data) {
-                if(data.returns){
-                    alert('提交成功！');
-                    location.reload();
-                }else{
-                    alert(data.message);
-                }
-
-            },
-            error: function (msg) {
-                alert ('网络连接失败！');
-            }
-        });
+                data:{'order_status':order_status,'payer':payer,'voucher':voucher,'oid':<?php echo $order_info['id'];?>},
+	            dataType: "json",
+	                success: function (data) {
+	                if(data.returns){
+	                    alert('提交成功！');
+	                    location.reload();
+	                }else{
+	                    alert(data.message);
+	                }
+	
+	            },
+	            error: function (msg) {
+	                alert ('网络连接失败！');
+	            }
+	        });
 
         }catch(e){
             alert(e);
