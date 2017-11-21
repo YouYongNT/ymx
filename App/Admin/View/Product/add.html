@@ -251,72 +251,67 @@
                 </div>
             </div>
 			 -->
-
-            <div class="row cl">
+            <div class="row cl" id="linkpro">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>关联产品：</label>
-                <div>
-                    <div id="child_info" class="product-add">
-                        <table class="table table-border table-bordered table-bg">
-                            <thead>
-                                <tr class="text-c">
-                                    <th>分类</th>
-                                    <th>产品</th>
-                                    <th>数量</th>
-                                    <th>操作</th>
-                                </tr>
-                            </thead>
-                            	
-                            <tbody id="p_list">
-                            	<volist name="relate_list" id="r">
-		                      	<tr class="text-c" id="pro_{$r.id}">
-					                <td>{$r.catname}</td>
-					                <td>{$r.name}</td>
-					               	<td>{$r.count}</td>
-					                <td>
-					                	<input type="hidden" name="relate_id[]" value="{$r.id}" />
-					                	<input type="hidden" name="count[]" value="{$r.count}" />
-					                    <button onclick="$(this).parent().parent().remove();">删除</button>
-					                </td>
-					            </tr>   	
-                               	</volist>
-                            </tbody>
-                            
-                                <tr>
-                                    <td style="text-align: center;">
-                                        <select id="category" class="inp_1 input-text" onchange="getproduct();">
-                                            <!-- 遍历 -->
-                                            <option value="">分类列表</option>
-                                                <volist name="cate_list" id="v">
-                                                	<option value="{$v.id}">{$v.name}</option>
-                                            	</volist>
-                                            <!-- 遍历 -->
-                                        </select>
-                                    </td>
-                                    <td style="text-align: center;">
-                                        <select id="product" class="inp_1 input-text">
-                                            <!-- 遍历 -->
-                                            <option value="">产品列表</option>
-                                            <volist name="product_list" id="v">
-                                                <option value="{$v.id}">{$v.name}</option>
-                                            </volist>
-                                            <!-- 遍历 -->
-                                        </select>
-                                    </td>
-                                    <td style="text-align: center;">
-                                        <input type="text" class="input-text input-number" style="width: 100px;" placeholder="数量" id="count" />
-                                    </td>
-                                    <td style="text-align: center;">
-                                        <a href="javascript:void(0);" onclick="addproduct();">增加</a>
-                                    </td>
-                                </tr>
-                        </table>
-                    </div>
-                </div>
+           		<div id="child_info" class="product-add">
+                     <table class="table table-border table-bordered table-bg">
+                         <thead>
+                             <tr class="text-c">
+                                 <th>分类</th>
+                                 <th>产品</th>
+                                 <th>数量</th>
+                                 <th>操作</th>
+                             </tr>
+                         </thead>
+                         <tbody id="p_list">
+                         	<volist name="relate_list" id="r">
+	                     	<tr class="text-c" id="pro_{$r.id}">
+				                <td>{$r.catname}</td>
+				                <td>{$r.name}</td>
+				               	<td>{$r.count}</td>
+				                <td>
+				                	<input type="hidden" name="relate_id[]" value="{$r.id}" />
+				                	<input type="hidden" name="count[]" value="{$r.count}" />
+				                    <button onclick="$(this).parent().parent().remove();">删除</button>
+				                </td>
+			  				</tr>   	
+                     		</volist>
+                 		</tbody>
+                  		<tr>
+                          <td style="text-align: center;">
+                              <select id="category" class="inp_1 input-text" onchange="getproduct();">
+                                  <!-- 遍历 -->
+                                  <option value="">分类列表</option>
+                                      <volist name="cate_list" id="v">
+                                      	<option value="{$v.id}">{$v.name}</option>
+                                  	</volist>
+                                  <!-- 遍历 -->
+                              </select>
+                          </td>
+                          <td style="text-align: center;">
+                              <select id="product" class="inp_1 input-text">
+                                  <!-- 遍历 -->
+                                  <option value="">产品列表</option>
+                                  <volist name="product_list" id="v">
+                                      <option value="{$v.id}">{$v.name}</option>
+                                  </volist>
+                                  <!-- 遍历 -->
+                              </select>
+                          </td>
+                          <td style="text-align: center;">
+                              <input type="text" class="input-text input-number" style="width: 100px;" placeholder="数量" id="count" />
+                          </td>
+                          <td style="text-align: center;">
+                              <a href="javascript:void(0);" onclick="addproduct();">增加</a>
+                          </td>
+                  		</tr>
+                     </table>
+           		</div>
             </div>
 
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>产品介绍：</label>
-                <div class="">
+                <div style="padding: 0 15px;">
                     <textarea class="inp_1 inp_2" name="content" id="content" />{$pro_allinfo.content}</textarea>
                 </div>
             </div>
@@ -332,7 +327,6 @@
     <script type="text/javascript" src="__PUBLIC__/admin/js/product.js"></script>
 
     <!--_footer 作为公共模版分离出去-->
-
     <script>
         //初始化编辑器
         $('#content').xheditor({
@@ -353,10 +347,13 @@
         		$('#class_id').show();
         		$('#cc_id').hide();
         		$('#code_count').val('');
+        		$('#linkpro').hide();
+        		$('#p_list').html('');
         	}else {
         		$('#cc_id').show();
         		$('#class_id').hide();
         		$('#class').val('');
+        		$('#linkpro').show();
         	}
         }
 

@@ -29,11 +29,6 @@
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 订单管理 <span class="c-gray en">&gt;</span> 订单详情 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-    <div class="text-c">
-        <input type="text" class="input-text" style="width:250px" placeholder="品牌名称" id="name" value="<?php echo $name;?>">
-        <button type="button" class="btn btn-success" id="" name="" onclick="product_option(0);"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
-    </div>
-    <br>
     <table class="table table-border table-bordered table-bg">
         <thead>
 
@@ -117,17 +112,21 @@
             	<?php if($order_info['status'] == 50){echo '已付款';}elseif($order_info['status'] == 0){echo '已取消';}?>
             <?php } ?>
             <br />
-			付费人姓名：<input id="payer" value="<?php echo $order_info['payer'];?>"/>
+			付费人姓名：
+				<?php if($order_info['status'] == 10){ ?>
+				<input id="payer" value="<?php echo $order_info['payer'];?>"/>
+				<?php }else{ echo $order_info['payer']; } ?>
             <br />
-			付费凭证单据号：<input id="voucher" value="<?php echo $order_info['voucher'];?>"/>
+			付费凭证单据号：
+				<?php if($order_info['status'] == 10){ ?>
+				<input id="voucher" value="<?php echo $order_info['voucher'];?>"/>
+				<?php }else{ echo $order_info['voucher']; } ?>
         <br><br>
         <input type="button" value="提交" style="" onclick="sms_message()" class="btn btn-success"/>
         <br>
         <input type="hidden" value="<?php echo $order_info['status']; ?>" name="o_status" id="o_status">
     </div>
     </div>
-
-
 
     <?php if($order_info['back']>0){ ?>
     <div class="ord_show_1">

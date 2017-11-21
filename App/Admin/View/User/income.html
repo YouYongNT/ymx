@@ -24,17 +24,16 @@
     <![endif]-->
     <script type="text/javascript" src="__PUBLIC__/admin/js/jquery.js"></script>
     <script type="text/javascript" src="__PUBLIC__/admin/js/action.js"></script>
-    <script type="text/javascript">
-        function openDialog(type) {
-            window.open("{:U('Inout/expUser')}?mobile={$mobile}&name={$name}");
-        }
-    </script>
-    <title>会员列表</title>
+    <title>收益列表</title>
 </head>
 
 <body>
-    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 会员管理 <span class="c-gray en">&gt;</span> 会员列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
-            title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <nav class="breadcrumb">
+	    <i class="Hui-iconfont">&#xe67f;</i> 首页 
+	    <span class="c-gray en">&gt;</span> 收益管理 
+	    <span class="c-gray en">&gt;</span> 收益列表 
+    	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
+    </nav>
     <div class="page-container">
         <div class="text-c">
             <input type="text" class="input-text" style="width:250px" placeholder="用户名" id="name" value="{$name}">
@@ -46,48 +45,32 @@
             <thead>
 
                 <tr class="text-c">
-                    <th width="40">ID</th>
-                    <th width="100">头像</th>
-                    <th width="100">账户名</th>
-                    <th width="100">用户姓名</th>
-                    <th width="150">手机号码</th>
-                    <th width="100">状态</th>
-                    <th width="130">会员开始时间</th>
-                    <th width="130">会员结束时间</th>
-                    <th width="130">注册时间</th>
+                    <th width="40">姓名</th>
+                    <th width="100">手机</th>
+                    <th width="100">会员等级</th>
+                    <th width="100">总收益</th>
+                    <th width="150">未进入结算周期金额</th>
+                    <th width="100">可提现金额</th>
+                    <th width="130">申请中体现金额</th>
+                    <th width="130">已提现金额</th>
                     <th width="100">操作</th>
                 </tr>
             </thead>
 
             <tbody id="news_option">
                 <!-- 遍历 -->
-                <volist name="userlist" id="v" empty="暂时没有数据">
-                    <tr data-id="{$v.id}" data-name="{$v.name}" class="text-c">
-                        <td>{$v.id}</td>
-                        <td><img src="{$v.photo}" width="65px" height="65px" /></td>
+                <volist name="incomelist" id="v" empty="暂时没有数据">
+                    <tr data-id="{$v.id}" data-name="{$v.uname}" class="text-c">
+                        <td>{$v.uname}</td>
+                        <td>{$v.mobile}</td>
                         <td>{$v.name}</td>
                         <td>{$v.uname}</td>
                         <td>{$v.mobile}</td>
-                        <td>
-                            <if condition="$v.del neq 0">
-                            	<label style="color:red;">已禁用</label>
-                            <else />
-                            	<label style="color:green;">正常</label>
-                            </if>
-                        </td>
                         <td>{$v.vip_starttime}</td>
                         <td>{$v.vip_endtime}</td>
                         <td>{$v.addtime}</td>
                         <td class="obj_1">
-                          	<a href="{:U('User/add')}?id={$v.id}">修改</a> | 
-                            <a onclick='del_id_urls({$v.id},{$page})'>
-                                <if condition="$v.del neq 0">
-                                	<label style="color:green;">恢复</label>
-                            	<else />
-                            		禁用
-                            	</if>
-                            </a> | 
-                            <a onclick='dodel_id_urls({$v.id},{$page})'>删除</a>
+                          	<a href="{:U('User/income_info')}?id={$v.id}">详情</a> | 
                         </td>
                     </tr>
                 </volist>

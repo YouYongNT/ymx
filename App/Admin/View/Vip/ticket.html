@@ -26,11 +26,6 @@
 	<script type="text/javascript" src="__PUBLIC__/admin/js/jCalendar.js"></script>
     <script type="text/javascript" src="__PUBLIC__/admin/js/jquery.XYTipsWindow.min.2.8.js"></script>
     <script type="text/javascript" src="__PUBLIC__/admin/js/mydate.js"></script>
-    <script type="text/javascript">
-        function openDialog(type) {
-            window.open("{:U('Inout/expUser')}?tel={$tel}&name={$name}");
-        }
-    </script>
     <title>门票激活列表</title>
 </head>
 
@@ -45,7 +40,7 @@
         <div class="text-c">
         <form name='form' action="{:U('ticket')}" method='get'>
 			状态：
-			<select name="status" id="status">
+			<select class="inp_1 inp_6 input-text" style="width:150px;vertical-align:middle;" name="status" id="status">
 				<option value="">状态不限</option>
 				<option value="1" <?php if($status == 1)echo 'selected="selected"'; ?>>未使用</option>
 				<option value="2" <?php if($status == 2)echo 'selected="selected"'; ?>>待激活</option>
@@ -53,7 +48,7 @@
 				<option value="4" <?php if($status == 4	)echo 'selected="selected"'; ?>>已使用</option>
 			</select>
 			门票类型：
-			<select name="type" id="type">
+			<select class="inp_1 inp_6 input-text" style="width:150px;vertical-align:middle;" name="type" id="type">
 				<option value="">类型不限</option>
 				<volist name="tlist" id="t" empty="暂时没有数据">
 				<option value="{$t.id}" <?php if($type == $t.id)echo 'selected="selected"'; ?>>{$t.name}</option>

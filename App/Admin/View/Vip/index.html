@@ -35,13 +35,11 @@
     <div class="page-container">
         <div class="text-c">
         <form name='form' action="{:U('index')}" method='get'>
-			VIP卡号：<input type="text" class="input-text" style="width:250px" placeholder="VIP卡号" id="number" value="{$number}">
-			购买时间：
-            <input class="inp_1 inp_6 input-text" id="start_time" name="start_time" value="{$start_time}" onfocus="MyCalendar.SetDate(this)" style="width:160px;">
-            <input class="inp_1 inp_6 input-text" id="end_time" name="end_time" value="{$end_time}" onfocus="MyCalendar.SetDate(this)" style="width:160px;">
-			<br />
-			手机号码：<input type="text" class="input-text" style="width:250px" placeholder="持卡人手机号码" id="mobile" value="{$mobile}">
-			姓名：<input type="text" class="input-text" style="width:250px" placeholder="持卡人姓名" id="uname" value="{$uname}">
+			<input type="text" class="input-text" placeholder="VIP卡号" style="width:200px" id="number" value="{$number}">
+			<input type="text" class="input-text" placeholder="持卡人手机号码" style="width:120px" id="mobile" value="{$mobile}">
+			<input type="text" class="input-text" placeholder="持卡人姓名" style="width:120px" id="uname" value="{$uname}">
+            <input class="inp_1 inp_6 input-text" placeholder="开始时间" id="start_time" name="start_time" value="{$start_time}" onfocus="MyCalendar.SetDate(this)" style="width:120px;">
+            <input class="inp_1 inp_6 input-text" placeholder="结束时间" id="end_time" name="end_time" value="{$end_time}" onfocus="MyCalendar.SetDate(this)" style="width:120px;">
             <button type="button" class="btn btn-success" id="" name="" onclick="product_option(0);"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
         </form>
         </div>
