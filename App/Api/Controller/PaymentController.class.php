@@ -161,6 +161,15 @@ class PaymentController extends PublicController
                 ));
                 exit();
             }
+            $nn = M('invite_code')->where(['number'=>$data['uninum']])->find();
+            if($nn['status'] != 0){
+                echo json_encode(array(
+                    'status' => 0,
+                    'err' => '邀请码无法使用'
+                ));
+                exit();
+            }
+            M('invite_code')->where(['number'=>$data['uninum']])->setField(['status'=>1]);
             $data['receiver'] = $adds_info['uname'];
             $data['tel'] = $adds_info['mobile'];
             $data['address_xq'] = '暂无需填写';
@@ -177,10 +186,6 @@ class PaymentController extends PublicController
                 exit();
             }
             
-            /**
-             * ***********************************************
-             */
-            // dump($data);exit;
             $result = $order->add($data);
             if ($result) {
                 $date = array();

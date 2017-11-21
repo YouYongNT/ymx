@@ -840,4 +840,362 @@ class UserController extends PublicController
             exit();
         }
     }
+
+    public function vipcard()
+    {
+        $uid = trim($_REQUEST['uid']);
+        if (intval($uid) <= 0) {
+            echo json_encode(array(
+                
+                'status' => 0,
+                'err' => '参数错误'
+            
+            ));
+            exit();
+        }
+        // 用户购买的卡
+        $vipcard = M('vip_card')->where([
+            'uid' => $uid
+        ])->select();
+        if ($vipcard) {
+            $vipcards = array();
+            foreach ($vipcard as $k => $v) {
+                if (intval($v['pid']) > 0) {
+                    $pro = M('product')->where([
+                        'id' => $v['pid']
+                    ])->find();
+                    $pro['photo_x'] = __DATAURL__ . $pro['photo_x'];
+                    $codes = M('invite_code')->where([
+                        'vip_id' => $v['id']
+                    ])->select();
+                    $pro['codes'] = $codes;
+                    $arr = unserialize($pro['relate']);
+                    if (count($arr) > 0) {
+                        $list = array();
+                        $TIC = 27;
+                        $COU = 28;
+                        foreach ($arr as $kk => $vv) {
+                            $d = M('product')->where('id=' . intval($kk) . ' AND del=0 AND is_down=0')->find();
+                            $d['num'] = $vv; // 数量
+                            $d['photo_x'] = __DATAURL__ . $d['photo_x'];
+                            if ($d['cid'] == $TIC)
+                                $d['name'] .= '门票';
+                            if ($d['cid'] == $COU)
+                                $d['name'] .= '课程';
+                            $list[] = $d;
+                        }
+                        $pro['relate'] = $list;
+                        $pro['vip_id'] = $v['id'];
+                        $pro['uid'] = $v['uid'];
+                        $pro['cou'] = M('course')->where([
+                            'vip_id' => $v['id']
+                        ])->select();
+                        $tickets = M('ticket')->where([
+                            'uid' => $uid,
+                            'vip_id' => $v['id']
+                        ])->select();
+                        $pro['tic'] = $tickets;
+                    }
+                    $vipcards[] = $pro;
+                }
+            }
+            echo json_encode(array(
+                'status' => 1,
+                'vipcards' => $vipcards
+            ), JSON_UNESCAPED_UNICODE);
+        } else
+            echo json_encode(array(
+                'status' => 0,
+                'err' => '暂无信息'
+            ));
+        exit();
+    }
+
+    public function course()
+    {
+        $uid = trim($_REQUEST['uid']);
+        if (intval($uid) <= 0) {
+            echo json_encode(array(
+                
+                'status' => 0,
+                'err' => '参数错误'
+            
+            ));
+            exit();
+        }
+        $course = M('course')->where([
+            'uid' => $uid
+        ])->select();
+        if ($course) {
+            $courses = array();
+            foreach ($course as $k => $v) {
+                if (intval($v['pid']) > 0) {
+                    $cou = M('product')->where([
+                        'id' => $v['pid']
+                    ])->find();
+                    $cou['photo_x'] = __DATAURL__ . $cou['photo_x'];
+                    $cou['status'] = $v['status'];
+                    $cou['number'] = $v['number'];
+                    $cou['vip_id'] = $v['vip_id'];
+                    $courses[] = $cou;
+                }
+            }
+            echo json_encode(array(
+                
+                'status' => 1,
+                'courses' => $courses
+            
+            ), JSON_UNESCAPED_UNICODE);
+        } else
+            echo json_encode(array(
+                
+                'status' => 0,
+                'err' => '暂无信息'
+            
+            ));
+        exit();
+    }
+
+    // 查询总收益
+    public function income()
+    {
+        $uid = trim($_REQUEST['uid']);
+        if (intval($uid) <= 0) {
+            echo json_encode(array(
+                
+                'status' => 0,
+                'err' => '参数错误'
+            
+            ));
+            exit();
+        }
+        $income = M('income')->where([
+            'uid' => $uid
+        ])->find();
+        if ($income)
+            echo json_encode(array(
+                
+                'status' => 1,
+                'income' => $income
+            
+            ), JSON_UNESCAPED_UNICODE);
+        else
+            echo json_encode(array(
+                
+                'status' => 0,
+                'err' => '暂无信息'
+            
+            ));
+        exit();
+    }
+
+    // 查询收益流水
+    public function incomeinfo()
+    {
+        $uid = trim($_REQUEST['uid']);
+        if (intval($uid) <= 0) {
+            echo json_encode(array(
+                
+                'status' => 0,
+                'err' => '参数错误'
+            
+            ));
+            exit();
+        }
+        $incomeinfo = M('income_info')->where([
+            'uid' => $uid
+        ])
+            ->order('id desc')
+            ->select();
+        foreach ($incomeinfo as $k => $v)
+            $incomeinfo[$k]['dateline'] = date('Y年m月d日', $v['dateline']);
+        
+        if ($incomeinfo)
+            echo json_encode(array(
+                
+                'status' => 1,
+                'incomeinfo' => $incomeinfo
+            
+            ), JSON_UNESCAPED_UNICODE);
+        else
+            echo json_encode(array(
+                
+                'status' => 0,
+                'err' => '暂无信息'
+            
+            ));
+        exit();
+    }
+
+    // 查询单个VIP卡下的所有邀请码
+    public function invitecode()
+    {
+        $cid = trim($_REQUEST['cid']);
+        if (intval($cid) <= 0) {
+            echo json_encode(array(
+                'status' => 0,
+                'err' => '参数错误'
+            ));
+            exit();
+        }
+        $codes = M('invite_code')->where([
+            'vip_id' => $cid
+        ])->select();
+        
+        if ($codes)
+            echo json_encode(array(
+                'status' => 1,
+                'codes' => $codes
+            ), JSON_UNESCAPED_UNICODE);
+        else
+            echo json_encode(array(
+                'status' => 0,
+                'err' => '暂无信息'
+            ));
+        exit();
+    }
+
+    // 计算用户邀请人数
+    public function abc()
+    {
+        $uid = trim($_REQUEST['uid']);
+        if (intval($uid) <= 0) {
+            echo json_encode([
+                'status' => 0,
+                'err' => '参数错误'
+            ]);
+            exit();
+        }
+        $vipcards = M('vip_card')->where([
+            'uid' => $uid
+        ])->select();
+        if (! vipcards) {
+            echo json_encode([
+                'status' => 0,
+                'err' => '暂无数据'
+            ]);
+            exit();
+        }
+        $count = array();
+        foreach ($vipcards as $k => $v) {
+            $cc = M('invite_code')->where([
+                'vip_id' => $v['id'],
+                'number' => $v['invite_code'],
+                'status > 0'
+            ])->find();
+            if ($cc)
+                $count[] = $cc;
+        }
+        $c = 0;
+        if (count($count) > 0) {
+        }
+        $already_amount = M('income')->where(['uid'=>$uid])->sum('already_amount');
+        echo json_encode([
+            'status' => 1,
+            'b' => count($count),
+            'c' => $c,
+            'aa' => $already_amount
+        ]);
+    }
+
+    // 购买门票、课程
+    public function useticket()
+    {
+        $id = $_POST['id'];
+        $uid = $_POST['uid'];
+        $bn = trim($_POST['bn']);
+        $bm = trim($_POST['bm']);
+        $type = trim($_POST['type']);
+        
+        if (empty($type) || empty($id) || empty($uid) || empty($bn) || empty($bm)) {
+            echo json_encode([
+                'status' => 0,
+                'err' => '参数错误'
+            ]);
+            exit();
+        }
+        $update = false;
+        if ($type == 'tic')
+            $update = M('ticket')->where([
+                'id' => $id,
+                'uid' => $uid
+            ])->setField([
+                'status' => 1,
+                'buyer_name' => $bn,
+                'buyer_mobile' => $bm
+            ]);
+        if ($type == 'cou')
+            $update = M('course')->where([
+                'id' => $id,
+                'uid' => $uid
+            ])->setField([
+                'status' => 1,
+                'uname' => $bn,
+                'umobile' => $bm
+            ]);
+        if ($update) {
+            echo json_encode([
+                'status' => 1
+            ]);
+        } else {
+            echo json_encode([
+                'status' => 0,
+                'err' => '更新出错'
+            ]);
+        }
+    }
+
+    public function newincome()
+    {
+        $uid = $_POST['uid'];
+        $number = 0;
+        if (intval($uid) <= 0) {
+            echo json_encode([
+                'status' => 0,
+                'err' => '参数错误'
+            ]);
+            exit();
+        }
+        $number = M('income')->where(['uid'=>$uid])->getField('allow_amount');
+        if($number <= 0){
+            echo json_encode([
+                'status' => 0,
+                'err' => '可提现金额不足'
+            ]);
+            exit();
+        }
+        $user = M('user')->where(['id'=>$uid])->find();
+        if(empty($user['cardholder'])||empty($user['cardnumber'])||empty($user['cardbank'])){
+            echo json_encode([
+                'status' => 0,
+                'err' => '请先完善银行账户信息'
+            ]);
+            exit();
+        }
+        $in = M('income_log')->save([
+            'uid' => $uid,
+            'number' => $number,
+            'optime' => date('Y-m-d H:i:s'),
+            'type' => 1
+        ]);
+        if ($in) {
+            if (M('income')->where([
+                'uid' => $uid
+            ])->setField([
+                'incash_amount' => $number
+            ]))
+                echo json_encode([
+                    'status' => 1
+                ]);
+            else
+                echo json_encode([
+                    'status' => 0,
+                    'err' => '操作失败'
+                ]);
+        } else
+            echo json_encode([
+                'status' => 0,
+                'err' => '提交失败'
+            ]);
+    }
 }
