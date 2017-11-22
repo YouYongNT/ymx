@@ -403,7 +403,6 @@ class UserController extends PublicController
             'status' => 1,
             'sc_list' => $sc_list
         ));
-        exit();
     }
 
     // *****************************
@@ -626,7 +625,6 @@ class UserController extends PublicController
             'nouses' => $nouses,
             'useds' => $useds
         ));
-        exit();
     }
 
     /**
@@ -723,7 +721,6 @@ class UserController extends PublicController
                 'status' => 0,
                 'err' => '操作失败'
             ), JSON_UNESCAPED_UNICODE);
-            exit();
         }
     }
 
@@ -737,7 +734,6 @@ class UserController extends PublicController
             'status' => 1,
             'bank' => $bank
         ));
-        exit();
     }
 
     /**
@@ -908,7 +904,6 @@ class UserController extends PublicController
                 'status' => 0,
                 'err' => '暂无信息'
             ));
-        exit();
     }
 
     public function course()
@@ -929,21 +924,28 @@ class UserController extends PublicController
         if ($course) {
             $courses = array();
             foreach ($course as $k => $v) {
-                if (intval($v['pid']) > 0) {
-                    $cou = M('product')->where([
+                if (intval($v['pid']) > 0 && $v['vip_id'] == 0) {
+                    $co = M('product')->where([
                         'id' => $v['pid']
                     ])->find();
-                    $cou['photo_x'] = __DATAURL__ . $cou['photo_x'];
+                    $cou = array();
+                    $cou['k'] = $v['id'];
+                    $cou['id'] = $co['id'];
+                    $cou['name'] = $co['name'];
+                    $cou['vip_id'] = $v['vip_id'];
+                    $cou['photo_x'] = __DATAURL__ . $co['photo_x'];
                     $cou['status'] = $v['status'];
                     $cou['number'] = $v['number'];
-                    $cou['vip_id'] = $v['vip_id'];
+                    $cou['uname'] = $v['uname'];
+                    $cou['umobile'] = $v['umobile'];
                     $courses[] = $cou;
                 }
             }
+            
             echo json_encode(array(
                 
                 'status' => 1,
-                'courses' => $courses
+                'courses' => $this->discourse($courses)
             
             ), JSON_UNESCAPED_UNICODE);
         } else
@@ -953,7 +955,26 @@ class UserController extends PublicController
                 'err' => '暂无信息'
             
             ));
-        exit();
+    }
+
+    private function discourse($courses)
+    {
+        $ff = array();
+        foreach ($courses as $key => $value) {
+            $ff[$value['id']] = $value['name'];
+        }
+        // 先根据课程产品主键处理出不同的课程数组
+        $arrout = $out = array();
+        foreach ($ff as $k => $v) {
+            foreach ($courses as $kk => $vv) {
+                if ($k == $vv['id'])
+                    $arrout[$k][] = $courses[$kk];
+            }
+        }
+        foreach ($arrout as $kk => $vv) {
+            $out[] = $vv;
+        }
+        return $out;
     }
 
     // 查询总收益
@@ -986,7 +1007,6 @@ class UserController extends PublicController
                 'err' => '暂无信息'
             
             ));
-        exit();
     }
 
     // 查询收益流水
@@ -1024,7 +1044,6 @@ class UserController extends PublicController
                 'err' => '暂无信息'
             
             ));
-        exit();
     }
 
     // 查询单个VIP卡下的所有邀请码
@@ -1052,10 +1071,9 @@ class UserController extends PublicController
                 'status' => 0,
                 'err' => '暂无信息'
             ));
-        exit();
     }
 
-    // 计算用户邀请人数
+    // 计算用户邀请人数，待修改
     public function abc()
     {
         $uid = trim($_REQUEST['uid']);
@@ -1087,9 +1105,12 @@ class UserController extends PublicController
                 $count[] = $cc;
         }
         $c = 0;
-        if (count($count) > 0) {
-        }
-        $already_amount = M('income')->where(['uid'=>$uid])->sum('already_amount');
+        if (count($count) > 0) {}
+        $already_amount = M('income')->where([
+            'uid' => $uid
+        ])->sum('already_amount');
+        if (empty($already_amount))
+            $already_amount = 0;
         echo json_encode([
             'status' => 1,
             'b' => count($count),
@@ -1156,19 +1177,24 @@ class UserController extends PublicController
             ]);
             exit();
         }
-        $number = M('income')->where(['uid'=>$uid])->getField('allow_amount');
-        if($number <= 0){
-            echo json_encode([
-                'status' => 0,
-                'err' => '可提现金额不足'
-            ]);
-            exit();
-        }
-        $user = M('user')->where(['id'=>$uid])->find();
-        if(empty($user['cardholder'])||empty($user['cardnumber'])||empty($user['cardbank'])){
+        
+        $user = M('user')->where([
+            'id' => $uid
+        ])->find();
+        if (empty($user['cardholder']) || empty($user['cardnumber']) || empty($user['cardbank'])) {
             echo json_encode([
                 'status' => 0,
                 'err' => '请先完善银行账户信息'
+            ]);
+            exit();
+        }
+        $number = M('income')->where([
+            'uid' => $uid
+        ])->getField('allow_amount');
+        if ($number <= 0) {
+            echo json_encode([
+                'status' => 0,
+                'err' => '可提现金额不足'
             ]);
             exit();
         }
@@ -1182,7 +1208,8 @@ class UserController extends PublicController
             if (M('income')->where([
                 'uid' => $uid
             ])->setField([
-                'incash_amount' => $number
+                'incash_amount' => $number,
+                'allow_amount' => 0
             ]))
                 echo json_encode([
                     'status' => 1
