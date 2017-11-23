@@ -51,7 +51,7 @@
                     <th width="100">总收益</th>
                     <th width="150">未进入结算周期金额</th>
                     <th width="100">可提现金额</th>
-                    <th width="130">申请中体现金额</th>
+                    <th width="130">申请中提现金额</th>
                     <th width="130">已提现金额</th>
                     <th width="100">操作</th>
                 </tr>
@@ -63,14 +63,14 @@
                     <tr data-id="{$v.id}" data-name="{$v.uname}" class="text-c">
                         <td>{$v.uname}</td>
                         <td>{$v.mobile}</td>
-                        <td>{$v.name}</td>
-                        <td>{$v.uname}</td>
-                        <td>{$v.mobile}</td>
-                        <td>{$v.vip_starttime}</td>
-                        <td>{$v.vip_endtime}</td>
-                        <td>{$v.addtime}</td>
+                        <td></td>
+                        <td>{$v.amount}</td>
+                        <td>{$v.cycle_amount}</td>
+                        <td>{$v.allow_amount}</td>
+                        <td>{$v.incash_amount}</td>
+                        <td>{$v.already_amount}</td>
                         <td class="obj_1">
-                          	<a href="{:U('User/income_info')}?id={$v.id}">详情</a> | 
+                          	<a href="{:U('User/income_info')}?id={$v.uid}">详情</a>
                         </td>
                     </tr>
                 </volist>

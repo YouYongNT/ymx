@@ -32,69 +32,54 @@
 		href="javascript:location.replace(location.href);" title="刷新"><i
 		class="Hui-iconfont">&#xe68f;</i></a> </nav>
 	<div class="page-container">
+	<form action="{:U('User/newincomeopt')}" method="post">
 		<table class="table table-border table-bordered table-bg"
 			style="width: 400px">
 			<tr>
 				<td>姓名</td>
-				<td>{$income.uname}</td>
+				<td>{$incomelog.uname}
+				<input type="hidden" name="id" value="{$incomelog.id}" />
+				<input type="hidden" name="uid" value="{$incomelog.uid}" />
+				<input type="hidden" name="number" value="{$incomelog.number}" />
+				</td>
+			</tr>
+			<tr>
+				<td>提现金额</td>
+				<td>{$incomelog.number}</td>
 			</tr>
 			<tr>
 				<td>手机</td>
-				<td>{$income.mobile}</td>
+				<td>{$incomelog.mobile}</td>
 			</tr>
 			<tr>
-				<td>会员等级</td>
-				<td></td>
+				<td>持卡人姓名</td>
+				<td>{$incomelog.cardholder}</td>
 			</tr>
 			<tr>
-				<td>总收益</td>
-				<td>{$income.amount}</td>
+				<td>卡号</td>
+				<td>{$incomelog.cardnumber}</td>
 			</tr>
 			<tr>
-				<td>未进入结算周期金额</td>
-				<td>{$income.cycle_amount}</td>
+				<td>收入详情</td>
+				<td><a href="{:U('User/income_info')}?id={$incomelog.uid}">查看详情</a></td>
 			</tr>
 			<tr>
-				<td>可提现金额</td>
-				<td>{$income.allow_amount}</td>
+				<td>申请日期</td>
+				<td>{$incomelog.optime}</td>
 			</tr>
 			<tr>
-				<td>申请中提现金额</td>
-				<td>{$income.incash_amount}</td>
+				<td>操作</td>
+				<td><select name="status">
+					<option value="0">请选择</option>
+					<option value="1">通过</option>
+					<option value="2">驳回</option>
+				</select>已打款用户才可修改为已结算，请谨慎操作</td>
 			</tr>
 			<tr>
-				<td>已提现金额</td>
-				<td>{$income.already_amount}</td>
+				<td colspan="2"><input type="submit" name="submit" value="提交" class="btn" border="0" /></td>
 			</tr>
 		</table>
-		<br/>
-		<table class="table table-border table-bordered table-bg">
-			<thead>
-
-				<tr class="text-c">
-					<th width="40">日期</th>
-					<th width="100">推荐类型</th>
-					<th width="100">推荐金额（元）</th>
-					<th width="100">佣金比例</th>
-					<th width="150">佣金金额（元）</th>
-					<th width="100">卡号</th>
-				</tr>
-			</thead>
-
-			<tbody id="news_option">
-				<!-- 遍历 -->
-				<volist name="incomeinfo" id="v" empty="暂时没有数据">
-				<tr data-id="{$v.id}" data-name="{$v.uname}" class="text-c">
-					<td>{$v.optime}</td>
-					<td>{$v.card_type}</td>
-					<td>{$v.name}</td>
-					<td>{$v.percent}</td>
-					<td>{$v.amount}</td>
-					<td>{$v.card_number}</td>
-				</tr>
-				</volist>
-			</tbody>
-		</table>
+		</form>
 	</div>
 </body>
 </html>
