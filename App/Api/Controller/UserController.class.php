@@ -1135,6 +1135,13 @@ class UserController extends PublicController
             ]);
             exit();
         }
+        if(!preg_match("/^1[34578]\d{9}$/", $bm)){
+        	echo json_encode([
+        			'status' => 0,
+        			'err' => '手机号码有误'
+        	]);
+        	exit();
+        }
         $update = false;
         if ($type == 'tic')
             $update = M('ticket')->where([
