@@ -280,7 +280,6 @@ class UserController extends PublicController{
 	    $this->assign('incomelist',$incomelist);
 	    $this->display();
 	}
-
 	
 	/**
 	 * 会员组管理

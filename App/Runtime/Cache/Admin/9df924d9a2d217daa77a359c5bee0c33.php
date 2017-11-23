@@ -8,23 +8,23 @@
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link rel="Bookmark" href="/favicon.ico" >
     <link rel="Shortcut Icon" href="/favicon.ico" />
-    <script type="text/javascript" src="/xcx_yamaxun/Public/admin/js/action.js"></script>
-    <script type="text/javascript" src="/xcx_yamaxun/Public/admin/js/jquery.js"></script>
+    <script type="text/javascript" src="/ymx/Public/admin/js/action.js"></script>
+    <script type="text/javascript" src="/ymx/Public/admin/js/jquery.js"></script>
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="/xcx_yamaxun/Public/admin/lib/html5shiv.js"></script>
-    <script type="text/javascript" src="/xcx_yamaxun/Public/admin/lib/respond.min.js"></script>
+    <script type="text/javascript" src="/ymx/Public/admin/lib/html5shiv.js"></script>
+    <script type="text/javascript" src="/ymx/Public/admin/lib/respond.min.js"></script>
 
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="/xcx_yamaxun/Public/admin/static/h-ui/css/H-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="/xcx_yamaxun/Public/admin/static/h-ui.admin/css/H-ui.admin.css" />
-    <link rel="stylesheet" type="text/css" href="/xcx_yamaxun/Public/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="/xcx_yamaxun/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
-    <link rel="stylesheet" type="text/css" href="/xcx_yamaxun/Public/admin/static/h-ui.admin/css/style.css" />
-    <link href="/xcx_yamaxun/Public/admin/css/main.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/ymx/Public/admin/static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/ymx/Public/admin/static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="/ymx/Public/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="/ymx/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="/ymx/Public/admin/static/h-ui.admin/css/style.css" />
+    <link href="/ymx/Public/admin/css/main.css" rel="stylesheet" type="text/css" />
 
     <!--[if IE 6]>
-    <script type="text/javascript" src="/xcx_yamaxun/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script type="text/javascript" src="/ymx/Public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
 
@@ -100,25 +100,14 @@
                 </ul>
             </dd>
         </dl>
-        <dl id="menu-product">
-            <dt><i class="Hui-iconfont">&#xe620;</i> 品牌管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <li>
-                        <a data-title="添加品牌" data-href="<?php echo U('Brand/add');?>" href="<?php echo U('Brand/add');?>" target="iframe">添加品牌</a>
-                    </li>
-                    <li>
-                        <a data-title="品牌管理" data-href="<?php echo U('Brand/index');?>" href="<?php echo U('Brand/index');?>" target="iframe">全部品牌</a>
-                    </li>
-                </ul>
-            </dd>
-        </dl>
-
         <dl id="menu-member">
             <dt><i class="Hui-iconfont">&#xe60d;</i> 会员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
                     <li><a data-href="<?php echo U('User/index');?>" data-title="会员管理" href="<?php echo U('User/index');?>" target="iframe">会员管理</a></li>
+                	<li><a data-href="<?php echo U('User/group');?>" data-title="会员组管理" href="<?php echo U('User/group');?>" target="iframe">会员组管理</a></li>
+                	<li><a data-href="<?php echo U('User/newincome');?>" data-title="会员提现管理" href="<?php echo U('User/newincome');?>" target="iframe">会员提现管理</a></li>
+                	<li><a data-href="<?php echo U('User/income');?>" data-title="会员收益" href="<?php echo U('User/income');?>" target="iframe">会员收益</a></li>
                 </ul>
             </dd>
         </dl>
@@ -136,6 +125,8 @@
             <dd>
                 <ul>
                     <li><a data-href="<?php echo U('Vip/index');?>" data-title="VIP卡管理" href="<?php echo U('Vip/index');?>" target="iframe">VIP卡管理</a></li>
+                    <li><a data-href="<?php echo U('Vip/ticket');?>" data-title="门票激活管理" href="<?php echo U('Vip/ticket');?>" target="iframe">门票激活管理</a></li>
+                    <li><a data-href="<?php echo U('Vip/course');?>" data-title="课程确定管理" href="<?php echo U('Vip/course');?>" target="iframe">课程确定管理</a></li>
                 </ul>
             </dd>
         </dl>
@@ -144,6 +135,20 @@
             <dd>
                 <ul>
                     <li><a data-title="全部订单" data-href="<?php echo U('Order/index');?>" href="<?php echo U('Order/index');?>" target="iframe">全部订单</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <!-- 
+        <dl id="menu-product">
+            <dt><i class="Hui-iconfont">&#xe620;</i> 品牌管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a data-title="添加品牌" data-href="<?php echo U('Brand/add');?>" href="<?php echo U('Brand/add');?>" target="iframe">添加品牌</a>
+                    </li>
+                    <li>
+                        <a data-title="品牌管理" data-href="<?php echo U('Brand/index');?>" href="<?php echo U('Brand/index');?>" target="iframe">全部品牌</a>
+                    </li>
                 </ul>
             </dd>
         </dl>
@@ -176,7 +181,7 @@
                 </ul>
             </dd>
         </dl>
-        
+         -->
         <dl id="menu-tongji3">
             <dt><i class="Hui-iconfont">&#xe61a;</i> 地区管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
@@ -208,13 +213,13 @@
 
 
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="/xcx_yamaxun/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="/xcx_yamaxun/Public/admin/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="/xcx_yamaxun/Public/admin/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="/xcx_yamaxun/Public/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/ymx/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/ymx/Public/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/ymx/Public/admin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="/ymx/Public/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="/xcx_yamaxun/Public/admin/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
+<script type="text/javascript" src="/ymx/Public/admin/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
 <script type="text/javascript">
     $(function(){
         /*$("#min_title_list li").contextMenu('Huiadminmenu', {
