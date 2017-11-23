@@ -223,13 +223,13 @@ class UserController extends PublicController{
 		$mobile!='' ? $where.=" and u.mobile like '%$mobile%'" : null;
 		
 		define('rows',20);
-		$count=M('income')->alias("i")->join('left join lr_user as u on i.uid=u.uid')->where($where)->count();
+		$count=M('income')->alias("i")->join('left join lr_user as u on i.uid=u.id')->where($where)->count();
 		$rows=ceil($count/rows);
 		
 		$page=(int)$_GET['page'];
 		$page<0?$page=0:'';
 		$limit=$page*rows;
-		$incomelist=M('income')->alias("i")->join('left join lr_user as u on i.uid=u.uid')->where($where)->field('u.uname,u.mobile,i.*')->order('id desc')->limit($limit,rows)->select();
+		$incomelist=M('income')->alias("i")->join('left join lr_user as u on i.uid=u.id')->where($where)->field('u.uname,u.mobile,i.*')->order('id desc')->limit($limit,rows)->select();
 		$page_index=$this->page_index($count,$rows,$page);
 		//====================
 		// 将GET到的参数输出
@@ -245,6 +245,42 @@ class UserController extends PublicController{
 		$this->assign('incomelist',$incomelist);
 		$this->display();
 	}
+
+	
+	public function newincome(){
+	    $mobile = trim($_REQUEST['mobile']);
+	    $name = trim($_REQUEST['name']);
+	    $names=$this->htmlentities_u8($_GET['name']);
+	    
+	    //搜索
+	    $where="1=1";
+	    $name!='' ? $where.=" and u.uname like '%$names%'" : null;
+	    $mobile!='' ? $where.=" and u.mobile like '%$mobile%'" : null;
+	    
+	    define('rows',20);
+	    $count=M('income_log')->alias("i")->join('left join lr_user as u on i.uid=u.id')->where($where)->count();
+	    $rows=ceil($count/rows);
+	    
+	    $page=(int)$_GET['page'];
+	    $page<0?$page=0:'';
+	    $limit=$page*rows;
+	    $incomelist=M('income_log')->alias("i")->join('left join lr_user as u on i.uid=u.id')->where($where)->field('u.uname,u.mobile,i.*')->order('id desc')->limit($limit,rows)->select();
+	    $page_index=$this->page_index($count,$rows,$page);
+	    //====================
+	    // 将GET到的参数输出
+	    //=====================
+	    $this->assign('name',$name);
+	    $this->assign('mobile',$mobile);
+	    
+	    //=============
+	    //将变量输出
+	    //=============
+	    $this->assign('page_index',$page_index);
+	    $this->assign('page',$page);
+	    $this->assign('incomelist',$incomelist);
+	    $this->display();
+	}
+
 	
 	/**
 	 * 会员组管理
@@ -329,4 +365,5 @@ class UserController extends PublicController{
 			exit();
 		}
 	}
+
 }
