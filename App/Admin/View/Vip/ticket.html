@@ -134,25 +134,38 @@
         
         //激活或者确认使用
         function doactive(id,status){
-        	var uname = $('#uname_'+id).val();
-        	var umobile = $('#umobile_'+id).val();
-        	$.ajax({
-                type: "POST",
-                url: "{:U('doactive')}",
-                data:{'status':status,'id':id,'uname':uname,'umobile':umobile},
-	            dataType: "json",
-	                success: function (data) {
-	                if(data.returns){
-	                    alert('提交成功！');
-	                    location.reload();
-	                }else{
-	                    alert(data.message);
-	                }
-	            },
-	            error: function (msg) {
-	                alert ('网络连接失败！');
-	            }
-	        });
+        	var str = '你确定要‘确认使用’该门票吗？';
+        	if(status == 2){
+        		str = '你确定要‘确认激活’该门票吗？';
+        	}
+        	if (confirm(str)) {
+	        	var uname = $('#uname_'+id).val();
+	        	var umobile = $('#umobile_'+id).val();
+	        	if (status == 3){
+	        		if (uname == '' || umobile == ''){
+	        			alert('确认前请填写使用者名称和手机！');
+	        			return false;
+	        		}
+	        	}
+	        	
+	        	$.ajax({
+	                type: "POST",
+	                url: "{:U('doactive')}",
+	                data:{'status':status,'id':id,'uname':uname,'umobile':umobile},
+		            dataType: "json",
+		                success: function (data) {
+		                if(data.returns){
+		                    alert('操作成功！');
+		                    location.reload();
+		                }else{
+		                    alert(data.message);
+		                }
+		            },
+		            error: function (msg) {
+		                alert ('网络连接失败！');
+		            }
+		        });
+        	}
         }
     </script>
 </body>
