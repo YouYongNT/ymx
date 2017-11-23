@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>后台管理</title>
+	<link href="__PUBLIC__/admin/css/main.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="__PUBLIC__/admin/js/jquery.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/admin/js/action.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/admin/js/jCalendar.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/admin/js/jquery.XYTipsWindow.min.2.8.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/admin/js/mydate.js"></script>
+</head>
+<body>
+<div class="aaa_pts_show_1">【 会员信息管理 】</div>
+<div class="aaa_pts_show_2">
+    <div class="aaa_pts_3">
+      <form action="{:U('User/add_group')}?id={$id}" method="post" onsubmit="return ac_from();">
+      <ul class="aaa_pts_5">
+			<li>
+		           <div class="d1">会员组名称:</div>
+		           <div>
+		             <input class="inp_1" name="group_name" id="group_name" value="{$groupinfo.group_name}"/>
+		           </div>
+			</li>
+			<li>
+		           <div class="d1">折扣率:</div>
+		           <div>
+		             <input class="inp_1" name="discount" id="discount" value="{$groupinfo.discount}"/>%
+		           </div>
+			</li>
+			<li>
+		        	<input type="submit" name="submit" value="提交" class="aaa_pts_web_3" border="0" />
+			</li>
+      </ul>
+      </form>
+    </div>
+</div>
+<script type="text/javascript">
+function ac_from(){
+  	var name = $('#group_name').val();
+	if(name.length<2){
+		alert('用户名长度不能少于2');
+		return false;
+	}
+  
+	var discount = $('#discount').val();
+	if (discount == '') {
+		alert("折扣不能为空");
+		return false;
+	}
+}
+</script>
+</body>
+</html>

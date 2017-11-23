@@ -34,66 +34,32 @@
     	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
     </nav>
     <div class="page-container">
-        <div class="text-c">
-            <input type="text" class="input-text" style="width:250px" placeholder="用户名" id="name" value="{$name}">
-            <input type="text" class="input-text" style="width:250px" placeholder="手机号码" id="mobile" value="{$mobile}">
-            <button type="button" class="btn btn-success" id="" name="" onclick="product_option(0);"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
-        </div>
-        <br>
+    	<a href="{:U('User/add_group')}">+添加会员组</a>
+    	<br />
         <table class="table table-border table-bordered table-bg">
             <thead>
                 <tr class="text-c">
                     <th width="40">ID</th>
-                    <th width="100">头像</th>
-                    <th width="100">账户名</th>
-                    <th width="100">用户姓名</th>
-                    <th width="150">手机号码</th>
-                    <th width="100">状态</th>
-                    <th width="130">会员开始时间</th>
-                    <th width="130">会员结束时间</th>
-                    <th width="130">注册时间</th>
+                    <th width="100">会员组名称</th>
+                    <th width="100">折扣率</th>
                     <th width="100">操作</th>
                 </tr>
             </thead>
             <tbody id="news_option">
                 <!-- 遍历 -->
-                <volist name="userlist" id="v" empty="暂时没有数据">
+                <volist name="grouplist" id="v" empty="暂时没有数据">
                     <tr data-id="{$v.id}" data-name="{$v.name}" class="text-c">
                         <td>{$v.id}</td>
-                        <td><img src="{$v.photo}" width="65px" height="65px" /></td>
-                        <td>{$v.name}</td>
-                        <td>{$v.uname}</td>
-                        <td>{$v.mobile}</td>
-                        <td>
-                            <if condition="$v.del neq 0">
-                            	<label style="color:red;">已禁用</label>
-                            <else />
-                            	<label style="color:green;">正常</label>
-                            </if>
-                        </td>
-                        <td>{$v.vip_starttime}</td>
-                        <td>{$v.vip_endtime}</td>
-                        <td>{$v.addtime}</td>
+                        <td>{$v.group_name}</td>
+                        <td>{$v.discount}</td>
                         <td class="obj_1">
-                          	<a href="{:U('User/add')}?id={$v.id}">修改</a> | 
-                            <a onclick='del_id_urls({$v.id},{$page})'>
-                                <if condition="$v.del neq 0">
-                                	<label style="color:green;">恢复</label>
-                            	<else />
-                            		禁用
-                            	</if>
-                            </a> | 
+                          	<a href="{:U('User/add_group')}?id={$v.id}">修改</a> | 
                             <a onclick='dodel_id_urls({$v.id},{$page})'>删除</a>
                         </td>
                     </tr>
                 </volist>
                 <!-- 遍历 -->
             </tbody>
-            <tr>
-                <td colspan="10" class="td_2">
-                    {$page_index}
-                </td>
-            </tr>
         </table>
     </div>
     <!--_footer 作为公共模版分离出去-->
@@ -104,28 +70,12 @@
     <!--/_footer 作为公共模版分离出去-->
 
     <!--请在下方写此页面业务相关的脚本-->
-    <script type="text/javascript" src="__PUBLIC__/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/admin/lib/laypage/1.2/laypage.js"></script>
     <script>
-        //分页
-        function product_option(page) {
-            var obj = {
-                "name": $("#name").val(),
-                "mobile": $("#mobile").val(),
-            }
-            var url = '?page=' + page;
-            $.each(obj, function(a, b) {
-                url += '&' + a + '=' + b;
-            });
-            location = url;
-        }
-
         //更改按钮
         if (type == 'xz') {
             $('.obj_1').html('<input type="button" value="选 择" class="aaa_pts_web_3" style="margin:3px 0;" onclick="window_opener(this)">');
         }
-
+        
         function window_opener(e) {
             var obj = $(e);
             window.opener.document.getElementById('uid').value = obj.parent().parent().attr('data-id');
@@ -136,13 +86,13 @@
 
         function del_id_urls(id, page) {
             if (confirm('你确定要执行此操作吗？')) {
-                location.href = '{:U("del")}?did=' + id + '&page=' + page;
+                location.href = '{:U("del_group")}?did=' + id + '&page=' + page;
             }
         }
         
         function dodel_id_urls(id, page) {
-            if (confirm('你确定要删除该用户所有信息吗？')) {
-                location.href = '{:U("dodel")}?did=' + id + '&page=' + page;
+            if (confirm('你确定要删除该用户组所有信息吗？')) {
+                location.href = '{:U("dodel_group")}?did=' + id + '&page=' + page;
             }
         }
         

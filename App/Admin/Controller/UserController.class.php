@@ -63,6 +63,7 @@ class UserController extends PublicController{
 						'name'=>$_POST['name'] ,
 						'uname'=>$_POST['name'] ,
 						'mobile'=> $_POST['mobile'] ,
+						'group_id'=> $_POST['group_id'] ,
 						'provinceid'=> intval($_POST['provinceid']) ,
 						'cityid'=> intval($_POST['cityid']) ,
 						'areaid'=> intval($_POST['areaid']) ,
@@ -123,6 +124,10 @@ class UserController extends PublicController{
 			$this->assign('area_list',$area_list);
 			$this->assign('userinfo',$info);
 		}
+		
+		//会员组
+		$group_list = M('user_group')->select();
+		$this->assign('group_list',$group_list);
 		$this->display();
 	}
 	
@@ -239,5 +244,89 @@ class UserController extends PublicController{
 		$this->assign('page',$page);
 		$this->assign('incomelist',$incomelist);
 		$this->display();
+	}
+	
+	/**
+	 * 会员组管理
+	 */
+	public function group(){
+		$grouplist = M('user_group')->order('id desc')->select();
+
+		$this->assign('grouplist',$grouplist);
+		$this->display();
+	}
+	
+	/**
+	 * 会员组添加
+	 */
+	public function add_group(){
+		$id = intval($_REQUEST['id']);
+		if(isset($_POST['submit'])){
+			try{
+				$array=array(
+						'group_name'=>$_POST['group_name'] ,
+						'discount'	=>$_POST['discount'] ,
+				);
+				//执行添加
+				if($id){
+					//将空数据排除掉，防止将原有数据空置
+					foreach ($array as $k => $v) {
+						if(empty($v)){
+							unset($v);
+						}
+					}
+					$sql = M('user_group')->where('id='.$id)->save($array);
+				}else{
+					$sql = M('user_group')->add($array);
+					$id=$sql;
+				}
+		
+				//规格操作
+				if($sql){
+					$this->success('操作成功.');
+					exit();
+				}else{
+					throw new \Exception('操作失败.');
+				}
+					
+			}catch(\Exception $e){
+				echo "<script>alert('".$e->getMessage()."');location='{:U('User/group')}';</script>";
+			}
+		}
+		
+		if ($id){
+			$info = M('user_group')->where('id='.intval($id))->find();
+			
+			$this->assign('id',$id);
+			$this->assign('groupinfo',$info);
+		}
+		$this->display();
+	}
+	
+	/**
+	 * 删除用户组
+	 */
+	public function dodel_group(){
+		$id = intval($_REQUEST['did']);
+		$info = M('user_group')->where('id='.intval($id))->find();
+		if (!$info) {
+			$this->error('会员组信息错误.'.__LINE__);
+			exit();
+		}
+		
+		$ulist = M('user')->where('group_id='.intval($id))->find();
+		if (!empty($ulist)) {
+			$this->error('该会员组被会员绑定，请修改会员信息后删除会员组.'.__LINE__);
+			exit();
+		}
+		
+		//删除
+		if (M('user_group')->where('id='.intval($id))->delete()) {
+			$this->redirect('User/group');
+			exit();
+		}else{
+			$this->error('操作失败.');
+			exit();
+		}
 	}
 }

@@ -26,24 +26,23 @@
               <input class="inp_1" name="name" id="name" value="{$userinfo.name}"/>
             </div>
          </li>
-<!--          <li>
+		 <li>
             <div class="d1">用户姓名:</div>
             <div>
               <input class="inp_1" name="uname" id="uname" value="{$userinfo.uname}"/> &nbsp;&nbsp;&nbsp;请设置2个字符以上
             </div>
          </li>
          <li>
-            <div class="d1">用户权限:</div>
+            <div class="d1">用户组:</div>
             <div>
-              <select class="inp_1" name="qx" id="qx">
-                 	权限遍历 category id=6 就是普通会员后续要改进一下表的结构
-                    <option value="6">普通会员</option>
-                 	权限遍历
+              <select class="inp_1" name="group_id" id="group_id">
+              		<option value="">请选择会员组</option>
+              		<volist name="group_list" id="g" empty="暂时没有数据">
+                    <option value="{$g.id}" <if condition="$g.id eq $userinfo['group_id']">selected="selected"</if> >{$g.group_name}</option>
+                    </volist>
               </select>
             </div>
-         </li> 
- -->
- 
+         </li>
 		<li>
             <div class="d1">手机号码:</div>
             <div>
@@ -213,8 +212,8 @@ function aChangeArea(e,t){
 
 function ac_from(){
   	var name = $('#name').val();
-	if(name.length<3){
-		alert('用户名长度不能少于3');
+	if(name.length<2){
+		alert('用户名长度不能少于2');
 		return false;
 	}
   
