@@ -5,7 +5,12 @@ use Think\Controller;
 
 class UserController extends PublicController
 {
-    static $statusarr = ['待审核','已通过','已驳回']; 
+
+    static $statusarr = [
+        '待审核',
+        '已通过',
+        '已驳回'
+    ];
 
     // *************************
     // 普通会员的管理
@@ -296,6 +301,7 @@ class UserController extends PublicController
         $this->assign('incomeinfo', $incomeinfo);
         $this->display();
     }
+
     public function newincome()
     {
         $mobile = trim($_REQUEST['mobile']);
@@ -378,24 +384,24 @@ class UserController extends PublicController
             $this->error('订单操作失败');
         // 提现通过，需更新相应的income表记录
         // 若通过，扣除提现中金额，增加已提现金额
-        if ($update && $status == 1 && intval($uid) > 0) {
+        if ($status == 1 && intval($uid) > 0) {
             if (M('income')->where([
                 'uid' => $uid
             ])->setInc('already_amount', $number) && M('income')->where([
                 'uid' => $uid
             ])->setDec('incash_amount', $number))
-                $this->success('操作成功');
+                $this->success('操作成功', '/User/newincome');
             else
                 $this->error('操作失败');
         }
         // 若驳回，扣除提现中金额，增加可提现金额
-        if ($update && $status == 2 && intval($uid) > 0) {
+        if ($status == 2 && intval($uid) > 0) {
             if (M('income')->where([
                 'uid' => $uid
             ])->setInc('allow_amount', $number) && M('income')->where([
                 'uid' => $uid
             ])->setDec('incash_amount', $number))
-                $this->success('操作成功');
+                $this->success('操作成功', '/User/newincome');
             else
                 $this->error('操作失败');
         }
