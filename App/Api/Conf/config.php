@@ -49,16 +49,14 @@ return array(
    
 	//微信配置参数
     'weixin'=>array(
-
-
         'appid' =>'wx87387b56defed47e',			//微信appid
-        'secret'=>'356dcaa9173fd663cb1501f526e8caec', //微信secret
+        'secret'=>'d60daf8c35125cefc3069d381648bbd5', //微信secret
 
         'mchid' => '',
         'key' => '',
 
         //这里是异步通知页面url，提交到项目的Pay控制器的notifyurl方法；
-        'notify_url'=>'https://wx.91youyong.cn/index.php/Api/Wxpay/notify',
+        'notify_url'=>'https://ymx.91youyong.cn/index.php/Api/Wxpay/notify',
 
     ),
 );

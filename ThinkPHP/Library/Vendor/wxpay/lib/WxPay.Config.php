@@ -25,7 +25,7 @@ class WxPayConfig
     const APPID = 'wx87387b56defed47e';
     const MCHID = '';
     const KEY = '';
-    const APPSECRET = '356dcaa9173fd663cb1501f526e8caec';
+    const APPSECRET = 'd60daf8c35125cefc3069d381648bbd5';
 	// const APPID = C("wxpay_config.app_id");
 	// const MCHID = C("wxpay_config.partner");
 	// const KEY = C("wxpay_config.partner_key");
