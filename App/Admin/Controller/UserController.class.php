@@ -366,7 +366,7 @@ class UserController extends PublicController
         $status = trim($_POST['status']);
         $uid = trim($_POST['uid']);
         $number = trim($_POST['number']);
-        if (intval($status) <= 0 || intval($uid) <= 0 || intval($id) <= 0 || intval($number) <= 0)
+        if (intval($status) <= 0 || intval($status) >= 3 || intval($uid) <= 0 || intval($id) <= 0 || intval($number) <= 0)
             $this->error('操作失败或参数不正确');
         $ilog = M('income_log')->where([
             'id' => $id
@@ -382,7 +382,7 @@ class UserController extends PublicController
         ]);
         if (! $update)
             $this->error('订单操作失败');
-        // 提现通过，需更新相应的income表记录
+        // 提现通过或驳回，需更新相应的income表记录
         // 若通过，扣除提现中金额，增加已提现金额
         if ($status == 1) {
             if (M('income')->where([
@@ -390,7 +390,7 @@ class UserController extends PublicController
             ])->setInc('already_amount', $number) && M('income')->where([
                 'uid' => $uid
             ])->setDec('incash_amount', $number))
-                $this->success('操作成功', '/User/newincome');
+                $this->success('操作成功', 'newincome');
             else
                 $this->error('操作失败');
         }
@@ -401,7 +401,7 @@ class UserController extends PublicController
             ])->setInc('allow_amount', $number) && M('income')->where([
                 'uid' => $uid
             ])->setDec('incash_amount', $number))
-                $this->success('操作成功', '/User/newincome');
+                $this->success('操作成功', 'newincome');
             else
                 $this->error('操作失败');
         }
