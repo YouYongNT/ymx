@@ -1027,9 +1027,21 @@ class UserController extends PublicController
         ])
             ->order('id desc')
             ->select();
-        foreach ($incomeinfo as $k => $v)
+        foreach ($incomeinfo as $k => $v) {
             $incomeinfo[$k]['dateline'] = date('Y年m月d日', $v['dateline']);
-        
+            $vc = M('vip_card')->where([
+                'id' => $v['card_id']
+            ])->find();
+            if ($vc) {
+                $incomeinfo[$k]['buy_amount'] = $vc['amount'];
+                $incomeinfo[$k]['buy_number'] = $vc['number'];
+                $p = M('product')->where([
+                    'id' => $vc['pid']
+                ])->find();
+                if ($p)
+                    $incomeinfo[$k]['buy_name'] = $p['name'];
+            }
+        }
         if ($incomeinfo)
             echo json_encode(array(
                 
@@ -1084,6 +1096,7 @@ class UserController extends PublicController
             ]);
             exit();
         }
+        // 先查询出当前用户购买的VIP卡
         $vipcards = M('vip_card')->where([
             'uid' => $uid
         ])->select();
@@ -1094,18 +1107,39 @@ class UserController extends PublicController
             ]);
             exit();
         }
-        $count = array();
+        // 统计B级下线人数
+        $count = 0;
+        $barr = array();
         foreach ($vipcards as $k => $v) {
-            $cc = M('invite_code')->where([
-                'vip_id' => $v['id'],
-                'number' => $v['invite_code'],
-                'status > 0'
-            ])->find();
-            if ($cc)
-                $count[] = $cc;
+            $cc = M('vip_card')->where([
+                'invite_id' => $v['id']
+            ])
+                ->distinct(true)
+                ->field('uid')
+                ->select();
+            if ($cc) {
+                $barr[] = $cc;
+                $count += count($cc);
+            }
         }
+        // 统计C级下线人数
         $c = 0;
-        if (count($count) > 0) {}
+        if (count($barr) > 0) {
+            foreach ($barr as $key => $value) {
+                $vcs = M('vip_card')->where([
+                    'uid' => $value['uid']
+                ])->select();
+                foreach ($vcs as $kk => $vv) {
+                    $cc = M('vip_card')->where([
+                        'invite_id' => $vv['id']
+                    ])
+                        ->distinct(true)
+                        ->field('uid')
+                        ->select();
+                    $c += count($cc);
+                }
+            }
+        }
         $already_amount = M('income')->where([
             'uid' => $uid
         ])->sum('already_amount');
@@ -1113,7 +1147,7 @@ class UserController extends PublicController
             $already_amount = 0;
         echo json_encode([
             'status' => 1,
-            'b' => count($count),
+            'b' => $count,
             'c' => $c,
             'aa' => $already_amount
         ]);
@@ -1198,18 +1232,19 @@ class UserController extends PublicController
         $number = M('income')->where([
             'uid' => $uid
         ])->getField('allow_amount');
-        if ($number <= 0) {
+        if (empty($number) || $number <= 0) {
             echo json_encode([
                 'status' => 0,
                 'err' => '可提现金额不足'
             ]);
             exit();
         }
-        $in = M('income_log')->save([
+        $in = M('income_log')->add([
             'uid' => $uid,
-            'number' => $number,
+            'number' => doubleval($number),
             'optime' => date('Y-m-d H:i:s'),
-            'type' => 1
+            'type' => 1,
+            'status' => 0
         ]);
         if ($in) {
             if (M('income')->where([
@@ -1229,7 +1264,7 @@ class UserController extends PublicController
         } else
             echo json_encode([
                 'status' => 0,
-                'err' => '提交失败'
+                'err' => $number . '提交失败'
             ]);
     }
 }
