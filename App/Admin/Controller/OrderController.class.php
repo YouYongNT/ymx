@@ -365,8 +365,8 @@ class OrderController extends PublicController{
 			}
 			
 			$data = array();
+			$data['status'] = $order_status;
 			if ($order_status) {
-				$data['status'] = $order_status;
 				$data['payer'] = $_POST['payer'];
 				$data['voucher'] = $_POST['voucher'];
 			}
