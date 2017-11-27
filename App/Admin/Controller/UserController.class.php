@@ -123,12 +123,26 @@ class UserController extends PublicController
             $info = M('user')->where('id=' . intval($id))->find();
             $province_list = M('china_city')->where('tid=0')->select();
             if ($info['areaid']) {
-                $city = M('china_city')->where("code = {$info['areaid']}")->find();
-                $area_list = M('china_city')->where('tid=' . $city['tid'])->select();
+                $city = M('china_city')->where("id = {$info['areaid']}")->find();
+                if ($city['tid'])
+                    $area_list = M('china_city')->where('tid=' . $city['tid'])->select();
             }
             if ($info['provinceid']) {
-                $province = M('china_city')->where("code = {$info['provinceid']}")->find();
-                $city_list = M('china_city')->where('tid=' . $province['id'])->select();
+                $province = M('china_city')->where("id = {$info['provinceid']}")->find();
+                if ($province['id'])
+                    $city_list = M('china_city')->where('tid=' . $province['id'])->select();
+            }
+            if ($info['agent_provinceid']) {
+                $aprovince = M('china_city')->where("id = {$info['agent_provinceid']}")->find();
+                $info['agent_provinceid'] = $aprovince['id'];
+            }
+            if ($info['agent_cityid']) {
+                $acity = M('china_city')->where("id = {$info['agent_cityid']}")->find();
+                $info['agent_cityid'] = $acity['id'];
+            }
+            if ($info['agent_areaid']) {
+                $aarea = M('china_city')->where("id = {$info['agent_areaid']}")->find();
+                $info['agent_provinceid'] = $aarea['id'];
             }
             
             $this->assign('id', $id);
@@ -260,10 +274,19 @@ class UserController extends PublicController
         $incomelist = M('income')->alias("i")
             ->join('left join lr_user as u on i.uid=u.id')
             ->where($where)
-            ->field('u.uname,u.mobile,i.*')
+            ->field('u.uname,u.mobile,u.group_id,i.*')
             ->order('id desc')
             ->limit($limit, rows)
             ->select();
+        foreach ($incomelist as $k => $v) {
+            if (intval($v['group_id']) > 0) {
+                $ug = M('user_group')->where([
+                    'id' => $v['group_id']
+                ])->find();
+                if ($ug['group_name'])
+                    $incomelist[$k]['g_name'] = $ug['group_name'];
+            }
+        }
         $page_index = $this->page_index($count, $rows, $page);
         // ====================
         // 将GET到的参数输出
@@ -286,7 +309,7 @@ class UserController extends PublicController
         $income = M('income')->alias("i")
             ->join('left join lr_user as u on i.uid=u.id')
             ->where("u.id = $uid")
-            ->field('u.uname,u.mobile,i.*')
+            ->field('u.uname,u.mobile,u.group_id,i.*')
             ->find();
         $incomeinfo = M('income_info')->alias("i")
             ->join('left join lr_user as u on i.uid=u.id')
@@ -294,8 +317,22 @@ class UserController extends PublicController
             ->field('u.uname,u.mobile,i.*')
             ->order('id desc')
             ->select();
+        
+        if (intval($income['group_id']) > 0) {
+            $ug = M('user_group')->where([
+                'id' => $income['group_id']
+            ])->find();
+            if ($ug['group_name'])
+                $income['g_name'] = $ug['group_name'];
+        }
+        
         foreach ($incomeinfo as $k => $v) {
             $incomeinfo[$k]['optime'] = date("Y-m-d H:i:s", $v['dateline']);
+            $vipcard = M('vip_card')->where([
+                'id' => $v['invite_card_id']
+            ])->find();
+            if ($vipcard['amount'])
+                $incomeinfo[$k]['iamount'] = $vipcard['amount'];
         }
         $this->assign('income', $income);
         $this->assign('incomeinfo', $incomeinfo);
@@ -306,12 +343,14 @@ class UserController extends PublicController
     {
         $mobile = trim($_REQUEST['mobile']);
         $name = trim($_REQUEST['name']);
+        $status = trim($_REQUEST['status']);
         $names = $this->htmlentities_u8($_GET['name']);
         
         // 搜索
         $where = "1=1";
         $name != '' ? $where .= " and u.uname like '%$names%'" : null;
         $mobile != '' ? $where .= " and u.mobile like '%$mobile%'" : null;
+        $status != '' ? $where .= " and i.status = $status" : null;
         
         define('rows', 20);
         $count = M('income_log')->alias("i")
@@ -336,7 +375,7 @@ class UserController extends PublicController
         // =====================
         $this->assign('name', $name);
         $this->assign('mobile', $mobile);
-        
+        $this->assign('status', $status);
         // =============
         // 将变量输出
         // =============
