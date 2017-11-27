@@ -119,7 +119,7 @@
             <br />
 			付费凭证单据号：
 				<?php if($order_info['status'] == 10){ ?>
-				<input id="voucher" value="<?php echo $order_info['voucher'];?>"/>
+				<input id="voucher" style="width: 200px;" value="<?php echo $order_info['voucher'];?>"/>
 				<?php }else{ echo $order_info['voucher']; } ?>
         <br><br>
         <input type="button" value="提交" style="" onclick="sms_message()" class="btn btn-success"/>
