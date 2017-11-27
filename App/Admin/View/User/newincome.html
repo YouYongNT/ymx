@@ -36,7 +36,12 @@
     <div class="page-container">
         <div class="text-c">
             <input type="text" class="input-text" style="width:250px" placeholder="用户名" id="name" value="{$name}">
-            <input type="text" class="input-text" style="width:250px" placeholder="手机号码" id="mobile" value="{$mobile}">
+            <input type="text" class="input-text" style="width:250px" placeholder="手机号码" id="mobile" value="{$mobile}">申请状态
+            <select name="status" id="status" class="inp_1 inp_6 input-text" style="width:150px;vertical-align:middle;">
+               <option value="0" <if condition="$status eq 0">selected="selected"</if>>默认</option>
+               <option value="1" <if condition="$status eq 1">selected="selected"</if>>通过</option>
+               <option value="2" <if condition="$status eq 2">selected="selected"</if>>驳回</option>
+            </select>
             <button type="button" class="btn btn-success" id="" name="" onclick="product_option(0);"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
         </div>
         <br>
@@ -101,6 +106,7 @@
             var obj = {
                 "name": $("#name").val(),
                 "mobile": $("#mobile").val(),
+                "status": $("#status").val(),
             }
             var url = '?page=' + page;
             $.each(obj, function(a, b) {
@@ -109,10 +115,7 @@
             location = url;
         }
 
-        //更改按钮
-        if (type == 'xz') {
-            $('.obj_1').html('<input type="button" value="选 择" class="aaa_pts_web_3" style="margin:3px 0;" onclick="window_opener(this)">');
-        }
+        
 
         function window_opener(e) {
             var obj = $(e);

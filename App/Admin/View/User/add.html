@@ -62,7 +62,7 @@
                     <!-- 遍历 -->
                     <option value="">省</option>
                     <volist name="province_list" id="v">
-                        <option value="{$v.code}" <if condition="$v.code eq $userinfo['provinceid']">selected="selected"</if>>-- {$v.name}</option>
+                        <option value="{$v.id}" <if condition="$v.id eq $userinfo['provinceid']">selected="selected"</if>>-- {$v.name}</option>
                     </volist>
                     <!-- 遍历 -->
                 </select>
@@ -71,7 +71,7 @@
                     <!-- 遍历 -->
                     <option value="">市</option>
                     <volist name="city_list" id="v">
-                        <option value="{$v.code}" <if condition="$v.code eq $userinfo['cityid']">selected="selected"</if>>-- {$v.name}</option>
+                        <option value="{$v.id}" <if condition="$v.id eq $userinfo['cityid']">selected="selected"</if>>-- {$v.name}</option>
                     </volist>
                     <!-- 遍历 -->
                 </select>
@@ -80,7 +80,7 @@
                     <!-- 遍历 -->
                     <option value="">区</option>
                     <volist name="area_list" id="v">
-                        <option value="{$v.code}" <if condition="$v.code eq $userinfo['areaid']">selected="selected"</if>>-- {$v.name}</option>
+                        <option value="{$v.id}" <if condition="$v.id eq $userinfo['areaid']">selected="selected"</if>>-- {$v.name}</option>
                     </volist>
                     <!-- 遍历 -->
                 </select>
@@ -121,7 +121,7 @@
             </div>
          </li>
          <li>
-            <div class="d1">授权区域:</div>
+            <div class="d1">授权区域:{$userinfo['agent_provinceid']}</div>
             <div>
             	<select class="inp_1 input-text" name="agent_provinceid" id="agent_provinceid" onchange="aChangeArea(this,1);" style="width:150px;margin-right:5px;">
                     <!-- 遍历 -->
