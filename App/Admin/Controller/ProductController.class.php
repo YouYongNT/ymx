@@ -16,17 +16,18 @@ class ProductController extends PublicController{
 
 		//搜索变量
 		$type=$this->htmlentities_u8($_GET['type']);
-		$tuijian=$this->htmlentities_u8($_GET['tuijian']);
+		$cid=intval($_GET['cid']);
 		$name=$this->htmlentities_u8($_GET['name']);
 		//===============================
 		// 产品列表信息 搜索
 		//===============================
 		//搜索
 		$where="1=1 AND pro_type=1 AND del<1";
-		$tuijian!=='' ? $where.=" AND type=$tuijian" : null;
+		$cid>0 ? $where.=" AND cid=$cid" : null;
 		$shop_id>0 ? $where.=" AND shop_id=$shop_id" : null;
 		$name!='' ? $where.=" AND name like '%$name%'" : null;
-		define('rows',5);
+		
+		define('rows',10);
 		$count=M('product')->where($where)->count();
 		$rows=ceil($count/rows);
 		$page=(int)$_GET['page'];
@@ -40,12 +41,15 @@ class ProductController extends PublicController{
 			$productlist[$k]['cname'] = M('category')->where('id='.intval($v['cid']))->getField('name');
 			$productlist[$k]['brand'] = M('brand')->where('id='.intval($v['brand_id']))->getField('name');
 		}
+		
+		$cate_list = M('category')->where('tid=1')->field('id,name')->select();
+		$this->assign('cate_list',$cate_list);
 
 		//==========================
 		// 将GET到的数据再输出
 		//==========================
 		$this->assign('id',$id);
-		$this->assign('tuijian',$tuijian);
+		$this->assign('cid',$cid);
 		$this->assign('name',$name);
 		$this->assign('type',$type);
 		$this->assign('shop_id',$shop_id);
@@ -93,6 +97,7 @@ class ProductController extends PublicController{
 				'is_hot'=>intval($_POST['is_hot']),//是否热卖
 				'is_show'=>intval($_POST['is_show']),//是否新品
 				'is_sale'=>intval($_POST['is_sale']),//是否折扣
+				'is_down'=>intval($_POST['is_down']),//是否下架
 			);
 			
 			//关联商品

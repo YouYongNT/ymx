@@ -309,17 +309,25 @@
            		</div>
             </div>
 
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>产品介绍：</label>
-                <div style="padding: 0 15px;">
-                    <textarea class="inp_1 inp_2" name="content" id="content" />{$pro_allinfo.content}</textarea>
+			<div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否下架：</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="radio" name="is_down" value="1" <?php echo $pro_allinfo[ 'is_down']==1 ? 'checked="checked"' : null?>/> 是 &nbsp;
+                    <input type="radio" name="is_down" value="0" <?php echo $pro_allinfo[ 'is_down']!=1 ? 'checked="checked"' : null?> /> 否
                 </div>
             </div>
             
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3">排序：</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <input type="text" class="input-text" placeholder="排序" name="sort" id="sort" value="{$pro_allinfo.sort}">
+                    <input type="text" class="input-text" style="width: 50px;" placeholder="排序" name="sort" id="sort" value="{$pro_allinfo.sort}">
+                </div>
+            </div>
+            
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>产品介绍：</label>
+                <div style="padding: 0 15px;">
+                    <textarea class="inp_1 inp_2" name="content" id="content" />{$pro_allinfo.content}</textarea>
                 </div>
             </div>
 

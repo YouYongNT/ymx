@@ -34,10 +34,11 @@
     <div class="page-container">
         <div class="text-c">
             <input type="text" class="input-text" style="width:250px" placeholder="产品名称" id="name" value="{$name}">
-            <select class="inp_1 inp_6 input-text" id="tuijian" style="width:100px;vertical-align:middle;">
+            <select class="inp_1 inp_6 input-text" id="cid" style="width:100px;vertical-align:middle;">
             <option value="">全部产品</option>
-            <option value="1" <?php echo $tuijian=='1' ? 'selected="selected"' : NULL ?>>推荐产品</option>
-            <option value="0" <?php echo $tuijian=='0' ? 'selected="selected"' : NULL ?>>非推荐产品</option>
+            <volist name="cate_list" id="c" empty="暂时没有数据">
+            <option value="{$c.id}" <?php echo $cid==$c['id'] ? 'selected="selected"' : NULL ?>>{$c.name}</option>
+            </volist>
         </select>
             <button type="button" class="btn btn-success" id="" name="" onclick="product_option(0);"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
         </div>
@@ -115,7 +116,7 @@
             var obj = {
                     "name": $("#name").val(),
                     "shop_id": pid,
-                    "tuijian": $("#tuijian").val()
+                    "cid": $("#cid").val()
                 }
                 //alert(obj);exit();
             var url = '?page=' + page;
