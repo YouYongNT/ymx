@@ -993,14 +993,19 @@ class UserController extends PublicController
         $income = M('income')->where([
             'uid' => $uid
         ])->find();
-        if ($income)
+        if ($income) {
+            // //////待统计修改/////////
+            $income['apply_amount'] = 0;
+            $income['business_amount'] = 0;
+            $income['partner_amount'] = 0;
+            // ///////////////////////
             echo json_encode(array(
                 
                 'status' => 1,
                 'income' => $income
             
             ), JSON_UNESCAPED_UNICODE);
-        else
+        } else
             echo json_encode(array(
                 
                 'status' => 0,
@@ -1028,6 +1033,7 @@ class UserController extends PublicController
             ->order('id desc')
             ->select();
         foreach ($incomeinfo as $k => $v) {
+            
             $incomeinfo[$k]['dateline'] = date('Y年m月d日', $v['dateline']);
             $vc = M('vip_card')->where([
                 'id' => $v['card_id']
@@ -1169,12 +1175,12 @@ class UserController extends PublicController
             ]);
             exit();
         }
-        if(!preg_match("/^1[34578]\d{9}$/", $bm)){
-        	echo json_encode([
-        			'status' => 0,
-        			'err' => '手机号码有误'
-        	]);
-        	exit();
+        if (! preg_match("/^1[34578]\d{9}$/", $bm)) {
+            echo json_encode([
+                'status' => 0,
+                'err' => '手机号码有误'
+            ]);
+            exit();
         }
         $update = false;
         if ($type == 'tic')
@@ -1265,6 +1271,91 @@ class UserController extends PublicController
             echo json_encode([
                 'status' => 0,
                 'err' => $number . '提交失败'
+            ]);
+    }
+
+    /**
+     * power_date : 授权日期
+     * agent_area : 代理区域
+     * year_dateline : 本年度结算起止
+     * year_sales : 本年度累计销售额
+     * target_sales : 目标销售额
+     */
+    public function areasales()
+    {
+        $uid = trim($_REQUEST['uid']);
+        $user = M('user')->where([
+            'id' => $uid,
+            'is_agent' => 1
+        ])->find();
+        if (! $user) {
+            echo json_encode([
+                'status' => 0,
+                'err' => '暂无信息'
+            ]);
+            exit();
+        }
+        $area = M('user')->where([
+            'id' => $uid
+        ])
+            ->field('agent_provinceid,agent_cityid,agent_areaid')
+            ->find();
+        
+        $alist = M('china_city')->where("id in (" . implode(',', $area) . ")")
+            ->field('name')
+            ->select();
+        $arr = array();
+        foreach ($alist as $k => $v)
+            $arr[] = $v['name'];
+        echo json_encode([
+            'status' => 1,
+            'areasales' => [
+                'power_date' => date('Y-m-d H:i:s', $user['vip_starttime']),
+                'agent_area' => implode(" ", $arr),
+                'year_dateline' => date('Y-m-d H:i:s', $user['vip_starttime']) . '至' . date('Y-m-d H:i:s', $user['vip_endtime']),
+                'year_sales' => '44444',
+                'target_sales' => ''
+            ]
+        ], JSON_UNESCAPED_UNICODE);
+    }
+
+    public function orderlist()
+    {
+        $uid = trim($_REQUEST['uid']);
+        $list = M('order')->where([
+            'uid' => $uid
+        ])->select();
+        foreach ($list as $k => $v){
+            if($v['id']){
+                $op = M('order_product')->where([
+                    'order_id' => $v['id']
+                ])->find();
+                $list[$k]['name'] = $op['name'];
+            }
+        }
+        echo json_encode([
+            'status' => 1,
+            'orderlist' => $list
+        ], JSON_UNESCAPED_UNICODE);
+    }
+
+    public function cancelorder()
+    {
+        $id = trim($_POST['id']);
+        $uid = trim($_POST['uid']);
+        if (M('order')->where([
+            'id' => $id,
+            'uid' => $uid
+        ])->setField([
+            'status' => 0
+        ]))
+            echo json_encode([
+                'status' => 1
+            ]);
+        else
+            echo json_encode([
+                'status' => 0,
+                'err' => '操作失败'
             ]);
     }
 }

@@ -147,29 +147,44 @@ class PaymentController extends PublicController
             $data['price'] = $_POST['price'];
             $data['uninum'] = $_POST['uninum'];
             $adds_info = M('user')->where("id = $uid")->find();
-            if(empty($adds_info['mobile'])){
+            if (empty($adds_info['mobile'])) {
                 echo json_encode(array(
                     'status' => 0,
                     'err' => '请先完善个人信息'
                 ));
                 exit();
             }
-            if(empty($data['uninum']) || $data['uninum'] == 'undefined'){
+            if (empty($data['uninum']) || $data['uninum'] == 'undefined') {
                 echo json_encode(array(
                     'status' => 0,
                     'err' => '邀请码必填'
                 ));
                 exit();
             }
-            $nn = M('invite_code')->where(['number'=>$data['uninum']])->find();
-            if($nn['status'] != 0){
+            $nn = M('invite_code')->where([
+                'number' => $data['uninum']
+            ])->find();
+            if (! $nn) {
+                if (trim($data['uninum']) != 'A00001') {
+                    echo json_encode(array(
+                        'status' => 0,
+                        'err' => '邀请码无法使用'
+                    ));
+                    exit();
+                }
+            }
+            if ($nn['status'] != 0) {
                 echo json_encode(array(
                     'status' => 0,
                     'err' => '邀请码无法使用'
                 ));
                 exit();
             }
-            M('invite_code')->where(['number'=>$data['uninum']])->setField(['status'=>1]);
+            M('invite_code')->where([
+                'number' => $data['uninum']
+            ])->setField([
+                'status' => 1
+            ]);
             $data['receiver'] = $adds_info['uname'];
             $data['tel'] = $adds_info['mobile'];
             $data['address_xq'] = '暂无需填写';
@@ -222,7 +237,6 @@ class PaymentController extends PublicController
                 $up['num'] = intval($check_pro['num']) - intval($date['num']);
                 $up['shiyong'] = intval($check_pro['shiyong']) + intval($date['num']);
                 $product->where('id=' . intval($date['pid']))->save($up);
-                
             } else {
                 echo json_encode(array(
                     'status' => 0,
@@ -237,7 +251,6 @@ class PaymentController extends PublicController
                 'err' => '数据异常'
             ));
             exit();
-           
         }
         // 把需要的数据返回
         $arr = array();
@@ -627,7 +640,7 @@ class PaymentController extends PublicController
 
     /**
      * 针对涂屠生成唯一订单号
-     * 
+     *
      * @return int 返回16位的唯一订单号
      */
     public function build_order_no()

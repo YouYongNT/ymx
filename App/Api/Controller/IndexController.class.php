@@ -75,13 +75,14 @@ class IndexController extends PublicController {
         $page = isset($_REQUEST['page'])?intval($_REQUEST['page']):1;
         $limit = intval($page*8)-8;
 		$PRO = 20;//VIP类别外键
+		$TIC = 27;//课程类别外键
 		$COU = 28;//课程类别外键
         $pro_list = M('product')->where("del=0 AND pro_type=1 AND is_down=0 AND cid = $PRO")->order('sort desc,id desc')->limit($limit.',8')->select();
         foreach ($pro_list as $k => $v) {
             $pro_list[$k]['photo_x'] = __DATAURL__.$v['photo_x'];
         }
         
-        $cou_list = M('product')->where("del=0 AND pro_type=1 AND is_down=0 AND cid = $COU")->order('sort desc,id desc')->limit($limit.',8')->select();
+        $cou_list = M('product')->where("del=0 AND pro_type=1 AND is_down=0 AND cid in ($TIC,$COU)")->order('sort desc,id desc')->limit($limit.',8')->select();
         foreach ($cou_list as $k => $v) {
         	$cou_list[$k]['photo_x'] = __DATAURL__.$v['photo_x'];
         	$cou_list[$k]['price'] = floor($v['price']);
