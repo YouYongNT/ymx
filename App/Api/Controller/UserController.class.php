@@ -874,23 +874,51 @@ class UserController extends PublicController
                             $d = M('product')->where('id=' . intval($kk) . ' AND del=0 AND is_down=0')->find();
                             $d['num'] = $vv; // 数量
                             $d['photo_x'] = __DATAURL__ . $d['photo_x'];
-                            if ($d['cid'] == $TIC)
+                            if ($d['cid'] == $TIC){
                                 $d['name'] .= '门票';
-                            if ($d['cid'] == $COU)
+                                $d['used'] = M('ticket')->where([
+                                    'uid' => $uid,
+                                    'pid' => $kk,
+                                    'vip_id' => $v['id'],
+                                    'status' => 3
+                                ])->count();
+                                $d['unused'] = M('ticket')->where([
+                                    'uid' => $uid,
+                                    'pid' => $kk,
+                                    'vip_id' => $v['id'],
+                                    'status' => 0
+                                ])->count();
+                            }
+                            if ($d['cid'] == $COU){
                                 $d['name'] .= '课程';
+                                $d['used'] = M('course')->where([
+                                    'uid' => $uid,
+                                    'pid' => $kk,
+                                    'vip_id' => $v['id'],
+                                    'status' => 2
+                                ])->count();
+                                $d['unused'] = M('course')->where([
+                                    'uid' => $uid,
+                                    'pid' => $kk,
+                                    'vip_id' => $v['id'],
+                                    'status' => 0
+                                ])->count();
+                            }
                             $list[] = $d;
                         }
                         $pro['relate'] = $list;
                         $pro['vip_id'] = $v['id'];
                         $pro['uid'] = $v['uid'];
                         $pro['cou'] = M('course')->where([
-                            'vip_id' => $v['id']
+                            'vip_id' => $v['id'],
+                            'uid' => $uid
                         ])->select();
-                        $tickets = M('ticket')->where([
+                        
+                        $pro['tic'] = M('ticket')->where([
                             'uid' => $uid,
                             'vip_id' => $v['id']
                         ])->select();
-                        $pro['tic'] = $tickets;
+                        
                     }
                     $vipcards[] = $pro;
                 }
