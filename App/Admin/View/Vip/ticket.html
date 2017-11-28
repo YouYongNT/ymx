@@ -55,6 +55,7 @@
 				</volist>
 			</select>
             <button type="button" class="btn btn-success" id="" name="" onclick="product_option(0);"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+            <button type="button" class="btn btn-success" onclick="export_excel();"><i class="Hui-iconfont">&#xe665;</i> 导出excel</button>
         </form>
         </div>
         <br>
@@ -132,6 +133,13 @@
                 url += '&' + a + '=' + b;
             });
             location = url;
+        }
+        
+      	//导出excel
+        function export_excel(){
+        	var status = $("#status").val();
+        	var type = $("#type").val();
+            location.href = '{:U("Inout/expTicket")}?status=' + status + '&type=' + type;
         }
         
         //激活或者确认使用
