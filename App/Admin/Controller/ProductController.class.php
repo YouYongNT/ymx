@@ -89,6 +89,7 @@ class ProductController extends PublicController{
 				'price_jf'=>(float)$_POST['price_jf'] ,//赠送积分
 				'updatetime'=>time(),
 				'num'=>(int)$_POST['num'] ,			//库存
+				'minimum'=>(int)$_POST['minimum'] ,			//库存
 				'content'=>$_POST['content'] , 
 				'class'=>$_POST['class'],  //产品单位
 				'code_count'=>$_POST['code_count'],  //邀请码数量

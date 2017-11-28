@@ -184,7 +184,7 @@ class VipController extends PublicController{
 		$page=(int)$_GET['page'];
 		$page<0?$page=0:'';
 		$limit=$page*rows;
-		$ticketlist=M('ticket')->alias("t")->join('left join lr_product as p on t.pid=p.id')->field('t.*,p.name as pro_name')->where($where)->order('t.id desc')->limit($limit,rows)->select();
+		$ticketlist=M('ticket')->alias("t")->join('left join lr_product as p on t.pid=p.id')->join('left join lr_user as u on t.uid=u.id')->field('t.*,u.uname as username,p.name as pro_name')->where($where)->order('t.id desc')->limit($limit,rows)->select();
 		$page_index=$this->page_index($count,$rows,$page);
 		
 		//查询关联vip卡
@@ -269,7 +269,7 @@ class VipController extends PublicController{
 		$page=(int)$_GET['page'];
 		$page<0?$page=0:'';
 		$limit=$page*rows;
-		$courselist=M('course')->alias("c")->join('left join lr_product as p on c.pid=p.id')->field('c.*,p.name as pro_name')->where($where)->order('c.id desc')->limit($limit,rows)->select();
+		$courselist=M('course')->alias("c")->join('left join lr_product as p on c.pid=p.id')->join('left join lr_user as u on c.uid=u.id')->field('c.*,u.uname as username,p.name as pro_name')->where($where)->order('c.id desc')->limit($limit,rows)->select();
 		$page_index=$this->page_index($count,$rows,$page);
 	
 		//查询关联vip卡

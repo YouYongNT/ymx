@@ -172,6 +172,7 @@
                     <input type="text" class="input-text" placeholder="优惠价" name="price_yh" id="price_yh" value="{$pro_allinfo.price_yh}">
                 </div>
             </div>
+            <!--
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red"></span>代理价：</label>
                 <div class="formControls col-xs-8 col-sm-3">
@@ -179,12 +180,13 @@
                 </div>
             </div>
 
-            <!-- <div class="row cl">
+             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>赠送积分：</label>
                 <div class="formControls col-xs-8 col-sm-3">
                     <input type="text" class="input-text" placeholder="赠送积分" name="price_jf" id="price_jf" value="{$pro_allinfo.price_jf}">
                 </div>
-            </div> -->
+            </div> 
+            -->
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>产品编号：</label>
                 <div class="formControls col-xs-8 col-sm-3">
@@ -198,7 +200,12 @@
                     <input type="text" class="input-text" placeholder="库存" name="num" id="num" value="<?php echo $pro_allinfo['num']==0 ? 999999 : $pro_allinfo['num']; ?>">
                 </div>
             </div>
-
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>最少购买量：</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" placeholder="最少购买量" name="minimum" id="minimum" value="<?php echo $pro_allinfo['minimum']; ?>">
+                </div>
+            </div>
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>缩略图，图片大小175*113</label>
                 <div class="formControls col-xs-8 col-sm-3">
@@ -209,7 +216,6 @@
                     <input type="file" name="photo_x" id="photo_x" />	
                 </div>
             </div>
-
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>大 图，图片大小370*240</label>
                 <div class="formControls col-xs-8 col-sm-3">

@@ -236,6 +236,52 @@ class InoutController extends Controller {
         $this->exportExcel($xlsName,$xlsCell,$xlsData);
             
     }
+    
+    /**
+     * 导出课程或门票
+     */
+    public function expCourse(){//导出Excel
+    	$xlsName  = "课程编号信息";//导出的文件名
+    	//要导出的信息
+    	$xlsCell  = array(
+    			array('number','课程编号'),
+    			array('type','课程类型'),
+    			array('username','会员名称'),
+    			array('vip_number','所属VIP卡'),
+    			array('status','状态'),
+    			array('uname','持卡者姓名'),
+    			array('umobile','持卡者手机')
+    	);
+    
+    	$type = $_GET['type'];
+		$status = $_GET['status'];
+	
+		//搜索
+		$where="1=1";
+		$type!='' ? $where.=" and p.id={$type}" : null;
+		if ($status!=''){
+			$s = $status-1;
+			$where.=" and c.status={$s}";
+		}
+	
+		$xlsData = M('course')->alias("c")->join('left join lr_product as p on c.pid=p.id')->join('left join lr_user as u on c.uid=u.id')->field('c.*,u.uname as username,p.name as pro_name')->where($where)->order('c.id desc')->select();
+    	//查询要导出的信息
+    	foreach ($xlsData as $k => $v)
+    	{
+    		if ($v['vip_id']){
+    			$vip = M('vip_card')->where('id='.$v['vip_id'])->find();
+    			$xlsData[$k]['vip_number'] = $vip['number'];
+    		}
+    		$xlsData[$k]['number']	= $v['number'];
+    		$xlsData[$k]['type']	= $v['pro_name'];
+    		$xlsData[$k]['username']= $v['username'];
+    		$xlsData[$k]['status']	= $v['status']==0 ? '未使用' : ($v['status']==1 ? '待确认' : '已确认');
+    		$xlsData[$k]['uname']	= $v['uname'];
+    		$xlsData[$k]['umobile']	= $v['umobile'];
+    	}
+    	$this->exportExcel($xlsName,$xlsCell,$xlsData);
+    
+    }
 
     public function expTest() {
         //调用excel扩展

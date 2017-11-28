@@ -51,7 +51,7 @@
 			<select class="inp_1 inp_6 input-text" style="width:150px;vertical-align:middle;" name="type" id="type">
 				<option value="">类型不限</option>
 				<volist name="tlist" id="t" empty="暂时没有数据">
-				<option value="{$t.id}" <?php if($type == $t.id)echo 'selected="selected"'; ?>>{$t.name}</option>
+				<option value="{$t.id}" <?php if($type == $t['id'])echo 'selected="selected"'; ?>>{$t.name}</option>
 				</volist>
 			</select>
             <button type="button" class="btn btn-success" id="" name="" onclick="product_option(0);"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
@@ -63,6 +63,7 @@
                 <tr class="text-c">
                     <th width="100">门票编号</th>
                     <th width="100">门票类型</th>
+                    <th width="100">会员名称</th>
                     <th width="150">所属VIP卡</th>
                     <th width="100">状态</th>
                     <th width="100">购买者姓名</th>
@@ -78,6 +79,7 @@
                     <tr data-id="{$v.id}" data-name="{$v.number}" class="text-c">
                         <td>{$v.number}</td>
                         <td>{$v.pro_name}</td>
+                        <td>{$v.username}</td>
                         <td>{$v.vip_number}</td>
                         <td>
                         	<?php if($v['status'] == 0){echo '未使用';}

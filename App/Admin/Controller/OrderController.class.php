@@ -369,6 +369,11 @@ class OrderController extends PublicController{
 			if ($order_status) {
 				$data['payer'] = $_POST['payer'];
 				$data['voucher'] = $_POST['voucher'];
+			}else {
+				//释放邀请码
+				if ($o_info['uninum'] != ''){
+					M('invite_code')->where("number='{$o_info['uninum']}'")->save(array('status'=>0));//status 0：未使用；1：锁定；2：已使用
+				}
 			}
 			$up = $this->order->where('id='.intval($oid))->save($data);
 			$json = array();
