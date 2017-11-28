@@ -121,7 +121,7 @@
             </div>
          </li>
          <li>
-            <div class="d1">授权区域:{$userinfo['agent_provinceid']}</div>
+            <div class="d1">授权区域:</div>
             <div>
             	<select class="inp_1 input-text" name="agent_provinceid" id="agent_provinceid" onchange="aChangeArea(this,1);" style="width:150px;margin-right:5px;">
                     <!-- 遍历 -->
@@ -135,7 +135,7 @@
                 <select class="inp_1 input-text" name="agent_cityid" id="agent_cityid" onchange="aChangeArea(this,2);" style="width:150px;margin-right:5px;">
                     <!-- 遍历 -->
                     <option value="">市</option>
-                    <volist name="city_list" id="v">
+                    <volist name="acity_list" id="v">
                         <option value="{$v.id}" <if condition="$v.id eq $userinfo['agent_cityid']">selected="selected"</if>>-- {$v.name}</option>
                     </volist>
                     <!-- 遍历 -->
@@ -144,7 +144,7 @@
                 <select class="inp_1 input-text" name="agent_areaid" id="agent_areaid" style="width:150px;margin-right:5px;">
                     <!-- 遍历 -->
                     <option value="">区</option>
-                    <volist name="area_list" id="v">
+                    <volist name="aarea_list" id="v">
                         <option value="{$v.id}" <if condition="$v.id eq $userinfo['agent_areaid']">selected="selected"</if>>-- {$v.name}</option>
                     </volist>
                     <!-- 遍历 -->

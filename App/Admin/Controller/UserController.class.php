@@ -133,22 +133,20 @@ class UserController extends PublicController
                     $city_list = M('china_city')->where('tid=' . $province['id'])->select();
             }
             if ($info['agent_provinceid']) {
-                $aprovince = M('china_city')->where("id = {$info['agent_provinceid']}")->find();
-                $info['agent_provinceid'] = $aprovince['id'];
-            }
-            if ($info['agent_cityid']) {
-                $acity = M('china_city')->where("id = {$info['agent_cityid']}")->find();
-                $info['agent_cityid'] = $acity['id'];
+                $acity_list = M('china_city')->where('tid=' . $info['agent_provinceid'])->select();
             }
             if ($info['agent_areaid']) {
-                $aarea = M('china_city')->where("id = {$info['agent_areaid']}")->find();
-                $info['agent_provinceid'] = $aarea['id'];
+                $city = M('china_city')->where("id = {$info['agent_areaid']}")->find();
+                if ($city['tid'])
+                    $aarea_list = M('china_city')->where('tid=' . $city['tid'])->select();
             }
             
             $this->assign('id', $id);
             $this->assign('province_list', $province_list);
             $this->assign('city_list', $city_list);
             $this->assign('area_list', $area_list);
+            $this->assign('acity_list', $acity_list);
+            $this->assign('aarea_list', $aarea_list);
             $this->assign('userinfo', $info);
         }
         
