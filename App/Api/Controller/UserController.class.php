@@ -104,17 +104,17 @@ class UserController extends PublicController
         
         $user = M("user")->where('id=' . intval($uid))->find();
         if (! empty($user['provinceid']))
-            $user['province'] = M('china_city')->where("code = {$user['provinceid']}")->getField('name');
+            $user['province'] = M('china_city')->where("id = {$user['provinceid']}")->getField('name');
         if (! empty($user['cityid']))
-            $user['city'] = M('china_city')->where("code = {$user['cityid']}")->getField('name');
+            $user['city'] = M('china_city')->where("id = {$user['cityid']}")->getField('name');
         if (! empty($user['areaid']))
-            $user['area'] = M('china_city')->where("code = {$user['areaid']}")->getField('name');
+            $user['area'] = M('china_city')->where("id = {$user['areaid']}")->getField('name');
         if (! empty($user['agent_provinceid']))
-            $user['agent_province'] = M('china_city')->where("code = {$user['agent_provinceid']}")->getField('name');
+            $user['agent_province'] = M('china_city')->where("id = {$user['agent_provinceid']}")->getField('name');
         if (! empty($user['agent_cityid']))
-            $user['agent_city'] = M('china_city')->where("code = {$user['agent_cityid']}")->getField('name');
+            $user['agent_city'] = M('china_city')->where("id = {$user['agent_cityid']}")->getField('name');
         if (! empty($user['agent_areaid']))
-            $user['agent_area'] = M('china_city')->where("code = {$user['agent_areaid']}")->getField('name');
+            $user['agent_area'] = M('china_city')->where("id = {$user['agent_areaid']}")->getField('name');
         
         if ($user['photo']) {
             if ($user['source'] == '') {
@@ -788,9 +788,17 @@ class UserController extends PublicController
         $data['mobile'] = $mobile;
         $data['pwd'] = $pwd;
         $data['uname'] = $realname;
-        $data['provinceid'] = $provinceid;
-        $data['cityid'] = $cityid;
-        $data['areaid'] = $areaid;
+        $replace = array();
+        if ($provinceid > 0 && $cityid > 0 && $areaid > 0) {
+            $list = M('china_city')->where("code in ($provinceid,$cityid,$areaid)")->select();
+            if ($list) {
+                foreach ($list as $k => $v)
+                    $replace[$v['code']] = $v['id'];
+            }
+        }
+        $data['provinceid'] = $replace[$provinceid];
+        $data['cityid'] = $replace[$cityid];
+        $data['areaid'] = $replace[$areaid];
         $data['addtime'] = time();
         $res = $user->where(array(
             'id' => $userid
@@ -874,7 +882,7 @@ class UserController extends PublicController
                             $d = M('product')->where('id=' . intval($kk) . ' AND del=0 AND is_down=0')->find();
                             $d['num'] = $vv; // 数量
                             $d['photo_x'] = __DATAURL__ . $d['photo_x'];
-                            if ($d['cid'] == $TIC){
+                            if ($d['cid'] == $TIC) {
                                 $d['name'] .= '门票';
                                 $d['used'] = M('ticket')->where([
                                     'uid' => $uid,
@@ -889,7 +897,7 @@ class UserController extends PublicController
                                     'status' => 0
                                 ])->count();
                             }
-                            if ($d['cid'] == $COU){
+                            if ($d['cid'] == $COU) {
                                 $d['name'] .= '课程';
                                 $d['used'] = M('course')->where([
                                     'uid' => $uid,
@@ -918,7 +926,6 @@ class UserController extends PublicController
                             'uid' => $uid,
                             'vip_id' => $v['id']
                         ])->select();
-                        
                     }
                     $vipcards[] = $pro;
                 }
@@ -1353,8 +1360,8 @@ class UserController extends PublicController
         $list = M('order')->where([
             'uid' => $uid
         ])->select();
-        foreach ($list as $k => $v){
-            if($v['id']){
+        foreach ($list as $k => $v) {
+            if ($v['id']) {
                 $op = M('order_product')->where([
                     'order_id' => $v['id']
                 ])->find();
