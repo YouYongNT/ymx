@@ -200,7 +200,7 @@
                     <input type="text" class="input-text" placeholder="库存" name="num" id="num" value="<?php echo $pro_allinfo['num']==0 ? 999999 : $pro_allinfo['num']; ?>">
                 </div>
             </div>
-            <div class="row cl" id="minim" style="display: none;">
+            <div class="row cl" id="minim" <if condition="$pro_allinfo['cid'] eq 20">style="display: none;"</if>>
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>最少购买量：</label>
                 <div class="formControls col-xs-8 col-sm-3">
                     <input type="text" class="input-text" placeholder="最少购买量" name="minimum" id="minimum" value="<?php echo $pro_allinfo['minimum']; ?>">
