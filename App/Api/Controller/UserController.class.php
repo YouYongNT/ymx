@@ -788,6 +788,7 @@ class UserController extends PublicController
         $data['mobile'] = $mobile;
         $data['pwd'] = $pwd;
         $data['uname'] = $realname;
+        //因小程序提交的地址信息为邮编，需转化为主键便于后台统一管理
         $replace = array();
         if ($provinceid > 0 && $cityid > 0 && $areaid > 0) {
             $list = M('china_city')->where("code in ($provinceid,$cityid,$areaid)")->select();

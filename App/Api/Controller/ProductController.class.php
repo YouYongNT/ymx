@@ -49,7 +49,7 @@ class ProductController extends PublicController
             $b[] = $pro['photo_d'];
         }
         $pro['img_arr'] = $b; // 图片轮播数组
-                               
+                              
         // 处理产品属性
         $catlist = array();
         if ($pro['pro_buff']) { // 如果产品属性有值才进行数据组装
@@ -122,6 +122,7 @@ class ProductController extends PublicController
                 $d = M('product')->where('id=' . intval($k) . ' AND del=0 AND is_down=0')->find();
                 $d['num'] = $v; // 数量
                 $d['photo_x'] = __DATAURL__ . $d['photo_x'];
+                $d['price_yh'] = $d['price_yh'] * $this->getuserdiscount();
                 if ($d['cid'] == $TIC)
                     $d['name'] .= '门票';
                 if ($d['cid'] == $COU)
@@ -309,7 +310,7 @@ class ProductController extends PublicController
     {
         $json = "";
         $id = intval($_POST['cat_id']); // 获得分类id 这里的id是pro表里的cid
-                                            // $id=44;
+                                        // $id=44;
         $type = I('post.type'); // 排序类型
         
         $page = intval($_POST['page']);
@@ -454,7 +455,7 @@ class ProductController extends PublicController
     {
         $json = "";
         $id = intval($_POST['cat_id']); // 获得分类id 这里的id是pro表里的cid
-                                            // $id=44;
+                                        // $id=44;
         $type = I('post.type'); // 排序类型
         
         $keyword = I('post.keyword');
@@ -519,7 +520,7 @@ class ProductController extends PublicController
     {
         $json = "";
         $id = intval($_POST['cat_id']); // 获得分类id 这里的id是pro表里的cid
-                                            // $id=44;
+                                        // $id=44;
         $type = I('post.type'); // 排序类型
         
         $page = intval($_POST['page']);

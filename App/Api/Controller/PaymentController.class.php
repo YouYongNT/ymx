@@ -123,6 +123,8 @@ class PaymentController extends PublicController
         $order = M("order");
         $order_pro = M("order_product");
         
+        $vipc = 20;
+        
         $uid = intval($_REQUEST['uid']);
         if (! $uid) {
             echo json_encode(array(
@@ -154,7 +156,11 @@ class PaymentController extends PublicController
                 ));
                 exit();
             }
-            if (empty($data['uninum']) || $data['uninum'] == 'undefined') {
+            $pro_data = M('product')->where([
+                'id' => intval($_POST['pid'])
+            ])->find();
+            
+            if ((empty($data['uninum']) || $data['uninum'] == 'undefined') && $pro_data['cid'] == $vipc) {
                 echo json_encode(array(
                     'status' => 0,
                     'err' => '邀请码必填'
@@ -164,7 +170,7 @@ class PaymentController extends PublicController
             $nn = M('invite_code')->where([
                 'number' => $data['uninum']
             ])->find();
-            if (! $nn) {
+            if (! $nn && $pro_data['cid'] == $vipc) {
                 if (trim($data['uninum']) != 'A00001') {
                     echo json_encode(array(
                         'status' => 0,
@@ -173,7 +179,7 @@ class PaymentController extends PublicController
                     exit();
                 }
             }
-            if ($nn['status'] != 0) {
+            if ($nn['status'] != 0 && $pro_data['cid'] == $vipc) {
                 echo json_encode(array(
                     'status' => 0,
                     'err' => '邀请码无法使用'
