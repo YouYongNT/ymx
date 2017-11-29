@@ -68,13 +68,13 @@ class LoginController extends PublicController
         $uid = M('user')->where($con)->getField('id');
         if ($uid) {
             $userinfo = M('user')->where('id=' . intval($uid))->find();
-            if (intval($userinfo['del']) == 1) {
-                echo json_encode(array(
-                    'status' => 0,
-                    'err' => '账号状态异常！'
-                ));
-                exit();
-            }
+//             if (intval($userinfo['del']) == 1) {
+//                 echo json_encode(array(
+//                     'status' => 0,
+//                     'err' => '账号状态异常！'
+//                 ));
+//                 exit();
+//             }
             $err = array();
             $err['ID'] = intval($uid);
             $err['NickName'] = $_POST['NickName'];

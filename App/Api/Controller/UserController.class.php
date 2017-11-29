@@ -749,7 +749,7 @@ class UserController extends PublicController
         $realname = trim($_POST['realname']);
         $pwd = md5(md5($_POST['pwd']));
         
-        $user_info = M('user')->where('id=' . intval($userid) . ' AND del=0')->find();
+        $user_info = M('user')->where('id=' . intval($userid))->find();
         if (! $user_info) {
             echo json_encode(array(
                 'status' => 0,
@@ -800,6 +800,7 @@ class UserController extends PublicController
         $data['provinceid'] = $replace[$provinceid];
         $data['cityid'] = $replace[$cityid];
         $data['areaid'] = $replace[$areaid];
+        $data['del'] = 1;
         $data['addtime'] = time();
         $res = $user->where(array(
             'id' => $userid
@@ -829,7 +830,7 @@ class UserController extends PublicController
             'openid' => $openid
         );
         $user_info = M('user')->where($where)
-            ->field('mobile')
+            ->field('mobile,del')
             ->find();
         if (! $user_info['mobile']) {
             echo json_encode(array(
