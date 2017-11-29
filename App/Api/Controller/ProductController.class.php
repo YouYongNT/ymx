@@ -111,9 +111,11 @@ class ProductController extends PublicController
         // $content = preg_replace("/width:.+?[\d]+px;/",'',$pro['content']);
         // $pro ['content'] = htmlspecialchars_decode ( $pro ['content'] );
         $pro['photo_x'] = __DATAURL__ . $pro['photo_x'];
+        $pro['photo_d'] = __DATAURL__ . $pro['photo_d'];
         $PRO = 20; // VIP类别外键
         $TIC = 27;
         $COU = 28;
+        $dis = $this->getuserdiscount($_REQUEST['uid']);
         // //////处理VIP卡数据////////
         if ($pro['cid'] == $PRO) {
             $plist = unserialize($pro['relate']);
@@ -122,7 +124,8 @@ class ProductController extends PublicController
                 $d = M('product')->where('id=' . intval($k) . ' AND del=0 AND is_down=0')->find();
                 $d['num'] = $v; // 数量
                 $d['photo_x'] = __DATAURL__ . $d['photo_x'];
-                $d['price_yh'] = $d['price_yh'] * $this->getuserdiscount($_REQUEST['uid']);
+                $d['photo_d'] = __DATAURL__ . $d['photo_d'];
+                $d['price_yh'] = $d['price_yh'] * $dis;
                 if ($d['cid'] == $TIC)
                     $d['name'] .= '门票';
                 if ($d['cid'] == $COU)
@@ -131,6 +134,7 @@ class ProductController extends PublicController
             }
             $pro['relate'] = $list;
         }
+        $pro['price_yh'] = $pro['price_yh'] * $dis;
         echo json_encode(array(
             'status' => 1,
             'content' => $pro
