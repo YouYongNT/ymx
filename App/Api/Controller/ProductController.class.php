@@ -125,7 +125,7 @@ class ProductController extends PublicController
                 $d['num'] = $v; // 数量
                 $d['photo_x'] = __DATAURL__ . $d['photo_x'];
                 $d['photo_d'] = __DATAURL__ . $d['photo_d'];
-                $d['price_yh'] = $d['price_yh'] * $dis;
+                $d['price_yh'] *= $dis;
                 if ($d['cid'] == $TIC)
                     $d['name'] .= '门票';
                 if ($d['cid'] == $COU)
@@ -134,6 +134,7 @@ class ProductController extends PublicController
             }
             $pro['relate'] = $list;
         }
+        $pro['price_yh'] *= $dis;
         echo json_encode(array(
             'status' => 1,
             'content' => $pro
