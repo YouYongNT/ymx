@@ -122,7 +122,7 @@ class ProductController extends PublicController
                 $d = M('product')->where('id=' . intval($k) . ' AND del=0 AND is_down=0')->find();
                 $d['num'] = $v; // 数量
                 $d['photo_x'] = __DATAURL__ . $d['photo_x'];
-                $d['price_yh'] = $d['price_yh'] * $this->getuserdiscount();
+                $d['price_yh'] = $d['price_yh'] * $this->getuserdiscount($_REQUEST['uid']);
                 if ($d['cid'] == $TIC)
                     $d['name'] .= '门票';
                 if ($d['cid'] == $COU)

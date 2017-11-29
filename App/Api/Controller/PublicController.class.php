@@ -123,14 +123,14 @@ class PublicController extends Controller
         }
     }
 
-    public function getuserdiscount()
+    public function getuserdiscount($uid)
     {
         $discount = M('user')->alias("i")
             ->join('inner join lr_user_group as u on i.group_id=u.id')
             ->where([
-            'i.id' => intval($_REQUEST['uid'])
+            'i.id' => intval($uid)
         ])
-            ->field('i.discount')
+            ->field('u.discount')
             ->find();
         return $discount;
     }
