@@ -134,7 +134,6 @@ class ProductController extends PublicController
             }
             $pro['relate'] = $list;
         }
-        $pro['price_yh'] = $pro['price_yh'] * $dis;
         echo json_encode(array(
             'status' => 1,
             'content' => $pro
