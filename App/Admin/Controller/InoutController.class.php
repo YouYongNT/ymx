@@ -285,7 +285,7 @@ class InoutController extends Controller {
     /**
      * 导出门票
      */
-    public function expCourse(){//导出Excel
+    public function expTicket(){//导出Excel
     	$xlsName  = "门票编号信息";//导出的文件名
     	//要导出的信息
     	$xlsCell  = array(
